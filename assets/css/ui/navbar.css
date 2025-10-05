@@ -1,0 +1,37 @@
+.navbar {
+    background: var(--bg-color);
+    position: fixed;
+    top: 70px;
+    /* Nằm ngay dưới header */
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /* Thấp hơn header nhưng cao hơn main */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 50px;
+    /* Chiều cao cố định */
+}
+
+.navbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    height: 50px;
+    /* Chiều cao cố định khớp với navbar */
+    background-color: var(--primary-color);
+    justify-content: center;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.navbar-list a {
+    font-size: var(--font-size-base);
+    color: var(--bg-color);
+    font-weight: var(--font-weight-normal);
+}
