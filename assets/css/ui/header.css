@@ -84,9 +84,9 @@
     background: linear-gradient(135deg, #e55a2b, #c82333);
 }
 
-.phone-icon {
-    font-size: var(--font-size-sm);
+.hotline-btn .phone-icon {
+    font-size: 1.2rem;
     display: inline-block;
-    min-width: 15px;
-    min-height: 15px;
+    min-width: 20px;
+    min-height: 20px;
 }

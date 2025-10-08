@@ -1,109 +1,137 @@
 /* CSS Variables */
 :root {
-    /* Colors */
-    --primary-color: #ff6b35;
-    --secondary-color: #dc3545;
-    --text-color: #333333;
-    --text-light: #666666;
-    --bg-color: #fff;
+  /* Colors */
+  --primary-color: #ff6b35;
+  --secondary-color: #dc3545;
+  --text-color: #333333;
+  --text-light: #666666;
+  --bg-color: #fff;
 
-    /* Typography */
-    --font-family: "Roboto Condensed", Arial, sans-serif;
-    --font-size-xs: 0.6rem;
-    --font-size-sm: 0.8rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.2rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
-    --font-size-3xl: 2.5rem;
+  /* Typography */
+  --font-family: "Roboto Condensed", Arial, sans-serif;
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
 
-    /* Spacing */
-    --letter-spacing-xs: 0.1rem;
-    --letter-spacing-sm: 0.3rem;
+  /* Spacing */
+  --letter-spacing-xs: 0.1rem;
+  --letter-spacing-sm: 0.3rem;
 
-    --line-height-base: 1.5;
-    --line-height-md: 1.7;
+  --line-height-base: 1.5;
+  --line-height-md: 1.7;
 
-    /* Border Radius */
-    --border-radius-md: 0.5rem;
-    --border-radius-lg: 1rem;
+  /* Border Radius */
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
 
-    /* Font Weight */
-    --font-weight-normal: 500;
-    --font-weight-bold: 600;
-
+  /* Font Weight */
+  --font-weight-normal: 500;
+  --font-weight-bold: 600;
 }
 
 /* Reset và Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family);
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 body {
-    line-height: var(--line-height-sm);
-    color: var(--text-color);
-    background-color: var(--bg-color);
+  line-height: var(--line-height-sm);
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
-/* Typography */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    line-height: var(--line-height-base);
+  line-height: var(--line-height-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-base);
 }
 
 h1 {
-    font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2xl);
 }
 
 h2 {
-    font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl);
 }
 
 h3 {
-    font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg);
 }
 
 p {
-    margin-bottom: 1rem;
-    line-height: var(--line-height-base);
+  margin-bottom: 1rem;
+  line-height: var(--line-height-base);
 }
 
 a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 /* Images */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Buttons */
 button {
-    cursor: pointer;
-    border: none;
-    background: none;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 /* Container */
 .container {
-    /* max-width: 1200px; */
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+  /* max-width: 1200px; */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Layout: Đảm bảo footer luôn ở đáy trang */
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1 0 auto;
+}
+#footer-placeholder {
+  flex-shrink: 0;
+  width: 100%;
 }

@@ -1,0 +1,281 @@
+/* Đảm bảo phần main-content không bị che bởi header và navbar cố định */
+.main-content {
+    padding: 120px 0 50px 0;
+}
+
+/* Giao diện trang liên hệ giống ảnh mẫu */
+.recruitment-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.breadcrumb .current {
+    color: #222;
+    font-weight: 500;
+}
+
+.recruitment-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 20px;
+}
+
+.recruitment-description {
+    font-size: var(--font-size-base);
+    margin-bottom: 40px;
+}
+
+/* ===========================================
+   RECRUITMENT TABLE OF CONTENTS & SECTIONS
+   =========================================== */
+
+/* Table of Contents */
+.recruitment-toc {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.toc-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toc-title i {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 12px;
+}
+
+.toc-link {
+    display: block;
+    /* padding: 12px 15px; */
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+}
+
+/* .toc-link:hover {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    text-decoration: none;
+}
+
+.toc-link.active {
+    background: var(--primary-color);
+    color: white;
+    border-left-color: #e55a2b;
+    font-weight: 500;
+} */
+
+/* Company Introduction */
+.company-introduction {
+    background: #f9f9f9;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.company-introduction p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+.company-introduction strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Recruitment Illustration */
+.recruitment-illustration {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.recruitment-illustration img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Recruitment Sections */
+.recruitment-section {
+    margin-bottom: 50px;
+    scroll-margin-top: 140px;
+}
+
+.section-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.section-content {
+    line-height: 1.8;
+    color: #444;
+}
+
+.section-content p {
+    font-size: var(--font-size-base);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Job Tasks */
+.job-tasks {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.job-tasks h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 15px 0;
+}
+
+.job-tasks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-tasks li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    font-size: var(--font-size-base);
+}
+
+.job-tasks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Requirements and Benefits Boxes */
+.requirements-box,
+.benefits-box {
+    /* background: #f0a500; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requirements-list,
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements-list li,
+.benefits-list li {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.requirements-list li::before,
+.benefits-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* ===========================================
+   SCROLL TO TOP BUTTON - Nút cuộn lên đầu
+   =========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}

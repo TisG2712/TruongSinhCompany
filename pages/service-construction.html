@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xây nhà trọn gói</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Thư viện Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Nhúng CSS Files -->
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/ui/header.css" />
+    <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+    <link rel="stylesheet" href="../assets/css/main-services.css" />
+</head>
+
+<body>
+    <div class="main-content">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+        <!-- Main Content -->
+        <main>
+            <div class="service-construction-container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Trang chủ</a>
+                    <span>></span>
+                    <a href="../pages/services.html">Dịch vụ</a>
+                    <span>></span>
+                    <span class="current">Xây nhà trọn gói</span>
+                </nav>
+                <div class="service-construction-content">
+                    <!-- Hero Slider Section -->
+                    <section class="service-hero-slider">
+                        <div class="slider-container">
+                            <div class="slider-wrapper">
+                                <div class="slider-track" id="sliderTrack">
+                                    <div class="slide active">
+                                        <img src="../assets/images/services_images/slider_image1.png"
+                                            alt="Xây nhà trọn gói - Dự án 1">
+                                        <div class="slide-content">
+                                            <h2>Xây nhà trọn gói</h2>
+                                            <p>Dịch vụ xây dựng nhà trọn gói từ A-Z với chất lượng cao và giá cả hợp lý
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="../assets/images/services_images/slider_image2.png"
+                                            alt="Xây nhà trọn gói - Dự án 2">
+                                        <div class="slide-content">
+                                            <h2>Thiết kế chuyên nghiệp</h2>
+                                            <p>Đội ngũ kiến trúc sư giàu kinh nghiệm thiết kế theo yêu cầu khách hàng
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="../assets/images/services_images/slider_image3.png"
+                                            alt="Xây nhà trọn gói - Dự án 3">
+                                        <div class="slide-content">
+                                            <h2>Thi công chất lượng</h2>
+                                            <p>Quy trình thi công chuyên nghiệp, đảm bảo tiến độ và chất lượng</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="../assets/images/services_images/slider_image4.png"
+                                            alt="Xây nhà trọn gói - Dự án 4">
+                                        <div class="slide-content">
+                                            <h2>Vật liệu cao cấp</h2>
+                                            <p>Sử dụng vật liệu chất lượng cao, có nguồn gốc rõ ràng</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="../assets/images/services_images/slider_image5.png"
+                                            alt="Xây nhà trọn gói - Dự án 5">
+                                        <div class="slide-content">
+                                            <h2>Bảo hành dài hạn</h2>
+                                            <p>Cam kết bảo hành công trình lên đến 5 năm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="slider-btn prev-btn" id="prevBtn">
+                                <i class="ri-arrow-left-line"></i>
+                            </button>
+                            <button class="slider-btn next-btn" id="nextBtn">
+                                <i class="ri-arrow-right-line"></i>
+                            </button>
+
+                            <!-- Dots Indicator -->
+                            <div class="slider-dots" id="sliderDots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                                <span class="dot" data-slide="3"></span>
+                                <span class="dot" data-slide="4"></span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Service Introduction Section -->
+                    <section class="service-introduction">
+                        <div class="intro-container">
+                            <div class="intro-image">
+                                <img src="../assets/images/services_images/service1.png" alt="Dịch vụ xây nhà trọn gói">
+                            </div>
+                            <div class="intro-content">
+                                <div class="intro-category">GIỚI THIỆU</div>
+                                <h2 class="intro-title">Dịch vụ Xây Nhà Trọn Gói tại Trường Sinh Group</h2>
+                                <div class="intro-text">
+                                    <p>Xây nhà trọn gói là hình thức mà chủ đầu tư sẽ giao khoán toàn bộ mọi công việc
+                                        từ A-Z cho một nhà thầu khi xây dựng công trình. Cụ thể, nhà thầu sẽ có trách
+                                        nhiệm lên phương án, khảo sát kế hoạch, triển khai thi công, lắp đặt thiết bị và
+                                        hoàn thiện theo mô hình khép kín</p>
+                                    <p>Trường Sinh tự hào là đơn vị chuyên cung cấp dịch vụ xây nhà trọn gói trên toàn
+                                        quốc. Với năng lực đã được kiểm chứng, chúng tôi cam kết mang đến cho khách hàng
+                                        giải pháp xây dựng trọn gói 3 Chuẩn:</p>
+                                    <ul class="intro-list">
+                                        <li>Chuẩn báo giá</li>
+                                        <li>Chuẩn chất lượng</li>
+                                        <li>Chuẩn tiến độ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Projects Showcase Section -->
+                    <section class="projects-showcase">
+                        <div class="showcase-container">
+                            <div class="showcase-header">
+                                <div class="showcase-title-section">
+                                    <div class="section-category">CÔNG TRÌNH</div>
+                                    <h2 class="section-main-title">Công trình đã triển khai</h2>
+                                </div>
+
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="project-carousel">
+                                    <div class="carousel-container">
+                                        <div class="carousel-track" id="projectCarouselTrack">
+                                            <div class="carousel-slide active">
+                                                <img src="../assets/images/services_images/villa1.png"
+                                                    alt="Hình minh họa villa">
+                                            </div>
+                                            <div class="carousel-slide">
+                                                <img src="../assets/images/services_images/villa2.png"
+                                                    alt="Hình minh họa villa">
+                                            </div>
+                                            <div class="carousel-slide">
+                                                <img src="../assets/images/services_images/villa3.png"
+                                                    alt="Hình minh họa villa">
+                                            </div>
+                                        </div>
+
+                                        <button class="carousel-btn prev-carousel-btn" id="prevCarouselBtn">
+                                            <i class="ri-arrow-left-line"></i>
+                                        </button>
+                                        <button class="carousel-btn next-carousel-btn" id="nextCarouselBtn">
+                                            <i class="ri-arrow-right-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="project-details">
+                                    <div class="project-info">
+                                        <div class="featured-project-title">
+                                            <h3>Công trình nổi bật</h3>
+                                        </div>
+                                        <h4 class="project-name">Công Trình Nhà Ở Biệt Thự Tân Cổ Điển 3 Tầng 1 Tum Anh
+                                            Nguyễn Mạnh Dũng Phú Thọ - NOBTTCD03001</h4>
+
+                                        <div class="project-meta">
+                                            <div class="meta-item">
+                                                <div class="meta-icon">
+                                                    <i class="ri-user-line"></i>
+                                                </div>
+                                                <span class="meta-label">Khách hàng:</span>
+                                                <span class="meta-value">Nguyễn Mạnh Dũng</span>
+                                            </div>
+
+                                            <div class="meta-item">
+                                                <div class="meta-icon">
+                                                    <i class="ri-home-line"></i>
+                                                </div>
+                                                <span class="meta-label">Diện tích:</span>
+                                                <span class="meta-value">624m2</span>
+                                            </div>
+
+                                            <div class="meta-item">
+                                                <div class="meta-icon">
+                                                    <i class="ri-map-pin-line"></i>
+                                                </div>
+                                                <span class="meta-label">Vị trí:</span>
+                                                <span class="meta-value">Phú Thọ</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="project-actions">
+                                            <a href="#" class="btn-primary-action">
+                                                <span>Chi tiết</span>
+                                            </a>
+                                            <a href="#" class="btn-secondary-action">
+                                                <span>Xem thêm công trình</span>
+                                                <i class="ri-arrow-right-line"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Design Templates Section -->
+                    <section class="design-templates">
+                        <div class="templates-container">
+                            <div class="templates-header">
+                                <div class="section-category">MẪU THIẾT KẾ</div>
+                                <h2 class="section-main-title">Mẫu kiến trúc nổi bật</h2>
+                            </div>
+
+                            <div class="templates-tabs">
+                                <button class="tab-btn active" data-tab="villa">Biệt thự</button>
+                                <button class="tab-btn" data-tab="townhouse">Nhà liền kế</button>
+                            </div>
+
+                            <div class="templates-grid" id="villa-tab">
+                                <!-- Cột 1: Ảnh dọc + ảnh ngang -->
+                                <div class="template-column">
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh1.png" alt="Biệt thự 1">
+                                    </div>
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh2.png" alt="Biệt thự 2">
+                                    </div>
+                                </div>
+
+                                <!-- Cột 2: Ảnh ngang + ảnh dọc -->
+                                <div class="template-column">
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh3.png" alt="Biệt thự 3">
+                                    </div>
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh4.png" alt="Biệt thự 4">
+                                    </div>
+                                </div>
+
+                                <!-- Cột 3: Ảnh dọc + ảnh ngang (giống cột 1) -->
+                                <div class="template-column">
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh5.png" alt="Biệt thự 5">
+                                    </div>
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh6.png" alt="Biệt thự 6">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="templates-grid" id="townhouse-tab" style="display: none;">
+                                <div class="template-column">
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh1.png" alt="Biệt thự 1">
+                                    </div>
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh2.png" alt="Biệt thự 2">
+                                    </div>
+                                </div>
+
+                                <!-- Cột 2: Ảnh ngang + ảnh dọc -->
+                                <div class="template-column">
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh5.png" alt="Biệt thự 5">
+                                    </div>
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh6.png" alt="Biệt thự 6">
+                                    </div>
+
+                                </div>
+
+                                <!-- Cột 3: Ảnh dọc + ảnh ngang (giống cột 1) -->
+                                <div class="template-column">
+                                    <div class="template-item template-horizontal">
+                                        <img src="../assets/images/services_images/anh3.png" alt="Biệt thự 3">
+                                    </div>
+                                    <div class="template-item template-vertical">
+                                        <img src="../assets/images/services_images/anh4.png" alt="Biệt thự 4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="templates-actions">
+                                <a href="#" class="btn-view-all">
+                                    <span>Xem tất cả mẫu kiến trúc</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Construction Process Section -->
+                    <section class="construction-process">
+                        <div class="process-container">
+                            <div class="process-header">
+                                <h2 class="process-title">Quy Trình Xây Nhà Trọn Gói</h2>
+                            </div>
+
+                            <div class="process-flow">
+                                <div class="process-line"></div>
+
+                                <!-- Step 1 -->
+                                <div class="process-step step-top step-1">
+                                    <div class="step-number">01</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Tiếp nhận thông tin</h3>
+                                        <p class="step-description">Khách hàng liên hệ với bên cung cấp dịch vụ thiết kế
+                                            và thi công trọn gói công trình, sau đó cung cấp những thông tin và những
+                                            yêu cầu về xây dựng</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="process-step step-bottom step-2">
+                                    <div class="step-number">02</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Tư vấn và báo giá</h3>
+                                        <p class="step-description">Sau khi tiếp nhận thông tin, Trường Sinh sẽ thảo
+                                            luận và có những tư vấn cụ thể dựa trên những mong muốn của khách hàng. Đồng
+                                            thời, báo giá thiết kế và lập khái toán thi công, đơn giá sẽ dựa trên tổng
+                                            chi phí dự kiến xây dựng.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="process-step step-top step-3">
+                                    <div class="step-number">03</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Ký kết hợp đồng</h3>
+                                        <p class="step-description">Sau khi thảo luận đi đến thống nhất, nhà thầu sẽ
+                                            soạn thảo hợp đồng dựa trên những ý kiến đã trao đổi. Khách hàng xem lại hợp
+                                            đồng, nếu như cần sửa đổi hay bổ sung có thể bàn bạc lại, cuối cùng sẽ thực
+                                            hiện giao kết hợp đồng đôi bên. Nhà thầu nhận tiền cọc và bắt đầu đi vào quy
+                                            trình thực hiện.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4 -->
+                                <div class="process-step step-bottom step-4">
+                                    <div class="step-number">04</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Thiết kế</h3>
+                                        <p class="step-description">Dựa trên những soạn thảo đã thống nhất, đơn vị dịch
+                                            vụ sẽ tiến hành thiết kế chi tiết cho công trình. Bản vẽ sẽ thể hiện được
+                                            đầy đủ về mặt bằng, diện tích, công năng từng phòng và phối cảnh. Từ đó, có
+                                            thể dự trù được kinh phí và tối ưu vật tư sử dụng.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 5 -->
+                                <div class="process-step step-top step-5">
+                                    <div class="step-number">05</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Thi công</h3>
+                                        <p class="step-description">Nhà thầu bắt tay vào thi công, đảm bảo triển khai
+                                            theo đúng kế hoạch và chất lượng suốt quá trình xây dựng. Quá trình này gồm
+                                            nhiều giai đoạn khác nhau, khách hàng có thể giám sát trong khi thực hiện.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 6 -->
+                                <div class="process-step step-bottom step-6">
+                                    <div class="step-number">06</div>
+                                    <div class="step-content">
+                                        <h3 class="step-title">Hoàn thiện và nghiệm thu công trình</h3>
+                                        <p class="step-description">Sau khi hoàn thành thi công, nhà thầu sẽ tiến hành
+                                            hoàn thiện các chi tiết cuối cùng và tổ chức nghiệm thu công trình. Khách
+                                            hàng kiểm tra chất lượng, nếu hài lòng sẽ ký biên bản nghiệm thu và thanh
+                                            toán phần còn lại.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Price Quote Section -->
+                    <section class="price-quote">
+                        <div class="quote-container">
+                            <div class="quote-header">
+                                <div class="section-category">BÁO GIÁ</div>
+                                <h2 class="section-main-title">Báo giá công trình</h2>
+                                <p class="quote-description">Điền thông tin dưới đây để nhận báo giá chi tiết và tư vấn
+                                    miễn phí từ đội ngũ chuyên gia của chúng tôi</p>
+                            </div>
+
+                            <div class="quote-form-container">
+                                <form class="quote-form" id="quoteForm">
+                                    <!-- Thông tin cá nhân -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Thông tin cá nhân</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="fullName">Họ và tên *</label>
+                                                <input type="text" id="fullName" name="fullName" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phone">Số điện thoại *</label>
+                                                <input type="tel" id="phone" name="phone" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" name="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">Địa chỉ</label>
+                                                <input type="text" id="address" name="address">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Thông tin công trình -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Thông tin công trình</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="projectType">Loại công trình *</label>
+                                                <select id="projectType" name="projectType" required>
+                                                    <option value="">Chọn loại công trình</option>
+                                                    <option value="house">Nhà ở</option>
+                                                    <option value="villa">Biệt thự</option>
+                                                    <option value="apartment">Chung cư</option>
+                                                    <option value="office">Văn phòng</option>
+                                                    <option value="shop">Cửa hàng</option>
+                                                    <option value="other">Khác</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="area">Diện tích (m²) *</label>
+                                                <input type="number" id="area" name="area" min="1" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="floors">Số tầng *</label>
+                                                <select id="floors" name="floors" required>
+                                                    <option value="">Chọn số tầng</option>
+                                                    <option value="1">1 tầng</option>
+                                                    <option value="2">2 tầng</option>
+                                                    <option value="3">3 tầng</option>
+                                                    <option value="4">4 tầng</option>
+                                                    <option value="5">5 tầng trở lên</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Vị trí xây dựng *</label>
+                                                <input type="text" id="location" name="location"
+                                                    placeholder="Tỉnh/Thành phố" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dịch vụ cần thiết -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Dịch vụ cần thiết</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="design" name="services" value="design">
+                                                <label for="design">Thiết kế kiến trúc</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="construction" name="services"
+                                                    value="construction">
+                                                <label for="construction">Thi công xây dựng</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="interior" name="services" value="interior">
+                                                <label for="interior">Thiết kế nội thất</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="landscape" name="services" value="landscape">
+                                                <label for="landscape">Thiết kế cảnh quan</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="consultation" name="services"
+                                                    value="consultation">
+                                                <label for="consultation">Tư vấn phong thủy</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phong cách thiết kế -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Phong cách thiết kế</h3>
+                                        <div class="radio-group">
+                                            <div class="radio-item">
+                                                <input type="radio" id="modern" name="style" value="modern">
+                                                <label for="modern">Hiện đại</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" id="classic" name="style" value="classic">
+                                                <label for="classic">Cổ điển</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" id="minimalist" name="style" value="minimalist">
+                                                <label for="minimalist">Tối giản</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" id="industrial" name="style" value="industrial">
+                                                <label for="industrial">Công nghiệp</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" id="scandinavian" name="style" value="scandinavian">
+                                                <label for="scandinavian">Scandinavian</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" id="other-style" name="style" value="other">
+                                                <label for="other-style">Khác</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ngân sách dự kiến -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Ngân sách dự kiến</h3>
+                                        <div class="budget-group">
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget1" name="budget" value="under-500">
+                                                <label for="budget1">Dưới 500 triệu</label>
+                                            </div>
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget2" name="budget" value="500-1000">
+                                                <label for="budget2">500 triệu - 1 tỷ</label>
+                                            </div>
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget3" name="budget" value="1000-2000">
+                                                <label for="budget3">1 tỷ - 2 tỷ</label>
+                                            </div>
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget4" name="budget" value="2000-5000">
+                                                <label for="budget4">2 tỷ - 5 tỷ</label>
+                                            </div>
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget5" name="budget" value="over-5000">
+                                                <label for="budget5">Trên 5 tỷ</label>
+                                            </div>
+                                            <div class="budget-item">
+                                                <input type="radio" id="budget6" name="budget" value="consult">
+                                                <label for="budget6">Cần tư vấn</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Thời gian dự kiến -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Thời gian dự kiến</h3>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="startDate">Thời gian bắt đầu dự kiến</label>
+                                                <input type="date" id="startDate" name="startDate">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="duration">Thời gian hoàn thành mong muốn (tháng)</label>
+                                                <select id="duration" name="duration">
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="3">3 tháng</option>
+                                                    <option value="6">6 tháng</option>
+                                                    <option value="9">9 tháng</option>
+                                                    <option value="12">12 tháng</option>
+                                                    <option value="18">18 tháng</option>
+                                                    <option value="24">24 tháng</option>
+                                                    <option value="flexible">Linh hoạt</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Yêu cầu đặc biệt -->
+                                    <div class="form-section">
+                                        <h3 class="form-section-title">Yêu cầu đặc biệt</h3>
+                                        <div class="form-group">
+                                            <label for="specialRequirements">Mô tả chi tiết yêu cầu của bạn</label>
+                                            <textarea id="specialRequirements" name="specialRequirements" rows="4"
+                                                placeholder="Vui lòng mô tả chi tiết về yêu cầu thiết kế, vật liệu, màu sắc, phong cách..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="form-submit">
+                                        <button type="submit" class="btn-submit-quote">
+                                            <i class="ri-send-plane-line"></i>
+                                            <span>Gửi yêu cầu báo giá</span>
+                                        </button>
+                                        <p class="submit-note">* Chúng tôi sẽ liên hệ lại trong vòng 24h để tư vấn chi
+                                            tiết</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Lên đầu trang">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <script src="../assets/js/main-services.js"></script>
+</body>
+
+</html>

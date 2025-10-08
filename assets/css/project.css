@@ -1,0 +1,238 @@
+/* Đảm bảo phần main-content không bị che bởi header và navbar cố định */
+.main-content {
+    padding: 120px 0 50px 0;
+}
+
+/* Giao diện trang liên hệ giống ảnh mẫu */
+.project-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.breadcrumb .current {
+    color: #222;
+    font-weight: 500;
+}
+
+/* ===========================================
+   PROJECT GALLERY
+   =========================================== */
+
+
+.project-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 0;
+    text-align: left;
+    color: #222;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: left;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.filter-tab:hover {
+    color: var(--primary-color);
+}
+
+.filter-tab.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.filter-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.project-item {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-btn {
+    font-weight: 500;
+}
+
+/* Animation for project filter */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   SCROLL TO TOP BUTTON - Nút cuộn lên đầu
+   =========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}

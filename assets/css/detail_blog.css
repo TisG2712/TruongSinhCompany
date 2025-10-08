@@ -1,0 +1,351 @@
+/* Đảm bảo phần main-content không bị che bởi header và navbar cố định */
+.main-content {
+    padding: 120px 0 50px 0;
+}
+
+/* Giao diện trang liên hệ giống ảnh mẫu */
+.detail-blog-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.breadcrumb .current {
+    color: #222;
+    font-weight: 500;
+}
+
+/* Detail Blog */
+.detail-blog-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: left;
+    color: #222;
+}
+
+.blog-timestamp {
+    font-size: var(--font-size-base);
+    color: #888;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: left;
+}
+
+.blog-description {
+    font-size: var(--font-size-base);
+    color: #222;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* ===========================================
+   BLOG TABLE OF CONTENTS 
+   =========================================== */
+
+/* Table of Contents */
+.blog-toc {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.blog-toc-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blog-toc-title i {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+}
+
+.blog-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blog-toc-list li {
+    margin-bottom: 12px;
+}
+
+.blog-toc-link {
+    display: block;
+    /* padding: 12px 15px; */
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+}
+
+.blog-toc-link:hover {
+    color: var(--primary-color);
+    background: rgba(255, 152, 0, 0.1);
+    padding: 8px 12px;
+    margin: -8px -12px;
+}
+
+.blog-toc-link.active {
+    color: var(--primary-color);
+    background: rgba(255, 152, 0, 0.15);
+    padding: 8px 12px;
+    margin: -8px -12px;
+    font-weight: 600;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Blog Sections */
+.section-1-content {
+    margin-bottom: 40px;
+}
+
+.section-1-content h2 {
+    margin-bottom: 10px;
+}
+
+.section-content-ul {
+    list-style: disc;
+    padding: 0 50px;
+}
+
+.section-content-ul li {
+    font-size: var(--font-size-base);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.section-2-content {
+    margin-bottom: 40px;
+}
+
+.section-content-p {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
+
+/* ===========================================
+   BLOG IMAGE - Ảnh minh họa blog
+   =========================================== */
+
+.blog-image {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.blog-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blog-image span {
+    display: block;
+    font-size: var(--font-size-base);
+    color: #666;
+    line-height: 1.5;
+    font-style: italic;
+    text-align: center;
+    padding: 15px 20px;
+    background: #f8f9fa;
+}
+
+/* ===========================================
+   CONTENT DIVIDER - Đường kẻ ngăn cách
+   =========================================== */
+
+.content-divider {
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 50px 0;
+    border-radius: 2px;
+}
+
+/* ===========================================
+   RELATED POSTS - Các tin khác
+   =========================================== */
+
+.related-posts {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.related-posts-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin: 0 0 40px 0;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.related-posts-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.related-post-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.related-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.related-post-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.related-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-post-item:hover .related-post-image img {
+    transform: scale(1.05);
+}
+
+.related-post-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 20px 15px 20px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-post-excerpt {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 20px 20px 20px;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Responsive cho Related Posts */
+@media (max-width: 1024px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .related-posts-title {
+        font-size: 1.5rem;
+    }
+
+    .related-post-image {
+        height: 180px;
+    }
+}
+
+
+/* ===========================================
+   SCROLL TO TOP BUTTON - Nút cuộn lên đầu
+   =========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}

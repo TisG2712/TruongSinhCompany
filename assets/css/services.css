@@ -1,0 +1,403 @@
+/* Đảm bảo phần main-content không bị che bởi header và navbar cố định */
+.main-content {
+    padding: 120px 0 50px 0;
+}
+
+/* ===========================================
+   SERVICES PAGE LAYOUT
+   =========================================== */
+
+.services-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.breadcrumb .current {
+    color: #222;
+    font-weight: 500;
+}
+
+/* ===========================================
+   SERVICES HERO SECTION
+   =========================================== */
+
+.services-hero {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+
+.services-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===========================================
+   SERVICES GRID
+   =========================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card.featured {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 2px solid var(--primary-color);
+}
+
+.service-card.featured::before {
+    background: linear-gradient(90deg, var(--primary-color), #e55a2b);
+    transform: scaleX(1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), #e55a2b);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 15px 0;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.service-features li i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.service-btn:hover {
+    background: #e55a2b;
+    transform: translateX(5px);
+    text-decoration: none;
+    color: #fff;
+}
+
+.service-btn i {
+    transition: transform 0.3s ease;
+}
+
+.service-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* ===========================================
+   WHY CHOOSE US SECTION
+   =========================================== */
+
+.why-choose-section {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 60px 40px;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin: 0 0 50px 0;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), #e55a2b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.feature-icon i {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.feature-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 15px 0;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===========================================
+   CTA SECTION
+   =========================================== */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e55a2b 100%);
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin: 0 0 40px 0;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* ===========================================
+   SCROLL TO TOP BUTTON - Nút cuộn lên đầu
+   =========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}

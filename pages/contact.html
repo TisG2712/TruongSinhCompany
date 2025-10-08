@@ -1,30 +1,114 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trường Sinh Company - Trang chủ</title>
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Thư viện Remix Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <!-- Nhúng CSS Files -->
-    <link rel="stylesheet" href="./assets/css/base.css" />
-    <link rel="stylesheet" href="./assets/css/ui/header.css" />
-    <link rel="stylesheet" href="./assets/css/ui/navbar.css" />
-    <link rel="stylesheet" href="./assets/css/ui/footer.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/index.css" /> -->
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên hệ</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <!-- Thư viện Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Nhúng CSS Files -->
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/ui/header.css" />
+  <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+  <link rel="stylesheet" href="../assets/css/contact.css" />
+</head>
+
+<body>
+  <div class="main-content">
     <div id="header-placeholder"></div>
     <div id="navbar-placeholder"></div>
-  </body>
+    <!-- Main Content -->
+    <main>
+      <div class="contact-container">
+        <nav class="breadcrumb">
+          <a href="../index.html">Trang chủ</a>
+          <span>></span>
+          <span class="current">Liên hệ</span>
+        </nav>
+        <div class="contact-page-content">
+          <div class="contact-page-info">
+            <h2 class="contact-page-title">Liên hệ với chúng tôi</h2>
+            <p class="contact-page-subtitle">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn. Hãy liên hệ với chúng tôi
+              để
+              được tư vấn miễn phí!</p>
+
+            <div class="contact-page-details">
+              <div class="contact-page-item">
+                <div class="contact-page-icon">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <div class="contact-page-text">
+                  <h3>Địa chỉ</h3>
+                  <p>Số 41 ngõ 95 Đội Cấn, Ba Đình, Hà Nội</p>
+                </div>
+              </div>
+
+              <div class="contact-page-item">
+                <div class="contact-page-icon">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <div class="contact-page-text">
+                  <h3>Điện thoại</h3>
+                  <p>+84 098 460 1683</p>
+                </div>
+              </div>
+
+              <div class="contact-page-item">
+                <div class="contact-page-icon">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <div class="contact-page-text">
+                  <h3>Email</h3>
+                  <p>xaydungtruongsinh.vn@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-page-form-section">
+            <h3 class="contact-page-form-title">Gửi yêu cầu tư vấn</h3>
+            <form class="contact-page-form">
+              <div class="contact-page-form-group">
+                <input type="text" class="contact-page-form-input" placeholder="Họ và tên *" required />
+              </div>
+              <div class="contact-page-form-group">
+                <input type="tel" class="contact-page-form-input" placeholder="Số điện thoại *" required />
+              </div>
+              <div class="contact-page-form-group">
+                <input type="email" class="contact-page-form-input" placeholder="Email" />
+              </div>
+              <div class="contact-page-form-group">
+                <input type="text" class="contact-page-form-input" placeholder="Địa chỉ" />
+              </div>
+              <div class="contact-page-form-group">
+                <textarea class="contact-page-form-textarea" placeholder="Nội dung yêu cầu *" rows="5"
+                  required></textarea>
+              </div>
+              <button type="submit" class="contact-page-form-submit-btn">
+                <span>Gửi yêu cầu</span>
+                <i class="ri-send-plane-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Lên đầu trang">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <script src="../assets/js/contact.js"></script>
+</body>
+
 </html>

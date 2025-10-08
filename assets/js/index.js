@@ -191,69 +191,6 @@ function initScrollToTop() {
   });
 }
 
-/**
- * Khởi tạo trạng thái active cho navbar
- * - Thêm class active cho link hiện tại
- * - Cập nhật khi cuộn đến section tương ứng
- */
-function initNavbarActiveState() {
-  const navLinks = document.querySelectorAll(".navbar-list a");
-  const sections = document.querySelectorAll("section[id]");
-
-  // Nếu không có section với id, tạo mapping thủ công
-  const sectionMapping = {
-    "trang-chu": ".header-slider",
-    "gioi-thieu": ".about-us",
-    "dich-vu": ".main-services",
-    "du-an": ".our-project",
-    "lien-he": ".contact-form",
-  };
-
-  function updateActiveNavLink() {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionHeight = section.offsetHeight;
-
-      if (
-        window.pageYOffset >= sectionTop &&
-        window.pageYOffset < sectionTop + sectionHeight
-      ) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    // Fallback: kiểm tra theo vị trí cuộn
-    if (!current) {
-      const scrollPos = window.pageYOffset;
-
-      if (scrollPos < 500) current = "trang-chu";
-      else if (scrollPos < 1000) current = "gioi-thieu";
-      else if (scrollPos < 2000) current = "dich-vu";
-      else if (scrollPos < 3000) current = "du-an";
-      else current = "lien-he";
-    }
-
-    // Cập nhật class active
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (
-        link.getAttribute("href") === `#${current}` ||
-        link.textContent.toLowerCase().includes(current.replace("-", " "))
-      ) {
-        link.classList.add("active");
-      }
-    });
-  }
-
-  // Cập nhật khi cuộn
-  window.addEventListener("scroll", updateActiveNavLink);
-
-  // Cập nhật ban đầu
-  updateActiveNavLink();
-}
-
 // ===========================================
 //   SECTION: MAIN-SERVICES - Phần dịch vụ chính
 // ===========================================
@@ -507,6 +444,263 @@ function initSharingBlogSlideshow() {
 }
 
 // ===========================================
+//   SECTION: SHARING BLOG - Phần chia sẻ blog
+// ===========================================
+
+/**
+ * Dữ liệu bài viết cho các danh mục
+ */
+const blogData = {
+  news: [
+    {
+      img: "./assets/images/index_images/blog4.png",
+      title: "THIẾT KẾ NỘI THẤT BIỆT THỰ CAO CẤP",
+      excerpt:
+        "Khám phá những xu hướng thiết kế nội thất mới nhất cho biệt thự cao cấp. Từ phong cách hiện đại đến cổ điển, chúng tôi mang đến những giải pháp thiết kế độc đáo và sang trọng.",
+      date: "15/12/2024",
+      views: 1250,
+    },
+    {
+      img: "./assets/images/index_images/blog2.png",
+      title: "HOÀN THIỆN BIỆT THỰ",
+      excerpt:
+        "Quy trình hoàn thiện biệt thự từ A-Z với những bước quan trọng và lưu ý cần thiết để có được ngôi nhà hoàn hảo.",
+      date: "12/12/2024",
+      views: 980,
+    },
+    {
+      img: "./assets/images/index_images/blog3.png",
+      title: "THIẾT KẾ NỘI THẤT",
+      excerpt:
+        "Những xu hướng thiết kế nội thất hot nhất 2024, giúp không gian sống trở nên hiện đại và tiện nghi hơn.",
+      date: "10/12/2024",
+      views: 1560,
+    },
+    {
+      img: "./assets/images/index_images/blog5.png",
+      title: "XÂY DỰNG NHÀ PHỐ",
+      excerpt:
+        "Kinh nghiệm xây dựng nhà phố tiết kiệm chi phí mà vẫn đảm bảo chất lượng và thẩm mỹ cao nhất.",
+      date: "08/12/2024",
+      views: 2100,
+    },
+  ],
+  "kinh-nghiem-xay-dung": [
+    {
+      img: "./assets/images/index_images/blog1.png",
+      title: "101+ Mẫu nhà ống 1 tầng đẹp hiện đại, chi phí rẻ nhất 2025",
+      excerpt:
+        "Tổng hợp những mẫu nhà ống 1 tầng đẹp nhất với thiết kế hiện đại, tiết kiệm chi phí xây dựng mà vẫn đảm bảo tính thẩm mỹ và tiện nghi.",
+      date: "10/06/2025",
+      views: 866,
+    },
+    {
+      img: "./assets/images/index_images/blog2.png",
+      title: "99+ Mẫu nhà ống 3 tầng kiểu pháp đẳng cấp nhất 2025",
+      excerpt:
+        "Khám phá những mẫu nhà ống 3 tầng kiểu Pháp sang trọng, đẳng cấp với thiết kế tinh tế và không gian sống lý tưởng cho gia đình.",
+      date: "23/07/2025",
+      views: 307,
+    },
+    {
+      img: "./assets/images/index_images/blog3.png",
+      title: "101+ Mẫu nhà 2 tầng mái Thái 500 triệu đẹp, đầy đủ tiện nghi",
+      excerpt:
+        "Bộ sưu tập mẫu nhà 2 tầng mái Thái đẹp với ngân sách 500 triệu, thiết kế tối ưu không gian và đầy đủ tiện nghi hiện đại.",
+      date: "10/05/2025",
+      views: 1692,
+    },
+    {
+      img: "./assets/images/index_images/blog4.png",
+      title: "66+ Mẫu nhà 2 tầng đẹp giá 1 tỷ độc đáo, xu hướng nổi bật",
+      excerpt:
+        "Những mẫu nhà 2 tầng độc đáo với ngân sách 1 tỷ đồng, theo xu hướng thiết kế mới nhất và phù hợp với phong cách sống hiện đại.",
+      date: "03/09/2025",
+      views: 1855,
+    },
+  ],
+  "phong-thuy": [
+    {
+      img: "./assets/images/index_images/blog5.png",
+      title: "Phong thủy nhà ở: 10 nguyên tắc vàng cho ngôi nhà hạnh phúc",
+      excerpt:
+        "Khám phá những nguyên tắc phong thủy cơ bản giúp tạo ra không gian sống hài hòa, mang lại may mắn và hạnh phúc cho gia đình.",
+      date: "20/11/2024",
+      views: 3240,
+    },
+    {
+      img: "./assets/images/index_images/blog1.png",
+      title: "Hướng nhà hợp tuổi: Cách chọn hướng nhà theo phong thủy",
+      excerpt:
+        "Hướng dẫn chi tiết cách chọn hướng nhà phù hợp với tuổi và mệnh của gia chủ để mang lại tài lộc và sức khỏe.",
+      date: "18/11/2024",
+      views: 2890,
+    },
+    {
+      img: "./assets/images/index_images/blog2.png",
+      title: "Phong thủy phòng khách: Bố trí nội thất đúng cách",
+      excerpt:
+        "Những quy tắc phong thủy quan trọng khi bố trí phòng khách để tạo ra không gian đón khách lý tưởng và thu hút tài lộc.",
+      date: "15/11/2024",
+      views: 2150,
+    },
+    {
+      img: "./assets/images/index_images/blog3.png",
+      title: "Cây phong thủy trong nhà: Top 15 loại cây mang lại may mắn",
+      excerpt:
+        "Danh sách những loại cây phong thủy tốt nhất để trồng trong nhà, giúp thanh lọc không khí và mang lại năng lượng tích cực.",
+      date: "12/11/2024",
+      views: 1980,
+    },
+  ],
+  "kien-truc": [
+    {
+      img: "./assets/images/index_images/blog4.png",
+      title: "Xu hướng kiến trúc 2025: Những phong cách thiết kế nổi bật",
+      excerpt:
+        "Khám phá những xu hướng kiến trúc mới nhất năm 2025, từ thiết kế bền vững đến công nghệ thông minh trong xây dựng.",
+      date: "25/11/2024",
+      views: 1450,
+    },
+    {
+      img: "./assets/images/index_images/blog5.png",
+      title: "Kiến trúc xanh: Thiết kế nhà ở thân thiện với môi trường",
+      excerpt:
+        "Tìm hiểu về kiến trúc xanh và cách áp dụng các nguyên tắc thiết kế bền vững vào ngôi nhà của bạn.",
+      date: "22/11/2024",
+      views: 1200,
+    },
+    {
+      img: "./assets/images/index_images/blog1.png",
+      title: "Thiết kế nhà phố hiện đại: Tối ưu không gian sống",
+      excerpt:
+        "Những ý tưởng thiết kế nhà phố hiện đại giúp tối ưu hóa không gian sống và tạo ra không gian sống lý tưởng.",
+      date: "20/11/2024",
+      views: 1680,
+    },
+    {
+      img: "./assets/images/index_images/blog2.png",
+      title: "Kiến trúc cổ điển vs hiện đại: So sánh và lựa chọn",
+      excerpt:
+        "Phân tích chi tiết sự khác biệt giữa kiến trúc cổ điển và hiện đại để giúp bạn lựa chọn phong cách phù hợp.",
+      date: "18/11/2024",
+      views: 1320,
+    },
+  ],
+};
+
+/**
+ * Khởi tạo chức năng chuyển đổi danh mục blog
+ * - Click vào category button để hiển thị bài viết tương ứng
+ * - Hiển thị layout 2x2 cho các bài viết
+ */
+function initBlogCategoryFilter() {
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const blogContent = document.querySelector(".blog-content");
+
+  if (!categoryButtons.length || !blogContent) return;
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Xóa class active khỏi tất cả button
+      categoryButtons.forEach((btn) => btn.classList.remove("active"));
+
+      // Thêm class active vào button được click
+      this.classList.add("active");
+
+      // Lấy category từ data-category hoặc text content
+      let category = this.getAttribute("data-category");
+      if (!category) {
+        const text = this.textContent.trim();
+        if (text === "Kinh nghiệm xây dựng") {
+          category = "kinh-nghiem-xay-dung";
+        } else if (text === "Phong thủy") {
+          category = "phong-thuy";
+        } else if (text === "Kiến trúc") {
+          category = "kien-truc";
+        } else if (text === "Tin tức") {
+          category = "news";
+        }
+      }
+
+      // Hiển thị bài viết theo category
+      displayBlogPosts(category);
+    });
+  });
+}
+
+/**
+ * Hiển thị bài viết theo danh mục
+ * @param {string} category - Danh mục bài viết
+ */
+function displayBlogPosts(category) {
+  const posts = blogData[category] || blogData.news;
+  const blogContent = document.querySelector(".blog-content");
+
+  if (!blogContent) return;
+
+  // Tạo HTML cho tất cả các mục với giao diện đồng bộ (layout 2 cột)
+  const postsHTML = `
+    <!-- Left Column - Featured Post -->
+    <div class="featured-post">
+      <div class="post-card featured">
+        <div class="post-image">
+          <img src="${posts[0].img}" alt="${posts[0].title}">
+        </div>
+        <div class="post-content">
+          <h3 class="post-title">${posts[0].title}</h3>
+          <p class="post-excerpt">${posts[0].excerpt}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column - Recent Posts -->
+    <div class="recent-posts">
+      ${posts
+        .slice(1)
+        .map(
+          (post, index) => `
+        <div class="post-card">
+          <div class="post-image">
+            <img src="${post.img}" alt="${post.title}">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">${post.title}</h3>
+            <p class="post-excerpt">${post.excerpt}</p>
+          </div>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+
+  // Thay thế nội dung blog
+  blogContent.innerHTML = postsHTML;
+
+  // Thêm hiệu ứng fade in
+  blogContent.style.opacity = "0";
+  setTimeout(() => {
+    blogContent.style.opacity = "1";
+  }, 100);
+
+  // Khởi tạo slideshow cho tất cả các mục
+  setTimeout(() => {
+    initSharingBlogSlideshow();
+  }, 200);
+}
+
+/**
+ * Mở bài viết chi tiết (có thể mở trang detail hoặc modal)
+ * @param {string} title - Tiêu đề bài viết
+ */
+function openBlogPost(title) {
+  // Có thể chuyển đến trang chi tiết hoặc mở modal
+  console.log("Opening blog post:", title);
+  // Ví dụ: window.location.href = `./pages/detail_blog.html?title=${encodeURIComponent(title)}`;
+}
+
+// ===========================================
 //   INITIALIZATION - Khởi tạo khi DOM ready
 // ===========================================
 
@@ -522,8 +716,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initProjectFilter(); // Section: Our Project
   initFeedbackSlider(); // Section: Feedback Company
   initSharingBlogSlideshow(); // Section: Sharing Blog
+  initBlogCategoryFilter(); // Section: Blog Category Filter
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
-  initNavbarActiveState(); // Trạng thái active navbar
 });

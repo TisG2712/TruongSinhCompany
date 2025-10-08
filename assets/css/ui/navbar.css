@@ -34,4 +34,78 @@
     font-size: var(--font-size-base);
     color: var(--bg-color);
     font-weight: var(--font-weight-normal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-list a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===========================================
+   DROPDOWN MENU - Menu thả xuống
+   =========================================== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: "▼";
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: var(--primary-color);
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    /* color: #333 !important; */
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding-left: 25px;
 }
