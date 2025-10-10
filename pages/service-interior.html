@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
     <link rel="stylesheet" href="../assets/css/ui/footer.css" />
     <link rel="stylesheet" href="../assets/css/main-services.css" />
+    <link rel="stylesheet" href="../assets/css/responsive/main-services_responsive.css" />
 </head>
 
 <body>
@@ -28,9 +29,9 @@
         <main>
             <div class="service-construction-container">
                 <nav class="breadcrumb">
-                    <a href="../index.html">Trang chủ</a>
+                    <a href="index.html">Trang chủ</a>
                     <span>></span>
-                    <a href="../pages/services.html">Dịch vụ</a>
+                    <a href="services.html">Dịch vụ</a>
                     <span>></span>
                     <span class="current">Thiết kế nội thất</span>
                 </nav>
@@ -206,10 +207,10 @@
                                         </div>
 
                                         <div class="project-actions">
-                                            <a href="#" class="btn-primary-action">
+                                            <a href="project_special.html" class="btn-primary-action">
                                                 <span>Chi tiết</span>
                                             </a>
-                                            <a href="#" class="btn-secondary-action">
+                                            <a href="project.html" class="btn-secondary-action">
                                                 <span>Xem thêm công trình</span>
                                                 <i class="ri-arrow-right-line"></i>
                                             </a>
@@ -230,7 +231,7 @@
 
                             <div class="templates-tabs">
                                 <button class="tab-btn active" data-tab="villa">Biệt thự</button>
-                                <button class="tab-btn" data-tab="townhouse">Nhà liền kế</button>
+                                <button class="tab-btn" data-tab="townhouse">Nhà liền kề</button>
                             </div>
 
                             <div class="templates-grid" id="villa-tab">
@@ -297,11 +298,11 @@
                                 </div>
                             </div>
 
-                            <div class="templates-actions">
+                            <!-- <div class="templates-actions">
                                 <a href="#" class="btn-view-all">
                                     <span>Xem tất cả mẫu kiến trúc</span>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </section>
 
@@ -397,222 +398,6 @@
                         </div>
                     </section>
 
-                    <!-- Price Quote Section -->
-                    <section class="price-quote">
-                        <div class="quote-container">
-                            <div class="quote-header">
-                                <div class="section-category">BÁO GIÁ</div>
-                                <h2 class="section-main-title">Báo giá công trình</h2>
-                                <p class="quote-description">Điền thông tin dưới đây để nhận báo giá chi tiết và tư vấn
-                                    miễn phí từ đội ngũ chuyên gia của chúng tôi</p>
-                            </div>
-
-                            <div class="quote-form-container">
-                                <form class="quote-form" id="quoteForm">
-                                    <!-- Thông tin cá nhân -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Thông tin cá nhân</h3>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="fullName">Họ và tên *</label>
-                                                <input type="text" id="fullName" name="fullName" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="phone">Số điện thoại *</label>
-                                                <input type="tel" id="phone" name="phone" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="email" id="email" name="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="address">Địa chỉ</label>
-                                                <input type="text" id="address" name="address">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Thông tin công trình -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Thông tin công trình</h3>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="projectType">Loại công trình *</label>
-                                                <select id="projectType" name="projectType" required>
-                                                    <option value="">Chọn loại công trình</option>
-                                                    <option value="house">Nhà ở</option>
-                                                    <option value="villa">Biệt thự</option>
-                                                    <option value="apartment">Chung cư</option>
-                                                    <option value="office">Văn phòng</option>
-                                                    <option value="shop">Cửa hàng</option>
-                                                    <option value="other">Khác</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="area">Diện tích (m²) *</label>
-                                                <input type="number" id="area" name="area" min="1" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="floors">Số tầng *</label>
-                                                <select id="floors" name="floors" required>
-                                                    <option value="">Chọn số tầng</option>
-                                                    <option value="1">1 tầng</option>
-                                                    <option value="2">2 tầng</option>
-                                                    <option value="3">3 tầng</option>
-                                                    <option value="4">4 tầng</option>
-                                                    <option value="5">5 tầng trở lên</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="location">Vị trí xây dựng *</label>
-                                                <input type="text" id="location" name="location"
-                                                    placeholder="Tỉnh/Thành phố" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Dịch vụ cần thiết -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Dịch vụ cần thiết</h3>
-                                        <div class="checkbox-group">
-                                            <div class="checkbox-item">
-                                                <input type="checkbox" id="design" name="services" value="design">
-                                                <label for="design">Thiết kế kiến trúc</label>
-                                            </div>
-                                            <div class="checkbox-item">
-                                                <input type="checkbox" id="construction" name="services"
-                                                    value="construction">
-                                                <label for="construction">Thi công xây dựng</label>
-                                            </div>
-                                            <div class="checkbox-item">
-                                                <input type="checkbox" id="interior" name="services" value="interior">
-                                                <label for="interior">Thiết kế nội thất</label>
-                                            </div>
-                                            <div class="checkbox-item">
-                                                <input type="checkbox" id="landscape" name="services" value="landscape">
-                                                <label for="landscape">Thiết kế cảnh quan</label>
-                                            </div>
-                                            <div class="checkbox-item">
-                                                <input type="checkbox" id="consultation" name="services"
-                                                    value="consultation">
-                                                <label for="consultation">Tư vấn phong thủy</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Phong cách thiết kế -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Phong cách thiết kế</h3>
-                                        <div class="radio-group">
-                                            <div class="radio-item">
-                                                <input type="radio" id="modern" name="style" value="modern">
-                                                <label for="modern">Hiện đại</label>
-                                            </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="classic" name="style" value="classic">
-                                                <label for="classic">Cổ điển</label>
-                                            </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="minimalist" name="style" value="minimalist">
-                                                <label for="minimalist">Tối giản</label>
-                                            </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="industrial" name="style" value="industrial">
-                                                <label for="industrial">Công nghiệp</label>
-                                            </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="scandinavian" name="style" value="scandinavian">
-                                                <label for="scandinavian">Scandinavian</label>
-                                            </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="other-style" name="style" value="other">
-                                                <label for="other-style">Khác</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Ngân sách dự kiến -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Ngân sách dự kiến</h3>
-                                        <div class="budget-group">
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget1" name="budget" value="under-500">
-                                                <label for="budget1">Dưới 500 triệu</label>
-                                            </div>
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget2" name="budget" value="500-1000">
-                                                <label for="budget2">500 triệu - 1 tỷ</label>
-                                            </div>
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget3" name="budget" value="1000-2000">
-                                                <label for="budget3">1 tỷ - 2 tỷ</label>
-                                            </div>
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget4" name="budget" value="2000-5000">
-                                                <label for="budget4">2 tỷ - 5 tỷ</label>
-                                            </div>
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget5" name="budget" value="over-5000">
-                                                <label for="budget5">Trên 5 tỷ</label>
-                                            </div>
-                                            <div class="budget-item">
-                                                <input type="radio" id="budget6" name="budget" value="consult">
-                                                <label for="budget6">Cần tư vấn</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Thời gian dự kiến -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Thời gian dự kiến</h3>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="startDate">Thời gian bắt đầu dự kiến</label>
-                                                <input type="date" id="startDate" name="startDate">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="duration">Thời gian hoàn thành mong muốn (tháng)</label>
-                                                <select id="duration" name="duration">
-                                                    <option value="">Chọn thời gian</option>
-                                                    <option value="3">3 tháng</option>
-                                                    <option value="6">6 tháng</option>
-                                                    <option value="9">9 tháng</option>
-                                                    <option value="12">12 tháng</option>
-                                                    <option value="18">18 tháng</option>
-                                                    <option value="24">24 tháng</option>
-                                                    <option value="flexible">Linh hoạt</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Yêu cầu đặc biệt -->
-                                    <div class="form-section">
-                                        <h3 class="form-section-title">Yêu cầu đặc biệt</h3>
-                                        <div class="form-group">
-                                            <label for="specialRequirements">Mô tả chi tiết yêu cầu của bạn</label>
-                                            <textarea id="specialRequirements" name="specialRequirements" rows="4"
-                                                placeholder="Vui lòng mô tả chi tiết về yêu cầu thiết kế, vật liệu, màu sắc, phong cách..."></textarea>
-                                        </div>
-                                    </div>
-
-                                    <!-- Submit Button -->
-                                    <div class="form-submit">
-                                        <button type="submit" class="btn-submit-quote">
-                                            <i class="ri-send-plane-line"></i>
-                                            <span>Gửi yêu cầu báo giá</span>
-                                        </button>
-                                        <p class="submit-note">* Chúng tôi sẽ liên hệ lại trong vòng 24h để tư vấn chi
-                                            tiết</p>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </main>
@@ -625,6 +410,7 @@
     </button>
 
     <script src="../assets/js/main-services.js"></script>
+    <script src="../assets/js/navbar.js"></script>
 </body>
 
 </html>

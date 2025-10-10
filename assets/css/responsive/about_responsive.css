@@ -1,0 +1,132 @@
+@media (max-width: 768px) {
+    .main-content {
+        padding: 70px 0 30px 0;
+    }
+
+    .company-overview-section {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        text-align: center;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .section-content p {
+        font-size: 0.9rem;
+        letter-spacing: 0;
+        margin-bottom: 5px;
+    }
+
+    .company-intro-list li,
+    .mission-list li,
+    .vision-list li,
+    .philosophy-list li {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .company-images-section {
+        height: 480px;
+    }
+
+    .image-grid {
+        gap: 15px;
+        max-height: 400px;
+    }
+
+    .image-column-left {
+        margin-top: 20px;
+    }
+
+    .image-column {
+        gap: 15px;
+    }
+
+    .about-content-box {
+        margin-bottom: 0;
+
+    }
+
+    .company-text-content {
+        padding-right: 0;
+    }
+
+    .company-intro-section:last-child,
+    .mission-section:last-child {
+        margin-bottom: 10px;
+    }
+
+    .vision-section,
+    .philosophy-section {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .company-intro-list,
+    .mission-list,
+    .vision-list {
+        margin: 5px;
+    }
+
+    .awards-grid {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .award-item {
+        width: 100px;
+        height: 100px;
+        padding: 0px;
+    }
+
+    .contact-form .container {
+        padding: 0px;
+        height: 400px;
+    }
+
+    .contact-form-container {
+        padding: 10px;
+
+    }
+
+    .contact-form {
+        padding: 50px 0 30px 0;
+    }
+
+    .contact-content {
+        height: 400px;
+    }
+
+    .contact-visual {
+        display: none;
+    }
+
+    .form-title {
+        font-size: 1.4rem;
+    }
+
+    .form-wrapper {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    .btn-submit {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}

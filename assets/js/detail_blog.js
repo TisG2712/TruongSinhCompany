@@ -143,17 +143,88 @@ function initBlogTOC() {
   }
 }
 
+/**
+ * Khởi tạo chức năng toggle cho mục lục blog
+ * - Click vào title hoặc icon để ẩn/hiện danh sách
+ * - Animation mượt mà với arrow rotation
+ */
+function initBlogTocToggle() {
+  const tocToggle = document.getElementById("blogTocToggle");
+  const tocList = document.getElementById("blogTocList");
+
+  if (!tocToggle || !tocList) return;
+
+  tocToggle.addEventListener("click", function () {
+    // Toggle class collapsed
+    tocToggle.classList.toggle("collapsed");
+
+    // Toggle hiển thị danh sách
+    if (tocToggle.classList.contains("collapsed")) {
+      tocList.style.display = "none";
+    } else {
+      tocList.style.display = "block";
+    }
+  });
+}
+
+/**
+ * Khởi tạo chức năng form bình luận
+ * - Xử lý submit form bình luận
+ * - Thêm bình luận mới vào danh sách
+ * - Reset form sau khi submit
+ */
+function initCommentForm() {
+  const commentForm = document.getElementById("commentForm");
+
+  if (commentForm) {
+    commentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const commentText = document.getElementById("commentText").value;
+      const commentName = document.getElementById("commentName").value;
+      const commentEmail = document.getElementById("commentEmail").value;
+
+      if (commentText && commentName && commentEmail) {
+        // Create new comment element
+        const newComment = document.createElement("div");
+        newComment.className = "comment-item";
+        newComment.innerHTML = `
+          <div class="comment-avatar">
+            <img src="../assets/images/index_images/architect1.png" alt="Avatar">
+          </div>
+          <div class="comment-content">
+            <h4 class="comment-author">${commentName}</h4>
+            <p class="comment-text">${commentText}</p>
+          </div>
+        `;
+
+        // Add to comments list
+        const commentsList = document.querySelector(".comments-list");
+        commentsList.appendChild(newComment);
+
+        // Clear form
+        commentForm.reset();
+
+        // Show success message
+        alert("Bình luận của bạn đã được đăng thành công!");
+      }
+    });
+  }
+}
+
 // ===========================================
 //   INITIALIZATION - Khởi tạo khi DOM ready
 // ===========================================
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load các component chung với đường dẫn tuyệt đối để tránh lỗi 404
-  loadComponent("header", "/components/header.html");
-  loadComponent("navbar", "/components/navbar.html");
-  loadComponent("footer", "/components/footer.html");
+  loadComponent("header", "../components/header.html");
+  loadComponent("navbar", "../components/navbar.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
   initBlogTOC(); // Chức năng mục lục blog và smooth scroll
+  initBlogTocToggle(); // Chức năng toggle mục lục blog
+  initCommentForm(); // Chức năng form bình luận
 });

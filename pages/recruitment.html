@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
     <link rel="stylesheet" href="../assets/css/ui/footer.css" />
     <link rel="stylesheet" href="../assets/css/recruitment.css" />
+    <link rel="stylesheet" href="../assets/css/responsive/recruitment_responsive.css" />
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <main>
             <div class="recruitment-container">
                 <nav class="breadcrumb">
-                    <a href="../index.html">Trang chủ</a>
+                    <a href="index.html">Trang chủ</a>
                     <span>></span>
                     <span class="current">Tuyển dụng</span>
                 </nav>
@@ -42,11 +43,12 @@
                     <div class="main-recruitment-content">
                         <!-- Table of Contents -->
                         <div class="recruitment-toc">
-                            <h3 class="toc-title">
+                            <h3 class="toc-title" id="recruitmentTocToggle">
                                 <i class="ri-list-check"></i>
                                 Mục lục
+                                <i class="ri-arrow-down-s-line toc-arrow"></i>
                             </h3>
-                            <ul class="toc-list">
+                            <ul class="toc-list" id="recruitmentTocList">
                                 <li><a href="#job-description" class="toc-link">Mô tả công việc</a></li>
                                 <li><a href="#candidate-requirements" class="toc-link">Yêu cầu ứng viên</a></li>
                                 <li><a href="#benefits" class="toc-link">Quyền lợi được hưởng</a></li>
@@ -134,6 +136,7 @@
     </button>
 
     <script src="../assets/js/recruitment.js"></script>
+    <script src="../assets/js/navbar.js"></script>
 </body>
 
 </html>

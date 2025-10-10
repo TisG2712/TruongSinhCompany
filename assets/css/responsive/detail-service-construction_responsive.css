@@ -1,0 +1,161 @@
+/* Responsive styles for detail-service-construction page */
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 70px 0 30px 0;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .featured-image {
+        height: 250px;
+    }
+
+    .article-header,
+    .article-section {
+        padding: 0;
+    }
+
+    .recruitment-toc {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .timeline-item {
+        /* flex-direction: column; */
+        text-align: left;
+    }
+
+    .timeline-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .timeline-content h3 {
+        margin: 10px;
+        padding: 0;
+    }
+
+    .timeline-marker {
+        margin-right: 0;
+        margin-bottom: 20px;
+        position: relative;
+        left: auto;
+        transform: none;
+        z-index: 2;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cost-table th,
+    .cost-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .author-bio {
+        flex-direction: column;
+        text-align: center;
+        margin: 30px 0px;
+
+    }
+
+    .contact-cta {
+        padding: 30px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cost-table {
+        font-size: 0.9rem;
+    }
+
+    .cost-table th,
+    .cost-table td {
+        padding: 10px 5px;
+    }
+
+    .advantage-card {
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .advantage-card p {
+        padding: 0 40px;
+    }
+
+
+    .article-section p {
+        font-size: 0.9rem;
+    }
+
+    .tip-card {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .faq-item {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .cta-content p {
+        padding: 0 40px;
+        font-size: 0.8rem;
+    }
+
+    .article-conclusion {
+        margin: 0px;
+        padding: 0;
+    }
+
+    .article-conclusion p {
+        font-size: 0.9rem;
+    }
+
+    .featured-image img {
+        border-radius: 8px 8px 0 0;
+    }
+}

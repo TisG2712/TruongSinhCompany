@@ -1,0 +1,117 @@
+/* Responsive styles for detail service page */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 70px 0 50px 0;
+    }
+
+    .service-title {
+        font-size: 1.8rem;
+    }
+
+    .service-subtitle {
+        font-size: 1rem;
+    }
+
+    .overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .service-detail-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .service-icon-large {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+    }
+
+    .service-detail-content {
+        padding: 20px;
+    }
+
+    .service-features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-category {
+        padding: 20px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .advantage-item {
+        padding: 20px;
+    }
+
+    .steps-timeline {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .step-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .contact-cta {
+        padding: 30px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .cta-content p {
+        font-size: 0.9rem;
+        padding: 0px 30px;
+    }
+
+    .step-content p {
+        padding: 0 40px;
+    }
+}

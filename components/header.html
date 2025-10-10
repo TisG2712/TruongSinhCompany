@@ -1,14 +1,10 @@
 <!-- Header Component -->
 <header class="header">
   <div class="container">
-    <div class="header-content">
+    <div class="header-container">
       <div class="logo">
-        <a href="../index.html">
-          <img
-            src="../public/images/logo.png"
-            alt="Logo Công ty Trường Sinh"
-            class="logo-img"
-          />
+        <a href="../pages/index.html">
+          <img src="../public/images/logo.png" alt="Logo Công ty Trường Sinh" class="logo-img" />
         </a>
       </div>
       <!-- Navigation -->
@@ -21,9 +17,90 @@
       <div class="hotline-section">
         <button class="hotline-btn">
           <i class="ri-phone-line phone-icon"></i>
-          <span>HOTLINE: 0975.258.999</span>
+          <span>Hotline: 0975.258.999</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="mobile-menu-btn">
+        <button class="hamburger-btn" id="hamburger-btn">
+          <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </div>
 </header>
+
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobile-sidebar">
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <button class="close-btn" id="close-btn">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="../pages/index.html" class="sidebar-link">
+        <span>Trang chủ</span>
+      </a>
+      <a href="../pages/about.html" class="sidebar-link">
+        <span>Giới thiệu</span>
+      </a>
+      <a href="../pages/services.html" class="sidebar-link">
+        <span>Dịch vụ</span>
+      </a>
+      <div class="sidebar-dropdown">
+        <div class="sidebar-dropdown-header">
+          <a href="../pages/service-construction.html" class="sidebar-link">
+            <span>Xây nhà trọn gói</span>
+          </a>
+          <button class="sidebar-dropdown-toggle">
+            <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+          </button>
+        </div>
+        <div class="sidebar-dropdown-menu">
+          <a href="../pages/detail-service-construction.html" class="sidebar-dropdown-item">Xây nhà trọn gói ở Hà
+            Nội</a>
+          <a href="../pages/service-construction.html" class="sidebar-dropdown-item">Xây nhà trọn gói ở Bắc Ninh</a>
+          <a href="../pages/service-construction.html" class="sidebar-dropdown-item">Xây nhà trọn gói ở Nam Định</a>
+        </div>
+      </div>
+      <div class="sidebar-dropdown">
+        <div class="sidebar-dropdown-header">
+          <a href="../pages/service-interior.html" class="sidebar-link">
+            <span>Thiết kế nội thất</span>
+          </a>
+          <button class="sidebar-dropdown-toggle">
+            <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+          </button>
+        </div>
+        <div class="sidebar-dropdown-menu">
+          <a href="../pages/service-interior.html" class="sidebar-dropdown-item">Thiết kế nội thất nhà ở</a>
+          <a href="../pages/service-interior.html" class="sidebar-dropdown-item">Thiết kế nội thất chung cư</a>
+          <a href="../pages/service-interior.html" class="sidebar-dropdown-item">Thiết kế nội thất văn phòng</a>
+        </div>
+      </div>
+      <a href="../pages/project.html" class="sidebar-link">
+        <span>Dự án</span>
+      </a>
+      <a href="../pages/news.html" class="sidebar-link">
+        <span>Tin tức</span>
+      </a>
+      <a href="../pages/recruitment.html" class="sidebar-link">
+        <span>Tuyển dụng</span>
+      </a>
+      <a href="../pages/contact.html" class="sidebar-link">
+        <span>Liên hệ</span>
+      </a>
+    </nav>
+
+    <!-- Hotline Button in Sidebar -->
+    <div class="sidebar-hotline">
+      <button class="sidebar-hotline-btn">
+        <i class="ri-phone-line"></i>
+        <span>Hotline: 0975.258.999</span>
+      </button>
+    </div>
+  </div>
+</div>

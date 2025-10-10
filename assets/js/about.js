@@ -68,9 +68,9 @@ function initScrollToTop() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load các component chung với đường dẫn tuyệt đối để tránh lỗi 404
-  loadComponent("header", "/components/header.html");
-  loadComponent("navbar", "/components/navbar.html");
-  loadComponent("footer", "/components/footer.html");
+  loadComponent("header", "../components/header.html");
+  loadComponent("navbar", "../components/navbar.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu

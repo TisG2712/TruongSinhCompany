@@ -1,0 +1,103 @@
+/* Responsive styles for detail project page */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 45px 0 50px 0;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .main-image {
+        height: 300px;
+    }
+
+    .gallery-thumbnails {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+
+    .project-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-overview {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .overview-item {
+        padding: 12px;
+    }
+
+    .overview-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .description-content {
+        padding: 20px;
+    }
+
+    .description-content p {
+        font-size: 1rem;
+    }
+
+    .process-timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 25px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-marker {
+        left: -17px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .contact-cta {
+        padding: 30px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}

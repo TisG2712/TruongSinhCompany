@@ -49,16 +49,23 @@
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .toc-title {
     font-size: var(--font-size-lg);
     font-weight: 600;
     color: #222;
-    margin: 0 0 20px 0;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.toc-title:hover {
+    color: var(--primary-color);
 }
 
 .toc-title i {
@@ -66,10 +73,21 @@
     font-size: var(--font-size-xl);
 }
 
+.toc-arrow {
+    margin-left: auto;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+}
+
+.toc-title.collapsed .toc-arrow {
+    transform: rotate(-90deg);
+}
+
 .toc-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-top: 10px;
 }
 
 .toc-list li {
@@ -88,19 +106,10 @@
     border-left: 3px solid transparent;
 }
 
-/* .toc-link:hover {
-    background: rgba(255, 107, 53, 0.1);
+.toc-link:hover {
+    text-decoration: underline;
     color: var(--primary-color);
-    border-left-color: var(--primary-color);
-    text-decoration: none;
 }
-
-.toc-link.active {
-    background: var(--primary-color);
-    color: white;
-    border-left-color: #e55a2b;
-    font-weight: 500;
-} */
 
 /* Company Introduction */
 .company-introduction {
@@ -130,15 +139,16 @@
 }
 
 .recruitment-illustration img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Recruitment Sections */
 .recruitment-section {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     scroll-margin-top: 140px;
 }
 
@@ -205,10 +215,11 @@
 /* Requirements and Benefits Boxes */
 .requirements-box,
 .benefits-box {
-    /* background: #f0a500; */
-    padding: 20px;
+    background: var(--primary-color);
+    padding: 20px 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 .requirements-list,
@@ -221,8 +232,9 @@
 .requirements-list li,
 .benefits-list li {
     font-size: var(--font-size-base);
+    padding: 8px 0;
     line-height: 1.6;
-    color: #333;
+    color: #fff;
     margin-bottom: 8px;
     padding-left: 20px;
     position: relative;
@@ -230,8 +242,8 @@
 
 .requirements-list li::before,
 .benefits-list li::before {
-    content: "•";
-    color: var(--primary-color);
+    content: "✓";
+    color: #fff;
     font-weight: bold;
     position: absolute;
     left: 0;

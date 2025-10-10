@@ -79,14 +79,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .service-card {
     background: #fff;
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     border: 1px solid #f0f0f0;
     position: relative;
@@ -250,7 +250,9 @@
 
 .feature-item {
     text-align: center;
+    border-radius: 16px;
     padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .feature-icon {

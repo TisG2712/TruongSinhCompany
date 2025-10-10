@@ -60,10 +60,10 @@ function initAboutUsAnimations() {
 
   // Lưu trữ src các ảnh
   let imageSrcs = [
-    "./assets/images/index_images/about1.png",
-    "./assets/images/index_images/about2.png",
-    "./assets/images/index_images/about3.png",
-    "./assets/images/index_images/about4.png",
+    "../assets/images/index_images/about1.png",
+    "../assets/images/index_images/about2.png",
+    "../assets/images/index_images/about3.png",
+    "../assets/images/index_images/about4.png",
   ];
 
   // Thiết lập trạng thái ban đầu - ẩn tất cả ảnh
@@ -197,40 +197,86 @@ function initScrollToTop() {
 
 /**
  * Khởi tạo slider dịch vụ với auto-scroll
- * - Hiển thị 3 card cùng lúc
+ * - Desktop: Hiển thị 3 card cùng lúc
+ * - Mobile: Hiển thị 1 card tại một thời điểm
  * - Tự động chuyển slide mỗi 3 giây
  * - Loop vô hạn
  */
 function initServicesSlider() {
   const sliderTrack = document.getElementById("slider-track");
+  const prevBtn = document.getElementById("sliderPrev");
+  const nextBtn = document.getElementById("sliderNext");
+
   if (!sliderTrack) return;
 
   let currentIndex = 0;
   const totalCards = 6;
-  const visibleCards = 3;
-  const cardWidth = 100 / visibleCards; // 33.333%
+  let autoSlideInterval;
 
-  // Clone 3 card đầu tiên và thêm vào cuối để loop mượt
+  // Kiểm tra kích thước màn hình để xác định số card hiển thị
+  function getVisibleCards() {
+    return window.innerWidth <= 768 ? 1 : 3;
+  }
+
+  const visibleCards = getVisibleCards();
+  const cardWidth = 100 / visibleCards;
+
+  // Clone cards để loop mượt
   const cards = sliderTrack.querySelectorAll(".service-card");
   for (let i = 0; i < visibleCards; i++) {
     const clonedCard = cards[i].cloneNode(true);
     sliderTrack.appendChild(clonedCard);
   }
 
-  function moveSlider() {
-    currentIndex++;
-
-    // Reset về đầu khi đã hiển thị hết card gốc
-    if (currentIndex >= totalCards) {
-      currentIndex = 0;
+  function moveSlider(direction = "next") {
+    if (direction === "next") {
+      currentIndex++;
+      // Reset về đầu khi đã hiển thị hết card gốc
+      if (currentIndex >= totalCards) {
+        currentIndex = 0;
+      }
+    } else {
+      currentIndex--;
+      // Reset về cuối khi đã hiển thị hết card gốc
+      if (currentIndex < 0) {
+        currentIndex = totalCards - 1;
+      }
     }
 
     const translateX = -currentIndex * cardWidth;
     sliderTrack.style.transform = `translateX(${translateX}%)`;
   }
 
+  // Navigation button events
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+      moveSlider("prev");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+      moveSlider("next");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+    });
+  }
+
   // Auto-scroll mỗi 3 giây
-  setInterval(moveSlider, 3000);
+  autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+
+  // Xử lý khi resize window
+  window.addEventListener("resize", function () {
+    const newVisibleCards = getVisibleCards();
+    if (newVisibleCards !== visibleCards) {
+      // Reload slider khi chuyển đổi giữa desktop/mobile
+      location.reload();
+    }
+  });
 }
 
 // ===========================================
@@ -284,75 +330,168 @@ function initProjectFilter() {
  * - Tạm dừng khi hover
  */
 function initFeedbackSlider() {
-  const sliderTrack = document.querySelector(".feedback-slider .slider-track");
-  const videoCards = document.querySelectorAll(".feedback-slider .video-card");
-  const prevBtn = document.querySelector(".feedback-slider .prev-btn");
-  const nextBtn = document.querySelector(".feedback-slider .next-btn");
+  const sliderTrack = document.getElementById("feedback-slider-track");
+  const prevBtn = document.getElementById("feedbackPrev");
+  const nextBtn = document.getElementById("feedbackNext");
 
-  if (!sliderTrack || videoCards.length === 0) return;
+  if (!sliderTrack) return;
 
   let currentIndex = 0;
-  const totalCards = videoCards.length;
-  const visibleCards = 3;
+  const totalCards = 6;
   let autoSlideInterval;
 
-  // Clone 3 card đầu tiên và thêm vào cuối để loop mượt
+  // Kiểm tra kích thước màn hình để xác định số card hiển thị
+  function getVisibleCards() {
+    return window.innerWidth <= 768 ? 1 : 3;
+  }
+
+  const visibleCards = getVisibleCards();
+  const cardWidth = 100 / visibleCards;
+
+  // Clone cards để loop mượt
+  const cards = sliderTrack.querySelectorAll(".video-card");
   for (let i = 0; i < visibleCards; i++) {
-    const clonedCard = videoCards[i].cloneNode(true);
+    const clonedCard = cards[i].cloneNode(true);
     sliderTrack.appendChild(clonedCard);
   }
 
-  function updateSlider() {
-    const translateX = -currentIndex * (100 / visibleCards);
+  function moveSlider(direction = "next") {
+    if (direction === "next") {
+      currentIndex++;
+      // Reset về đầu khi đã hiển thị hết card gốc
+      if (currentIndex >= totalCards) {
+        currentIndex = 0;
+      }
+    } else {
+      currentIndex--;
+      // Reset về cuối khi đã hiển thị hết card gốc
+      if (currentIndex < 0) {
+        currentIndex = totalCards - 1;
+      }
+    }
+
+    const translateX = -currentIndex * cardWidth;
     sliderTrack.style.transform = `translateX(${translateX}%)`;
   }
 
-  function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= totalCards) {
-      currentIndex = 0;
+  // Navigation button events
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+      moveSlider("prev");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+      moveSlider("next");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+    });
+  }
+
+  // Auto-scroll mỗi 3 giây
+  autoSlideInterval = setInterval(() => moveSlider("next"), 3000);
+
+  // Xử lý khi resize window
+  window.addEventListener("resize", function () {
+    const newVisibleCards = getVisibleCards();
+    if (newVisibleCards !== visibleCards) {
+      // Reload slider khi chuyển đổi giữa desktop/mobile
+      location.reload();
     }
-    updateSlider();
+  });
+}
+
+// ===========================================
+//   SECTION: TEAM-EXPERTS - Phần đội ngũ chuyên gia
+// ===========================================
+
+/**
+ * Khởi tạo slider cho đội ngũ chuyên gia
+ * - Desktop: Hiển thị 4 expert cards cùng lúc (grid)
+ * - Mobile: Hiển thị 1 expert card tại một thời điểm (slider)
+ * - Tự động chuyển slide mỗi 4 giây
+ * - Clone cards để loop mượt mà
+ */
+function initExpertsSlider() {
+  const sliderTrack = document.getElementById("experts-slider-track");
+  const prevBtn = document.getElementById("expertsPrev");
+  const nextBtn = document.getElementById("expertsNext");
+
+  if (!sliderTrack) return;
+
+  let currentIndex = 0;
+  const totalCards = 4;
+  let autoSlideInterval;
+
+  // Kiểm tra kích thước màn hình để xác định số card hiển thị
+  function getVisibleCards() {
+    return window.innerWidth <= 768 ? 1 : 4;
   }
 
-  function prevSlide() {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = totalCards - 1;
+  const visibleCards = getVisibleCards();
+  const cardWidth = 100 / visibleCards;
+
+  // Clone cards để loop mượt
+  const cards = sliderTrack.querySelectorAll(".expert-card");
+  for (let i = 0; i < visibleCards; i++) {
+    const clonedCard = cards[i].cloneNode(true);
+    sliderTrack.appendChild(clonedCard);
+  }
+
+  function moveSlider(direction = "next") {
+    if (direction === "next") {
+      currentIndex++;
+      // Reset về đầu khi đã hiển thị hết card gốc
+      if (currentIndex >= totalCards) {
+        currentIndex = 0;
+      }
+    } else {
+      currentIndex--;
+      // Reset về cuối khi đã hiển thị hết card gốc
+      if (currentIndex < 0) {
+        currentIndex = totalCards - 1;
+      }
     }
-    updateSlider();
+
+    const translateX = -currentIndex * cardWidth;
+    sliderTrack.style.transform = `translateX(${translateX}%)`;
   }
 
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 3000);
+  // Navigation button events
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+      moveSlider("prev");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 4000);
+    });
   }
 
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+      moveSlider("next");
+      // Reset auto-slide timer
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlider("next"), 4000);
+    });
   }
 
-  // Event listeners
-  nextBtn.addEventListener("click", () => {
-    nextSlide();
-    stopAutoSlide();
-    startAutoSlide();
+  // Auto-scroll mỗi 4 giây (chậm hơn services slider)
+  autoSlideInterval = setInterval(() => moveSlider("next"), 4000);
+
+  // Xử lý khi resize window
+  window.addEventListener("resize", function () {
+    const newVisibleCards = getVisibleCards();
+    if (newVisibleCards !== visibleCards) {
+      // Reload slider khi chuyển đổi giữa desktop/mobile
+      location.reload();
+    }
   });
-
-  prevBtn.addEventListener("click", () => {
-    prevSlide();
-    stopAutoSlide();
-    startAutoSlide();
-  });
-
-  // Tạm dừng khi hover
-  const sliderContainer = document.querySelector(
-    ".feedback-slider .slider-container"
-  );
-  sliderContainer.addEventListener("mouseenter", stopAutoSlide);
-  sliderContainer.addEventListener("mouseleave", startAutoSlide);
-
-  // Bắt đầu auto-slide
-  startAutoSlide();
 }
 
 // ===========================================
@@ -453,7 +592,7 @@ function initSharingBlogSlideshow() {
 const blogData = {
   news: [
     {
-      img: "./assets/images/index_images/blog4.png",
+      img: "../assets/images/index_images/worker_1.png",
       title: "THIẾT KẾ NỘI THẤT BIỆT THỰ CAO CẤP",
       excerpt:
         "Khám phá những xu hướng thiết kế nội thất mới nhất cho biệt thự cao cấp. Từ phong cách hiện đại đến cổ điển, chúng tôi mang đến những giải pháp thiết kế độc đáo và sang trọng.",
@@ -461,7 +600,7 @@ const blogData = {
       views: 1250,
     },
     {
-      img: "./assets/images/index_images/blog2.png",
+      img: "../assets/images/index_images/worker_2.png",
       title: "HOÀN THIỆN BIỆT THỰ",
       excerpt:
         "Quy trình hoàn thiện biệt thự từ A-Z với những bước quan trọng và lưu ý cần thiết để có được ngôi nhà hoàn hảo.",
@@ -469,7 +608,7 @@ const blogData = {
       views: 980,
     },
     {
-      img: "./assets/images/index_images/blog3.png",
+      img: "../assets/images/index_images/worker_3.png",
       title: "THIẾT KẾ NỘI THẤT",
       excerpt:
         "Những xu hướng thiết kế nội thất hot nhất 2024, giúp không gian sống trở nên hiện đại và tiện nghi hơn.",
@@ -477,17 +616,25 @@ const blogData = {
       views: 1560,
     },
     {
-      img: "./assets/images/index_images/blog5.png",
+      img: "../assets/images/index_images/worker_4.png",
       title: "XÂY DỰNG NHÀ PHỐ",
       excerpt:
         "Kinh nghiệm xây dựng nhà phố tiết kiệm chi phí mà vẫn đảm bảo chất lượng và thẩm mỹ cao nhất.",
       date: "08/12/2024",
       views: 2100,
     },
+    {
+      img: "../assets/images/index_images/worker_5.png",
+      title: "SỬA CHỮA NHÀ CŨ",
+      excerpt:
+        "Cách cải tạo nhà cũ thành không gian mới hiện đại, nâng cấp toàn diện với chi phí hợp lý nhất.",
+      date: "05/12/2024",
+      views: 1850,
+    },
   ],
   "kinh-nghiem-xay-dung": [
     {
-      img: "./assets/images/index_images/blog1.png",
+      img: "../assets/images/index_images/worker_1.png",
       title: "101+ Mẫu nhà ống 1 tầng đẹp hiện đại, chi phí rẻ nhất 2025",
       excerpt:
         "Tổng hợp những mẫu nhà ống 1 tầng đẹp nhất với thiết kế hiện đại, tiết kiệm chi phí xây dựng mà vẫn đảm bảo tính thẩm mỹ và tiện nghi.",
@@ -495,7 +642,7 @@ const blogData = {
       views: 866,
     },
     {
-      img: "./assets/images/index_images/blog2.png",
+      img: "../assets/images/index_images/worker_2.png",
       title: "99+ Mẫu nhà ống 3 tầng kiểu pháp đẳng cấp nhất 2025",
       excerpt:
         "Khám phá những mẫu nhà ống 3 tầng kiểu Pháp sang trọng, đẳng cấp với thiết kế tinh tế và không gian sống lý tưởng cho gia đình.",
@@ -503,7 +650,7 @@ const blogData = {
       views: 307,
     },
     {
-      img: "./assets/images/index_images/blog3.png",
+      img: "../assets/images/index_images/worker_3.png",
       title: "101+ Mẫu nhà 2 tầng mái Thái 500 triệu đẹp, đầy đủ tiện nghi",
       excerpt:
         "Bộ sưu tập mẫu nhà 2 tầng mái Thái đẹp với ngân sách 500 triệu, thiết kế tối ưu không gian và đầy đủ tiện nghi hiện đại.",
@@ -511,7 +658,7 @@ const blogData = {
       views: 1692,
     },
     {
-      img: "./assets/images/index_images/blog4.png",
+      img: "../assets/images/index_images/worker_4.png",
       title: "66+ Mẫu nhà 2 tầng đẹp giá 1 tỷ độc đáo, xu hướng nổi bật",
       excerpt:
         "Những mẫu nhà 2 tầng độc đáo với ngân sách 1 tỷ đồng, theo xu hướng thiết kế mới nhất và phù hợp với phong cách sống hiện đại.",
@@ -521,7 +668,7 @@ const blogData = {
   ],
   "phong-thuy": [
     {
-      img: "./assets/images/index_images/blog5.png",
+      img: "../assets/images/index_images/worker_5.png",
       title: "Phong thủy nhà ở: 10 nguyên tắc vàng cho ngôi nhà hạnh phúc",
       excerpt:
         "Khám phá những nguyên tắc phong thủy cơ bản giúp tạo ra không gian sống hài hòa, mang lại may mắn và hạnh phúc cho gia đình.",
@@ -529,7 +676,7 @@ const blogData = {
       views: 3240,
     },
     {
-      img: "./assets/images/index_images/blog1.png",
+      img: "../assets/images/index_images/worker_1.png",
       title: "Hướng nhà hợp tuổi: Cách chọn hướng nhà theo phong thủy",
       excerpt:
         "Hướng dẫn chi tiết cách chọn hướng nhà phù hợp với tuổi và mệnh của gia chủ để mang lại tài lộc và sức khỏe.",
@@ -537,7 +684,7 @@ const blogData = {
       views: 2890,
     },
     {
-      img: "./assets/images/index_images/blog2.png",
+      img: "../assets/images/index_images/worker_2.png",
       title: "Phong thủy phòng khách: Bố trí nội thất đúng cách",
       excerpt:
         "Những quy tắc phong thủy quan trọng khi bố trí phòng khách để tạo ra không gian đón khách lý tưởng và thu hút tài lộc.",
@@ -545,7 +692,7 @@ const blogData = {
       views: 2150,
     },
     {
-      img: "./assets/images/index_images/blog3.png",
+      img: "../assets/images/index_images/worker_3.png",
       title: "Cây phong thủy trong nhà: Top 15 loại cây mang lại may mắn",
       excerpt:
         "Danh sách những loại cây phong thủy tốt nhất để trồng trong nhà, giúp thanh lọc không khí và mang lại năng lượng tích cực.",
@@ -555,7 +702,7 @@ const blogData = {
   ],
   "kien-truc": [
     {
-      img: "./assets/images/index_images/blog4.png",
+      img: "../assets/images/index_images/worker_4.png",
       title: "Xu hướng kiến trúc 2025: Những phong cách thiết kế nổi bật",
       excerpt:
         "Khám phá những xu hướng kiến trúc mới nhất năm 2025, từ thiết kế bền vững đến công nghệ thông minh trong xây dựng.",
@@ -563,7 +710,7 @@ const blogData = {
       views: 1450,
     },
     {
-      img: "./assets/images/index_images/blog5.png",
+      img: "../assets/images/index_images/worker_5.png",
       title: "Kiến trúc xanh: Thiết kế nhà ở thân thiện với môi trường",
       excerpt:
         "Tìm hiểu về kiến trúc xanh và cách áp dụng các nguyên tắc thiết kế bền vững vào ngôi nhà của bạn.",
@@ -571,7 +718,7 @@ const blogData = {
       views: 1200,
     },
     {
-      img: "./assets/images/index_images/blog1.png",
+      img: "../assets/images/index_images/worker_1.png",
       title: "Thiết kế nhà phố hiện đại: Tối ưu không gian sống",
       excerpt:
         "Những ý tưởng thiết kế nhà phố hiện đại giúp tối ưu hóa không gian sống và tạo ra không gian sống lý tưởng.",
@@ -579,7 +726,7 @@ const blogData = {
       views: 1680,
     },
     {
-      img: "./assets/images/index_images/blog2.png",
+      img: "../assets/images/index_images/worker_2.png",
       title: "Kiến trúc cổ điển vs hiện đại: So sánh và lựa chọn",
       excerpt:
         "Phân tích chi tiết sự khác biệt giữa kiến trúc cổ điển và hiện đại để giúp bạn lựa chọn phong cách phù hợp.",
@@ -623,8 +770,8 @@ function initBlogCategoryFilter() {
         }
       }
 
-      // Hiển thị bài viết theo category
-      displayBlogPosts(category);
+      // Gọi hàm filter blog (sử dụng chung cho cả desktop và mobile)
+      filterBlogByCategory(category);
     });
   });
 }
@@ -701,22 +848,118 @@ function openBlogPost(title) {
 }
 
 // ===========================================
+//   SECTION: BLOG DROPDOWN - Dropdown menu cho blog categories
+// ===========================================
+
+/**
+ * Lọc blog theo category (sử dụng chung cho cả desktop và mobile)
+ * @param {string} category - Danh mục cần lọc
+ */
+function filterBlogByCategory(category) {
+  // Cập nhật desktop buttons
+  const desktopButtons = document.querySelectorAll(
+    ".desktop-categories .category-btn"
+  );
+  desktopButtons.forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.getAttribute("data-category") === category) {
+      btn.classList.add("active");
+    }
+  });
+
+  // Hiển thị bài viết theo category
+  displayBlogPosts(category);
+}
+
+/**
+ * Khởi tạo dropdown menu cho blog categories trên mobile
+ * - Click để mở/đóng dropdown
+ * - Chọn option để cập nhật text và đóng dropdown
+ * - Click outside để đóng dropdown
+ */
+function initBlogDropdown() {
+  const dropdownToggle = document.getElementById("categoryDropdown");
+  const dropdownMenu = document.getElementById("categoryMenu");
+  const selectedText = document.querySelector(".selected-text");
+  const dropdownItems = document.querySelectorAll(".filter-dropdown-item");
+  const desktopButtons = document.querySelectorAll(
+    ".desktop-categories .category-btn"
+  );
+
+  if (!dropdownToggle || !dropdownMenu) {
+    console.log("Dropdown elements not found, retrying...");
+    setTimeout(initBlogDropdown, 500);
+    return;
+  }
+
+  console.log("Blog dropdown initialized successfully");
+
+  // Toggle dropdown khi click vào toggle button
+  dropdownToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+    dropdownToggle.classList.toggle("active");
+  });
+
+  // Xử lý khi click vào dropdown item
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const category = this.getAttribute("data-category");
+      const text = this.textContent;
+
+      // Cập nhật text hiển thị
+      selectedText.textContent = text;
+
+      // Cập nhật active state
+      dropdownItems.forEach((i) => i.classList.remove("active"));
+      this.classList.add("active");
+
+      // Đóng dropdown
+      dropdownMenu.classList.remove("show");
+      dropdownToggle.classList.remove("active");
+
+      // Gọi hàm filter blog (sẽ tự động cập nhật desktop buttons)
+      filterBlogByCategory(category);
+    });
+  });
+
+  // Đóng dropdown khi click outside
+  document.addEventListener("click", function (e) {
+    if (
+      !dropdownToggle.contains(e.target) &&
+      !dropdownMenu.contains(e.target)
+    ) {
+      dropdownMenu.classList.remove("show");
+      dropdownToggle.classList.remove("active");
+    }
+  });
+
+  // Đóng dropdown khi scroll
+  window.addEventListener("scroll", function () {
+    dropdownMenu.classList.remove("show");
+    dropdownToggle.classList.remove("active");
+  });
+}
+
+// ===========================================
 //   INITIALIZATION - Khởi tạo khi DOM ready
 // ===========================================
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load các component chung
-  loadComponent("header", "components/header.html");
-  loadComponent("navbar", "components/navbar.html");
-  loadComponent("footer", "components/footer.html");
+  loadComponent("header", "../components/header.html");
+  loadComponent("navbar", "../components/navbar.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Khởi tạo các section theo thứ tự
   initAboutUsAnimations(); // Section: About Us
   initServicesSlider(); // Section: Main Services
   initProjectFilter(); // Section: Our Project
   initFeedbackSlider(); // Section: Feedback Company
+  initExpertsSlider(); // Section: Team Experts
   initSharingBlogSlideshow(); // Section: Sharing Blog
   initBlogCategoryFilter(); // Section: Blog Category Filter
+  initBlogDropdown(); // Section: Blog Dropdown Menu
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu

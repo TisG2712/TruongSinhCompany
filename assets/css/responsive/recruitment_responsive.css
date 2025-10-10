@@ -1,0 +1,82 @@
+@media (max-width: 768px) {
+    .main-content {
+        padding: 70px 0 20px 0;
+    }
+
+    .recruitment-title {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .recruitment-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .recruitment-toc {
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .toc-title,
+    .toc-title i {
+        font-size: 1rem;
+    }
+
+    .toc-link {
+        font-size: 0.9rem;
+    }
+
+    .company-introduction p {
+        font-size: 1rem;
+    }
+
+    .recruitment-illustration img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .job-tasks {
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .job-tasks h4 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+
+    .requirements-list li,
+    .benefits-list li,
+    .job-tasks li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .job-tasks li::before {
+        font-size: 1rem;
+    }
+
+    .requirements-box,
+    .benefits-box {
+        padding: 15px;
+    }
+}

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
   <link rel="stylesheet" href="../assets/css/news.css" />
+  <link rel="stylesheet" href="../assets/css/responsive/news_responsive.css" />
 </head>
 
 <body>
@@ -28,7 +29,7 @@
     <main>
       <div class="news-container">
         <nav class="breadcrumb">
-          <a href="../index.html">Trang chủ</a>
+          <a href="index.html">Trang chủ</a>
           <span>></span>
           <span class="current">Tin tức</span>
         </nav>
@@ -37,9 +38,47 @@
           <div class="news-gallery">
             <h2 class="news-title">Tin tức</h2>
 
+            <!-- Filter Tabs Desktop -->
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-filter="all">
+                Tất cả
+              </button>
+              <button class="filter-tab" data-filter="xay-nha">
+                Xây nhà trọn gói
+              </button>
+              <button class="filter-tab" data-filter="sua-nha">
+                Sửa nhà trọn gói
+              </button>
+              <button class="filter-tab" data-filter="thiet-ke">
+                Thiết kế nhà
+              </button>
+              <button class="filter-tab" data-filter="phong-thuy">
+                Phong thủy
+              </button>
+              <button class="filter-tab" data-filter="khac">Khác</button>
+            </div>
+
+            <!-- Filter Tabs Mobile -->
+            <div class="filter-tabs-mobile">
+              <div class="filter-dropdown">
+                <button class="filter-dropdown-toggle" id="filterDropdownToggle">
+                  <span class="selected-text">Tất cả</span>
+                  <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                </button>
+                <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                  <div class="filter-dropdown-item active" data-filter="all">Tất cả</div>
+                  <div class="filter-dropdown-item" data-filter="xay-nha">Xây nhà trọn gói</div>
+                  <div class="filter-dropdown-item" data-filter="sua-nha">Sửa nhà trọn gói</div>
+                  <div class="filter-dropdown-item" data-filter="thiet-ke">Thiết kế nhà</div>
+                  <div class="filter-dropdown-item" data-filter="phong-thuy">Phong thủy</div>
+                  <div class="filter-dropdown-item" data-filter="khac">Khác</div>
+                </div>
+              </div>
+            </div>
+
             <!-- News Articles Grid -->
-            <div class="news-grid">
-              <a href="detail_blog1.html" class="news-item">
+            <div class="news-grid" id="newsGrid">
+              <a href="detail_blog1.html" class="news-item" data-category="xay-nha">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (48).png"
                     alt="Top 5 mẫu nhà chống lụt xu hướng xây dựng trước biến đổi khí hậu" />
@@ -59,7 +98,7 @@
                 </div>
               </a>
 
-              <a href="detail_blog1.html" class="news-item">
+              <a href="detail_blog1.html" class="news-item" data-category="thiet-ke">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (43).png"
                     alt="Xu hướng thiết kế nhà thông minh tích hợp công nghệ 4.0" />
@@ -77,7 +116,7 @@
                 </div>
               </a>
 
-              <a href="detail_blog1.html" class="news-item">
+              <a href="detail_blog1.html" class="news-item" data-category="xay-nha">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (44).png"
                     alt="Vật liệu xây dựng xanh - Giải pháp cho tương lai bền vững" />
@@ -96,7 +135,7 @@
                 </div>
               </a>
 
-              <a href="detail_blog1.html" class="news-item">
+              <a href="detail_blog1.html" class="news-item" data-category="thiet-ke">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (45).png"
                     alt="Thiết kế nội thất tối giản - Phong cách sống hiện đại" />
@@ -114,7 +153,7 @@
                 </div>
               </a>
 
-              <a href="detail_blog1.html" class="news-item">
+              <a href="detail_blog1.html" class="news-item" data-category="sua-nha">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (46).png"
                     alt="Cải tạo nhà cũ - Biến không gian cũ thành mới" />
@@ -132,7 +171,7 @@
                 </div>
               </a>
 
-              <a href="detail_blog1.html" class="news-item">
+              <a href="detail_blog1.html" class="news-item" data-category="khac">
                 <div class="news-image">
                   <img src="../assets/images/news_images/download (47).png"
                     alt="Xu hướng xây dựng nhà container - Giải pháp tiết kiệm và sáng tạo" />
@@ -150,17 +189,128 @@
                   </p>
                 </div>
               </a>
+
+              <!-- Hidden News Items (will be shown when load more is clicked) -->
+              <div class="hidden-news" id="hiddenNews" style="display: none;">
+                <a href="detail_blog1.html" class="news-item" data-category="phong-thuy">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (48).png"
+                      alt="Phong thủy nhà ở - Những nguyên tắc cơ bản cần biết" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Phong thủy nhà ở - Những nguyên tắc cơ bản cần biết
+                    </h3>
+                    <p class="news-excerpt">
+                      Phong thủy là một bộ môn khoa học cổ xưa giúp tạo ra sự hài hòa
+                      giữa con người và môi trường sống. Trong xây dựng nhà ở, việc
+                      áp dụng các nguyên tắc phong thủy không chỉ mang lại may mắn
+                      mà còn tạo ra không gian sống thoải mái...
+                    </p>
+                  </div>
+                </a>
+
+                <a href="detail_blog1.html" class="news-item" data-category="xay-nha">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (43).png"
+                      alt="Quy trình xây nhà trọn gói - Từ A đến Z" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Quy trình xây nhà trọn gói - Từ A đến Z
+                    </h3>
+                    <p class="news-excerpt">
+                      Xây nhà trọn gói là giải pháp được nhiều gia đình lựa chọn
+                      để tiết kiệm thời gian và đảm bảo chất lượng công trình.
+                      Quy trình này bao gồm nhiều bước quan trọng từ thiết kế
+                      đến hoàn thiện...
+                    </p>
+                  </div>
+                </a>
+
+                <a href="detail_blog1.html" class="news-item" data-category="thiet-ke">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (44).png"
+                      alt="Thiết kế nhà phố 3 tầng - Xu hướng hiện đại" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Thiết kế nhà phố 3 tầng - Xu hướng hiện đại
+                    </h3>
+                    <p class="news-excerpt">
+                      Nhà phố 3 tầng đang trở thành lựa chọn phổ biến của nhiều
+                      gia đình tại các thành phố lớn. Với diện tích đất hạn chế,
+                      việc thiết kế nhà phố 3 tầng đòi hỏi sự tối ưu hóa không
+                      gian và công năng sử dụng...
+                    </p>
+                  </div>
+                </a>
+
+                <a href="detail_blog1.html" class="news-item" data-category="sua-nha">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (45).png"
+                      alt="Sửa chữa nhà cũ - Kinh nghiệm và lưu ý quan trọng" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Sửa chữa nhà cũ - Kinh nghiệm và lưu ý quan trọng
+                    </h3>
+                    <p class="news-excerpt">
+                      Sửa chữa nhà cũ là công việc đòi hỏi sự cẩn thận và kinh
+                      nghiệm. Từ việc đánh giá tình trạng hiện tại đến lựa chọn
+                      vật liệu phù hợp, mỗi bước đều cần được thực hiện một cách
+                      khoa học...
+                    </p>
+                  </div>
+                </a>
+
+                <a href="detail_blog1.html" class="news-item" data-category="khac">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (46).png"
+                      alt="Vật liệu xây dựng mới - Xu hướng 2024" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Vật liệu xây dựng mới - Xu hướng 2024
+                    </h3>
+                    <p class="news-excerpt">
+                      Năm 2024 chứng kiến sự ra đời của nhiều loại vật liệu xây
+                      dựng mới với tính năng vượt trội. Từ gạch thông minh đến
+                      bê tông tự phục hồi, những vật liệu này đang thay đổi
+                      cách chúng ta xây dựng...
+                    </p>
+                  </div>
+                </a>
+
+                <a href="detail_blog1.html" class="news-item" data-category="phong-thuy">
+                  <div class="news-image">
+                    <img src="../assets/images/news_images/download (47).png"
+                      alt="Hướng nhà theo phong thủy - Chọn hướng tốt cho gia chủ" />
+                  </div>
+                  <div class="news-detail">
+                    <h3 class="news-title-blog">
+                      Hướng nhà theo phong thủy - Chọn hướng tốt cho gia chủ
+                    </h3>
+                    <p class="news-excerpt">
+                      Hướng nhà là yếu tố quan trọng trong phong thủy, ảnh hưởng
+                      trực tiếp đến vận khí và sức khỏe của gia chủ. Việc chọn
+                      hướng nhà phù hợp với tuổi và mệnh của chủ nhà sẽ mang lại
+                      nhiều may mắn...
+                    </p>
+                  </div>
+                </a>
+              </div>
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-              <button class="pagination-btn prev-btn" disabled>
-                <i class="ri-arrow-left-line"></i>
+            <!-- Load More Button -->
+            <div class="load-more-container">
+              <button class="load-more-btn" id="loadMoreBtn">
+                <i class="ri-add-line"></i>
+                <span>Hiển thị thêm tin tức</span>
               </button>
-              <button class="pagination-btn page-btn active">1</button>
-              <button class="pagination-btn page-btn">2</button>
-              <button class="pagination-btn next-btn">
-                <i class="ri-arrow-right-line"></i>
+              <button class="collapse-btn" id="collapseBtn" style="display: none;">
+                <i class="ri-arrow-up-line"></i>
+                <span>Rút gọn</span>
               </button>
             </div>
           </div>
@@ -176,6 +326,7 @@
   </button>
 
   <script src="../assets/js/news.js"></script>
+  <script src="../assets/js/navbar.js"></script>
 </body>
 
 </html>

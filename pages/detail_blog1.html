@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
   <link rel="stylesheet" href="../assets/css/detail_blog.css" />
+  <link rel="stylesheet" href="../assets/css/responsive/detail_blog_responsive.css" />
 </head>
 
 <body>
@@ -28,9 +29,9 @@
     <main>
       <div class="detail-blog-container">
         <nav class="breadcrumb">
-          <a href="../index.html">Trang chủ</a>
+          <a href="index.html">Trang chủ</a>
           <span>></span>
-          <a href="../pages/news.html">Tin tức</a>
+          <a href="news.html">Tin tức</a>
           <span>></span>
           <span class="current">Top 5 mẫu nhà chống lụt xu hướng xây dựng trước biến đổi khí
             hậu</span>
@@ -51,11 +52,12 @@
         </div>
         <div class="main-blog-content">
           <div class="blog-toc">
-            <h3 class="blog-toc-title">
+            <h3 class="blog-toc-title" id="blogTocToggle">
               <i class="ri-list-check"></i>
               Mục lục
+              <i class="ri-arrow-down-s-line toc-arrow"></i>
             </h3>
-            <ul class="blog-toc-list">
+            <ul class="blog-toc-list" id="blogTocList">
               <li><a href="#section-1" class="blog-toc-link">Tại sao nên xây dựng mẫu nhà chống ngập lụt trong
                   giai đoạn hiện nay?</a></li>
               <li><a href="#section-2" class="blog-toc-link">Tham khảo 5 mẫu nhà chống ngập lụt đảm bảo an
@@ -206,7 +208,7 @@
         <div class="related-posts">
           <h2 class="related-posts-title">CÁC TIN KHÁC</h2>
           <div class="related-posts-grid">
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png"
                   alt="Khi nào cần hoặc không phải xin giấy phép sửa chữa nhà">
@@ -216,9 +218,9 @@
                 việc. Các công việc như sơn lại, thay gạch lát nền, sửa chữa nhỏ không cần giấy phép. Tuy nhiên, việc
                 thay đổi kết cấu, mở rộng diện tích, xây thêm tầng đều cần có giấy phép xây dựng. Trường Sinh tư vấn chi
                 tiết về quy trình xin giấy phép để đảm bảo tuân thủ pháp luật.</p>
-            </div>
+            </a>
 
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png"
                   alt="Những biến động mạnh về giá vật liệu xây dựng hiện nay">
@@ -228,9 +230,9 @@
                 chi phí vận chuyển, giá năng lượng và nguồn cung. Xi măng, thép, gạch đều tăng giá từ 15-30% so với năm
                 trước. Trường Sinh cam kết cung cấp vật liệu chất lượng với giá cạnh tranh và hỗ trợ khách hàng trong
                 việc lựa chọn vật liệu phù hợp với ngân sách.</p>
-            </div>
+            </a>
 
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png" alt="Dự đoán giá thép trong năm 2024">
               </div>
@@ -239,9 +241,9 @@
                 2023. Tuy nhiên, vẫn có thể có những biến động nhẹ do nhu cầu xây dựng tăng cao và chi phí sản xuất.
                 Trường Sinh khuyến nghị khách hàng nên lên kế hoạch mua sắm vật liệu sớm để tránh rủi ro về giá và đảm
                 bảo tiến độ thi công.</p>
-            </div>
+            </a>
 
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png" alt="Xu hướng thiết kế nhà phố hiện đại 2024">
               </div>
@@ -250,9 +252,9 @@
                 ánh sáng tự nhiên và tích hợp công nghệ thông minh. Các mẫu nhà phố của Trường Sinh kết hợp giữa phong
                 cách hiện đại và truyền thống, tạo ra không gian sống tiện nghi, thẩm mỹ cao và phù hợp với khí hậu
                 nhiệt đới của Việt Nam.</p>
-            </div>
+            </a>
 
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png" alt="Cách chọn vật liệu xây dựng bền vững">
               </div>
@@ -261,9 +263,9 @@
                 kiệm chi phí lâu dài. Gạch không nung, xi măng xanh, sơn không độc hại là những lựa chọn tốt. Trường
                 Sinh cung cấp đầy đủ các loại vật liệu xanh, đảm bảo chất lượng và có chứng nhận môi trường, giúp khách
                 hàng xây dựng ngôi nhà bền vững cho tương lai.</p>
-            </div>
+            </a>
 
-            <div class="related-post-item">
+            <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
                 <img src="../public/images/post_related.png"
                   alt="Quy trình xây dựng nhà trọn gói tại công ty Trường Sinh">
@@ -273,7 +275,86 @@
                 bước: khảo sát, thiết kế, xin phép, chuẩn bị vật liệu, thi công, nghiệm thu và bàn giao. Mỗi bước đều
                 được giám sát chặt chẽ, đảm bảo chất lượng và tiến độ. Khách hàng được cập nhật tiến độ thường xuyên và
                 có thể theo dõi công trình qua ứng dụng di động.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Comment Section -->
+        <div class="comment-customer">
+          <h2 class="comment-title">Bình luận</h2>
+
+          <!-- Comment Form -->
+          <div class="comment-form">
+            <form id="commentForm">
+              <div class="form-group">
+                <textarea id="commentText" placeholder="Viết bình luận của bạn..." rows="4" required></textarea>
+              </div>
+              <div class="form-group">
+                <input type="text" id="commentName" placeholder="Tên của bạn" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="commentEmail" placeholder="Email của bạn" required>
+              </div>
+              <button type="submit" class="comment-submit-btn">Đăng bình luận</button>
+            </form>
+          </div>
+
+          <!-- Comments List -->
+          <div class="comments-list">
+            <div class="comment-item">
+              <div class="comment-avatar">
+                <img src="../assets/images/index_images/architect1.png" alt="Avatar">
+              </div>
+              <div class="comment-content">
+                <h4 class="comment-author">Trần Minh Tuấn</h4>
+                <p class="comment-text">Bài viết rất hay và chi tiết! Tôi đang có kế hoạch xây nhà trọn gói ở Hà Nội và
+                  thông tin này rất hữu ích. Trường Sinh có vẻ là đơn vị uy tín với kinh nghiệm lâu năm. Cảm ơn tác giả
+                  đã chia sẻ!</p>
+              </div>
             </div>
+
+            <div class="comment-item">
+              <div class="comment-avatar">
+                <img src="../assets/images/index_images/architect2.png" alt="Avatar">
+              </div>
+              <div class="comment-content">
+                <h4 class="comment-author">Lê Thị Hương</h4>
+                <p class="comment-text">Tôi đã từng sử dụng dịch vụ xây nhà trọn gói của Trường Sinh và rất hài lòng.
+                  Đội ngũ kỹ thuật chuyên nghiệp, tiến độ đúng hẹn và chất lượng công trình tốt. Khuyến nghị mọi người
+                  nên tham khảo!</p>
+              </div>
+            </div>
+
+            <div class="comment-item">
+              <div class="comment-avatar">
+                <img src="../assets/images/index_images/architect3.png" alt="Avatar">
+              </div>
+              <div class="comment-content">
+                <h4 class="comment-author">Phạm Đức Anh</h4>
+                <p class="comment-text">Bảng giá trong bài viết rất chi tiết và minh bạch. Tôi thích cách Trường Sinh
+                  chia nhỏ từng hạng mục chi phí, giúp khách hàng dễ dàng lên kế hoạch tài chính. Sẽ liên hệ để được tư
+                  vấn cụ thể hơn.</p>
+              </div>
+            </div>
+
+            <div class="comment-item">
+              <div class="comment-avatar">
+                <img src="../assets/images/index_images/architect4.png" alt="Avatar">
+              </div>
+              <div class="comment-content">
+                <h4 class="comment-author">Hoàng Thị Mai</h4>
+                <p class="comment-text">Quy trình 7 bước rất rõ ràng và chuyên nghiệp. Tôi đặc biệt ấn tượng với phần hỗ
+                  trợ xin phép xây dựng, vì đây là vấn đề nhiều người gặp khó khăn. Cảm ơn tác giả đã chia sẻ kinh
+                  nghiệm quý báu!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="comment-pagination">
+            <span class="page-number active">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
           </div>
         </div>
     </main>
@@ -286,6 +367,7 @@
   </button>
 
   <script src="../assets/js/detail_blog.js"></script>
+  <script src="../assets/js/navbar.js"></script>
 </body>
 
 </html>

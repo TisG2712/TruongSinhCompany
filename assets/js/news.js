@@ -63,17 +63,17 @@ function initScrollToTop() {
 }
 
 // ===========================================
-//   SECTION: PROJECT GALLERY - Phần dự án
+//   SECTION: NEWS GALLERY - Phần tin tức
 // ===========================================
 
 /**
- * Khởi tạo chức năng lọc dự án theo tab
- * - Click tab để lọc dự án theo danh mục
+ * Khởi tạo chức năng lọc tin tức theo tab
+ * - Click tab để lọc tin tức theo danh mục
  * - Hiệu ứng fade in khi chuyển đổi
  */
-function initProjectFilter() {
+function initNewsFilter() {
   const tabButtons = document.querySelectorAll(".filter-tab");
-  const projectCards = document.querySelectorAll(".project-item");
+  const newsItems = document.querySelectorAll(".news-item");
 
   tabButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -86,18 +86,144 @@ function initProjectFilter() {
       // Lấy giá trị filter
       const filter = this.getAttribute("data-filter");
 
-      // Lọc project cards
-      projectCards.forEach((card) => {
-        const category = card.getAttribute("data-category");
+      // Lọc news items
+      newsItems.forEach((item) => {
+        const category = item.getAttribute("data-category");
 
         if (filter === "all" || category === filter) {
-          card.style.display = "block";
-          card.style.animation = "fadeIn 0.5s ease-in-out";
+          item.classList.remove("hidden");
+          item.style.animation = "fadeIn 0.5s ease-in-out";
         } else {
-          card.style.display = "none";
+          item.classList.add("hidden");
         }
       });
     });
+  });
+}
+
+/**
+ * Khởi tạo chức năng Load More cho tin tức
+ * - Hiển thị thêm tin tức khi click nút
+ * - Ẩn nút khi đã load hết
+ */
+function initLoadMore() {
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const collapseBtn = document.getElementById("collapseBtn");
+  const hiddenNews = document.getElementById("hiddenNews");
+
+  if (!loadMoreBtn || !collapseBtn || !hiddenNews) return;
+
+  loadMoreBtn.addEventListener("click", function () {
+    // Hiển thị tin tức ẩn với animation
+    hiddenNews.style.display = "contents";
+    setTimeout(() => {
+      hiddenNews.classList.add("show");
+    }, 100);
+
+    // Ẩn nút load more, hiện nút rút gọn
+    loadMoreBtn.style.display = "none";
+    collapseBtn.style.display = "flex";
+
+    // Scroll đến phần tin tức mới
+    setTimeout(() => {
+      hiddenNews.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 600);
+  });
+
+  collapseBtn.addEventListener("click", function () {
+    // Ẩn tin tức với animation
+    hiddenNews.classList.remove("show");
+    setTimeout(() => {
+      hiddenNews.style.display = "none";
+    }, 500);
+
+    // Hiện nút load more, ẩn nút rút gọn
+    loadMoreBtn.style.display = "flex";
+    collapseBtn.style.display = "none";
+
+    // Scroll lên đầu phần tin tức
+    setTimeout(() => {
+      document.querySelector(".news-grid").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  });
+}
+
+/**
+ * Khởi tạo mobile dropdown filter
+ * - Toggle dropdown khi click
+ * - Lọc tin tức khi chọn option
+ * - Đóng dropdown khi click outside
+ */
+function initMobileFilter() {
+  const dropdownToggle = document.getElementById("filterDropdownToggle");
+  const dropdownMenu = document.getElementById("filterDropdownMenu");
+  const dropdownItems = document.querySelectorAll(".filter-dropdown-item");
+  const selectedText = document.querySelector(".selected-text");
+
+  if (!dropdownToggle || !dropdownMenu) return;
+
+  // Toggle dropdown
+  dropdownToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownToggle.classList.toggle("active");
+    dropdownMenu.classList.toggle("show");
+  });
+
+  // Handle dropdown item selection
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const filter = item.getAttribute("data-filter");
+      const text = item.textContent;
+
+      // Update selected text
+      selectedText.textContent = text;
+
+      // Update active state
+      dropdownItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+
+      // Filter news
+      const newsItems = document.querySelectorAll(".news-item");
+      newsItems.forEach((newsItem) => {
+        const category = newsItem.getAttribute("data-category");
+
+        if (filter === "all" || category === filter) {
+          newsItem.style.display = "block";
+          newsItem.classList.remove("hidden");
+          newsItem.style.animation = "fadeIn 0.5s ease-in-out";
+        } else {
+          newsItem.style.display = "none";
+          newsItem.classList.add("hidden");
+        }
+      });
+
+      // Close dropdown
+      dropdownToggle.classList.remove("active");
+      dropdownMenu.classList.remove("show");
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !dropdownToggle.contains(e.target) &&
+      !dropdownMenu.contains(e.target)
+    ) {
+      dropdownToggle.classList.remove("active");
+      dropdownMenu.classList.remove("show");
+    }
+  });
+
+  // Close dropdown on scroll
+  window.addEventListener("scroll", () => {
+    dropdownToggle.classList.remove("active");
+    dropdownMenu.classList.remove("show");
   });
 }
 
@@ -107,11 +233,13 @@ function initProjectFilter() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load các component chung với đường dẫn tuyệt đối để tránh lỗi 404
-  loadComponent("header", "/components/header.html");
-  loadComponent("navbar", "/components/navbar.html");
-  loadComponent("footer", "/components/footer.html");
+  loadComponent("header", "../components/header.html");
+  loadComponent("navbar", "../components/navbar.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
-  initProjectFilter(); // Chức năng lọc dự án
+  initNewsFilter(); // Chức năng lọc tin tức
+  initLoadMore(); // Chức năng load more
+  initMobileFilter(); // Chức năng mobile filter dropdown
 });

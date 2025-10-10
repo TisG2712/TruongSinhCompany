@@ -331,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initSmoothScroll();
   initLazyLoading();
   initTemplatesTabs();
-  initPriceQuoteForm();
 
   // Initialize sliders after a short delay to ensure DOM is ready
   setTimeout(() => {
@@ -352,93 +351,5 @@ if (typeof module !== "undefined" && module.exports) {
     initSmoothScroll,
     initLazyLoading,
     initTemplatesTabs,
-    initPriceQuoteForm,
   };
-}
-
-// ===========================================
-//   PRICE QUOTE FORM - Form báo giá
-// ===========================================
-
-/**
- * Khởi tạo form báo giá
- * - Xử lý submit form
- * - Validation dữ liệu
- * - Gửi thông tin đến server
- */
-function initPriceQuoteForm() {
-  const quoteForm = document.getElementById("quoteForm");
-
-  if (!quoteForm) return;
-
-  quoteForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Lấy dữ liệu form
-    const formData = new FormData(quoteForm);
-    const data = Object.fromEntries(formData.entries());
-
-    // Lấy các dịch vụ được chọn
-    const services = Array.from(
-      document.querySelectorAll('input[name="services"]:checked')
-    ).map((input) => input.value);
-
-    // Validation cơ bản
-    if (
-      !data.fullName ||
-      !data.phone ||
-      !data.projectType ||
-      !data.area ||
-      !data.floors ||
-      !data.location
-    ) {
-      alert("Vui lòng điền đầy đủ các trường bắt buộc (*)");
-      return;
-    }
-
-    // Thêm services vào data
-    data.services = services;
-
-    // Hiển thị loading
-    const submitBtn = quoteForm.querySelector(".btn-submit-quote");
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML =
-      '<i class="ri-loader-4-line"></i><span>Đang gửi...</span>';
-    submitBtn.disabled = true;
-
-    // Simulate gửi dữ liệu (thay thế bằng API call thực tế)
-    setTimeout(() => {
-      console.log("Dữ liệu báo giá:", data);
-
-      // Hiển thị thông báo thành công
-      alert(
-        "Cảm ơn bạn đã gửi yêu cầu báo giá! Chúng tôi sẽ liên hệ lại trong vòng 24h."
-      );
-
-      // Reset form
-      quoteForm.reset();
-
-      // Khôi phục button
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-
-      // Scroll to top
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }, 2000);
-  });
-
-  // Thêm hiệu ứng cho các input khi focus
-  const inputs = quoteForm.querySelectorAll("input, select, textarea");
-  inputs.forEach((input) => {
-    input.addEventListener("focus", function () {
-      this.parentElement.classList.add("focused");
-    });
-
-    input.addEventListener("blur", function () {
-      this.parentElement.classList.remove("focused");
-    });
-  });
 }

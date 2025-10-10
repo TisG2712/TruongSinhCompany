@@ -141,17 +141,42 @@ function initRecruitmentTOC() {
   }
 }
 
+/**
+ * Khởi tạo chức năng toggle cho mục lục
+ * - Click vào title hoặc icon để ẩn/hiện danh sách
+ * - Animation mượt mà với arrow rotation
+ */
+function initTocToggle() {
+  const tocToggle = document.getElementById("recruitmentTocToggle");
+  const tocList = document.getElementById("recruitmentTocList");
+
+  if (!tocToggle || !tocList) return;
+
+  tocToggle.addEventListener("click", function () {
+    // Toggle class collapsed
+    tocToggle.classList.toggle("collapsed");
+
+    // Toggle hiển thị danh sách
+    if (tocToggle.classList.contains("collapsed")) {
+      tocList.style.display = "none";
+    } else {
+      tocList.style.display = "block";
+    }
+  });
+}
+
 // ===========================================
 //   INITIALIZATION - Khởi tạo khi DOM ready
 // ===========================================
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load các component chung với đường dẫn tuyệt đối để tránh lỗi 404
-  loadComponent("header", "/components/header.html");
-  loadComponent("navbar", "/components/navbar.html");
-  loadComponent("footer", "/components/footer.html");
+  loadComponent("header", "../components/header.html");
+  loadComponent("navbar", "../components/navbar.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
   initRecruitmentTOC(); // Chức năng mục lục và smooth scroll
+  initTocToggle(); // Chức năng toggle mục lục
 });

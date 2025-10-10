@@ -190,3 +190,81 @@
   height: 200px;
   border: none;
 }
+
+/* ===========================
+   Footer Responsive
+   =========================== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 30px 0;
+    overflow-x: hidden;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 15px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  /* Company description responsive */
+  .company-description span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Contact info responsive */
+  .contact-info {
+    gap: 12px;
+  }
+
+  .contact-item {
+    gap: 8px;
+  }
+
+  .contact-item i {
+    font-size: 1rem;
+  }
+
+  .contact-item span {
+    font-size: 0.85rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Services list responsive */
+  .services-list-footer li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  /* Social icons responsive */
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-icon i {
+    font-size: 1rem;
+  }
+
+  /* Map responsive */
+  .map-container iframe {
+    height: 150px;
+  }
+}
