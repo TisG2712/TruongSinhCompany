@@ -3,7 +3,7 @@
 /* Mobile styles */
 @media (max-width: 768px) {
     .main-content {
-        padding: 45px 0 50px 0;
+        padding: 70px 0 50px 0;
     }
 
     .project-title {
@@ -23,9 +23,22 @@
         height: 60px;
     }
 
+    .project-header {
+        margin-bottom: 30px;
+    }
+
+    .project-code,
+    .project-category-type {
+        font-size: 0.9rem;
+    }
+
+    .project-gallery {
+        margin-bottom: 30px;
+    }
+
     .project-info-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 
     .project-overview {
@@ -79,6 +92,12 @@
         gap: 20px;
     }
 
+    .related-project-card {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
     .related-project-card .project-image {
         height: 150px;
     }
@@ -88,7 +107,13 @@
     }
 
     .cta-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .cta-content p {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
     }
 
     .cta-buttons {

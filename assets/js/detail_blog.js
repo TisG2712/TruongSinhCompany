@@ -213,6 +213,163 @@ function initCommentForm() {
 }
 
 // ===========================================
+//   RATING POPUP FUNCTIONS - Chức năng popup đánh giá
+// ===========================================
+
+function initRatingPopup() {
+  const ratingPopup = document.getElementById("ratingPopup");
+  const closeRatingPopup = document.getElementById("closeRatingPopup");
+  const submitRating = document.getElementById("submitRating");
+  const stars = document.querySelectorAll(".rating-stars-select i");
+  const feedback = document.querySelector(".rating-feedback");
+  const commentSubmitBtn = document.querySelector(".comment-submit-btn");
+
+  let selectedRating = 0;
+
+  // Mở popup khi bấm "Đăng bình luận"
+  if (commentSubmitBtn) {
+    commentSubmitBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Kiểm tra form có đầy đủ thông tin không
+      const commentText = document.getElementById("commentText").value.trim();
+      const commentName = document.getElementById("commentName").value.trim();
+      const commentEmail = document.getElementById("commentEmail").value.trim();
+
+      if (commentText && commentName && commentEmail) {
+        showRatingPopup();
+      } else {
+        alert("Vui lòng điền đầy đủ thông tin trước khi đánh giá!");
+      }
+    });
+  }
+
+  // Đóng popup
+  if (closeRatingPopup) {
+    closeRatingPopup.addEventListener("click", hideRatingPopup);
+  }
+
+  // Đóng popup khi click bên ngoài
+  if (ratingPopup) {
+    ratingPopup.addEventListener("click", function (e) {
+      if (e.target === ratingPopup) {
+        hideRatingPopup();
+      }
+    });
+  }
+
+  // Xử lý chọn sao
+  stars.forEach((star, index) => {
+    star.addEventListener("click", function () {
+      selectedRating = index + 1;
+      updateStarsDisplay();
+      updateFeedback();
+      updateSubmitButton();
+    });
+
+    star.addEventListener("mouseenter", function () {
+      highlightStars(index + 1);
+    });
+  });
+
+  // Reset khi hover ra khỏi container
+  document
+    .querySelector(".rating-stars-select")
+    .addEventListener("mouseleave", function () {
+      updateStarsDisplay();
+    });
+
+  // Gửi đánh giá
+  if (submitRating) {
+    submitRating.addEventListener("click", function () {
+      if (selectedRating > 0) {
+        submitRatingData();
+      }
+    });
+  }
+
+  function showRatingPopup() {
+    ratingPopup.classList.add("show");
+    document.body.style.overflow = "hidden";
+    resetRating();
+  }
+
+  function hideRatingPopup() {
+    ratingPopup.classList.remove("show");
+    document.body.style.overflow = "";
+    resetRating();
+  }
+
+  function resetRating() {
+    selectedRating = 0;
+    updateStarsDisplay();
+    updateFeedback();
+    updateSubmitButton();
+  }
+
+  function updateStarsDisplay() {
+    stars.forEach((star, index) => {
+      if (index < selectedRating) {
+        star.classList.add("active");
+        star.classList.remove("ri-star-line");
+        star.classList.add("ri-star-fill");
+      } else {
+        star.classList.remove("active");
+        star.classList.remove("ri-star-fill");
+        star.classList.add("ri-star-line");
+      }
+    });
+  }
+
+  function highlightStars(rating) {
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.style.color = "#ffc107";
+      } else {
+        star.style.color = "#ddd";
+      }
+    });
+  }
+
+  function updateFeedback() {
+    const feedbacks = [
+      "Vui lòng chọn mức độ đánh giá",
+      "Rất tệ",
+      "Tệ",
+      "Bình thường",
+      "Tốt",
+      "Rất tốt",
+    ];
+    feedback.textContent = feedbacks[selectedRating];
+  }
+
+  function updateSubmitButton() {
+    if (selectedRating > 0) {
+      submitRating.disabled = false;
+    } else {
+      submitRating.disabled = true;
+    }
+  }
+
+  function submitRatingData() {
+    // Hiển thị thông báo thành công
+    feedback.textContent = `Cảm ơn bạn đã đánh giá ${selectedRating} sao!`;
+    feedback.style.color = "#28a745";
+
+    // Disable nút submit
+    submitRating.disabled = true;
+    submitRating.textContent = "Đã gửi đánh giá";
+
+    // Đóng popup sau 2 giây
+    setTimeout(() => {
+      hideRatingPopup();
+      // Có thể thêm logic gửi dữ liệu lên server ở đây
+      console.log("Rating submitted:", selectedRating);
+    }, 2000);
+  }
+}
+
+// ===========================================
 //   INITIALIZATION - Khởi tạo khi DOM ready
 // ===========================================
 
@@ -227,4 +384,5 @@ document.addEventListener("DOMContentLoaded", function () {
   initBlogTOC(); // Chức năng mục lục blog và smooth scroll
   initBlogTocToggle(); // Chức năng toggle mục lục blog
   initCommentForm(); // Chức năng form bình luận
+  initRatingPopup(); // Chức năng popup đánh giá sao
 });

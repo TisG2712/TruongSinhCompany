@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/ui/header.css" />
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+  <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
   <link rel="stylesheet" href="../assets/css/project.css" />
   <link rel="stylesheet" href="../assets/css/responsive/project_responsive.css" />
 </head>
@@ -57,18 +58,12 @@
 
             <!-- Filter Tabs Mobile -->
             <div class="filter-tabs-mobile">
-              <div class="filter-dropdown">
-                <button class="filter-dropdown-toggle" id="projectFilterDropdownToggle">
-                  <span class="selected-text">Tất cả</span>
-                  <i class="ri-arrow-down-s-line dropdown-arrow"></i>
-                </button>
-                <div class="filter-dropdown-menu" id="projectFilterDropdownMenu">
-                  <div class="filter-dropdown-item active" data-filter="all">Tất cả</div>
-                  <div class="filter-dropdown-item" data-filter="xay-nha">Xây nhà trọn gói</div>
-                  <div class="filter-dropdown-item" data-filter="sua-nha">Sửa nhà trọn gói</div>
-                  <div class="filter-dropdown-item" data-filter="thiet-ke">Thiết kế nội thất</div>
-                  <div class="filter-dropdown-item" data-filter="khac">Khác</div>
-                </div>
+              <div class="filter-tabs-scroll">
+                <button class="filter-tab active" data-filter="all">Tất cả</button>
+                <button class="filter-tab" data-filter="xay-nha">Xây nhà trọn gói</button>
+                <button class="filter-tab" data-filter="sua-nha">Sửa nhà trọn gói</button>
+                <button class="filter-tab" data-filter="thiet-ke">Thiết kế nội thất</button>
+                <button class="filter-tab" data-filter="khac">Khác</button>
               </div>
             </div>
 
@@ -134,59 +129,64 @@
                 </div>
               </a>
 
-              <!-- Hidden Projects -->
-              <div class="hidden-projects" id="hiddenProjects">
-                <a href="project_special.html" class="project-item" data-category="xay-nha">
-                  <div class="project-image">
-                    <img src="../assets/images/projects_images/download (37).png" alt="Nhà phố 4 tầng tại Bắc Ninh" />
-                  </div>
-                  <div class="project-info">
-                    <h3>Nhà phố 4 tầng tại Bắc Ninh</h3>
-                  </div>
-                </a>
+              <a href="project_special.html" class="project-item" data-category="xay-nha">
+                <div class="project-image">
+                  <img src="../assets/images/projects_images/download (37).png" alt="Nhà phố 4 tầng tại Bắc Ninh" />
+                </div>
+                <div class="project-info">
+                  <h3>Nhà phố 4 tầng tại Bắc Ninh</h3>
+                </div>
+              </a>
 
-                <a href="project_special.html" class="project-item" data-category="thiet-ke">
-                  <div class="project-image">
-                    <img src="../assets/images/projects_images/download (38).png"
-                      alt="Thiết kế nội thất phòng ngủ hiện đại" />
-                  </div>
-                  <div class="project-info">
-                    <h3>Thiết kế nội thất phòng ngủ hiện đại</h3>
-                  </div>
-                </a>
+              <a href="project_special.html" class="project-item" data-category="thiet-ke">
+                <div class="project-image">
+                  <img src="../assets/images/projects_images/download (38).png"
+                    alt="Thiết kế nội thất phòng ngủ hiện đại" />
+                </div>
+                <div class="project-info">
+                  <h3>Thiết kế nội thất phòng ngủ hiện đại</h3>
+                </div>
+              </a>
 
-                <a href="project_special.html" class="project-item" data-category="sua-nha">
-                  <div class="project-image">
-                    <img src="../assets/images/projects_images/download (39).png"
-                      alt="Cải tạo nhà cũ thành quán cafe" />
-                  </div>
-                  <div class="project-info">
-                    <h3>Cải tạo nhà cũ thành quán cafe</h3>
-                  </div>
-                </a>
+              <a href="project_special.html" class="project-item" data-category="sua-nha">
+                <div class="project-image">
+                  <img src="../assets/images/projects_images/download (39).png" alt="Cải tạo nhà cũ thành quán cafe" />
+                </div>
+                <div class="project-info">
+                  <h3>Cải tạo nhà cũ thành quán cafe</h3>
+                </div>
+              </a>
 
-                <a href="project_special.html" class="project-item" data-category="khac">
-                  <div class="project-image">
-                    <img src="../assets/images/projects_images/download (40).png"
-                      alt="Dự án khu đô thị mới tại Nam Định" />
-                  </div>
-                  <div class="project-info">
-                    <h3>Dự án khu đô thị mới tại Nam Định</h3>
-                  </div>
-                </a>
-              </div>
+              <a href="project_special.html" class="project-item" data-category="khac">
+                <div class="project-image">
+                  <img src="../assets/images/projects_images/download (40).png"
+                    alt="Dự án khu đô thị mới tại Nam Định" />
+                </div>
+                <div class="project-info">
+                  <h3>Dự án khu đô thị mới tại Nam Định</h3>
+                </div>
+              </a>
             </div>
 
-            <!-- Load More Button -->
-            <div class="load-more-container">
-              <button class="load-more-btn" id="loadMoreBtn">
-                <i class="ri-add-line"></i>
-                <span>Xem thêm dự án</span>
-              </button>
-              <button class="collapse-btn" id="collapseBtn" style="display: none;">
-                <i class="ri-arrow-up-line"></i>
-                <span>Rút gọn</span>
-              </button>
+            <!-- Pagination -->
+            <div class="pagination-container">
+              <div class="pagination">
+                <button class="pagination-btn prev-btn" id="prevBtn" disabled>
+                  <i class="ri-arrow-left-s-line"></i>
+                </button>
+
+                <div class="pagination-numbers">
+                  <button class="pagination-number active" data-page="1">1</button>
+                  <button class="pagination-number" data-page="2">2</button>
+                  <button class="pagination-number" data-page="3">3</button>
+                  <span class="pagination-dots">...</span>
+                  <button class="pagination-number" data-page="5">5</button>
+                </div>
+
+                <button class="pagination-btn next-btn" id="nextBtn">
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -200,8 +200,13 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- Floating Sidebar -->
+  <div id="floating-sidebar-container"></div>
+
+
   <script src="../assets/js/project.js"></script>
   <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

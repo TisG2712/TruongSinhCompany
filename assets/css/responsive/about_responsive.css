@@ -6,21 +6,30 @@
     .company-overview-section {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 25px;
+    }
+
+    .company-text-content {
+        order: 2;
+    }
+
+    .company-images-section {
+        order: 1;
     }
 
     .section-title {
         font-size: 1.4rem;
         line-height: 1.2;
         text-align: center;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
         text-transform: uppercase;
     }
 
     .section-content p {
         font-size: 0.9rem;
         letter-spacing: 0;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 
     .company-intro-list li,
@@ -32,12 +41,13 @@
     }
 
     .company-images-section {
-        height: 480px;
+        height: 470px;
+        margin-bottom: 40px;
     }
 
     .image-grid {
         gap: 15px;
-        max-height: 400px;
+        max-height: 500px;
     }
 
     .image-column-left {
@@ -48,30 +58,44 @@
         gap: 15px;
     }
 
-    .about-content-box {
-        margin-bottom: 0;
+    .image-item {
+        aspect-ratio: 4/5;
+        transform: translateY(30px);
+        /* Giảm khoảng cách di chuyển trên mobile */
+    }
 
+    .image-item.fade-in-visible {
+        transform: translateY(0);
+    }
+
+    .about-content-box {
+        margin-bottom: 30px;
     }
 
     .company-text-content {
         padding-right: 0;
     }
 
+    .company-intro-section,
+    .mission-section {
+        margin-bottom: 25px;
+    }
+
     .company-intro-section:last-child,
     .mission-section:last-child {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .vision-section,
     .philosophy-section {
         padding: 0;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .company-intro-list,
     .mission-list,
     .vision-list {
-        margin: 5px;
+        margin: 10px 0;
     }
 
     .awards-grid {
@@ -91,20 +115,23 @@
 
     .contact-form .container {
         padding: 0px;
-        height: 400px;
+        height: auto;
+        min-height: 500px;
     }
 
     .contact-form-container {
         padding: 10px;
-
+        height: auto;
     }
 
     .contact-form {
         padding: 50px 0 30px 0;
     }
 
+
     .contact-content {
-        height: 400px;
+        height: auto;
+        min-height: 500px;
     }
 
     .contact-visual {

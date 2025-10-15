@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/ui/header.css" />
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+  <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
   <link rel="stylesheet" href="../assets/css/about.css" />
   <link rel="stylesheet" href="../assets/css/responsive/about_responsive.css" />
 </head>
@@ -195,6 +196,14 @@
                     </div>
 
                     <div class="form-group">
+                      <input type="text" id="address" name="address" placeholder="Địa chỉ" required>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="email" id="email" name="email" placeholder="Email (không bắt buộc)">
+                    </div>
+
+                    <div class="form-group">
                       <textarea id="content" name="content" placeholder="Nội dung" rows="4" required></textarea>
                     </div>
 
@@ -214,8 +223,13 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- Floating Sidebar -->
+  <div id="floating-sidebar-container"></div>
+
+
   <script src="../assets/js/about.js"></script>
   <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

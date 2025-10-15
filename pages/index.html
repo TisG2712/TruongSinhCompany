@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/ui/header.css" />
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+  <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
   <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="../assets/css/responsive/index_responsive.css" />
 </head>
@@ -27,9 +28,43 @@
     <div id="navbar-placeholder"></div>
     <!-- Main Content -->
     <main>
-      <div class="slider-image">
-        <img src="../public/images/picture_back.jpeg" alt="Background Image" />
-        <div class="slider-text-overlay">
+      <div class="header-slider">
+        <div class="header-slider-container">
+          <div class="header-slider-wrapper">
+            <div class="header-slide active">
+              <img src="../public/images/slider_1.png" alt="Slider Image 1" />
+            </div>
+            <div class="header-slide">
+              <img src="../public/images/slider_6.png" alt="Slider Image 2" />
+            </div>
+            <div class="header-slide">
+              <img src="../public/images/slider_3.png" alt="Slider Image 3" />
+            </div>
+            <div class="header-slide">
+              <img src="../public/images/slider_4.png" alt="Slider Image 4" />
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="header-slider-controls">
+            <button class="header-slider-btn header-slider-prev" id="header-slider-prev">
+              <i class="ri-arrow-left-line"></i>
+            </button>
+
+            <div class="header-slider-dots">
+              <span class="header-dot active" data-slide="0"></span>
+              <span class="header-dot" data-slide="1"></span>
+              <span class="header-dot" data-slide="2"></span>
+              <span class="header-dot" data-slide="3"></span>
+            </div>
+
+            <button class="header-slider-btn header-slider-next" id="header-slider-next">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="header-slider-text-overlay">
           <p>Tận tâm - Uy tín - Chất lượng</p>
           <h2>Kiến tạo không gian sống</h2>
           <a href="tel:0975258999" class="btn-advisory">
@@ -59,7 +94,9 @@
               </div>
               <div class="about-philosophy">
                 <ul class="values-list">
-                  <li>Phương châm làm việc: <strong>"XÂY DỰNG TỪ TÂM - NÂNG TẦM ĐẲNG CẤP".</strong></li>
+                  <li>Phương châm làm việc của Công ty TNHH tư vấn xây dựng và thương mại Trường Sinh: <strong>"XÂY DỰNG
+                      TỪ TÂM - NÂNG TẦM ĐẲNG
+                      CẤP".</strong></li>
                   <li>Chúng tôi luôn lấy <strong>"CHỮ TÍN + CHỮ TÂM"</strong> đặt lên hàng đầu.</li>
                   <li>
                     <strong>Thương hiệu Trường Sinh</strong> được khẳng định thông qua những công trình và những sản
@@ -385,14 +422,24 @@
             <h2 class="project-title">DỰ ÁN CỦA CHÚNG TÔI</h2>
           </div>
 
+          <!-- Desktop Tabs -->
           <div class="project-tabs">
             <button class="tab-btn active" data-filter="all">Tất cả</button>
             <button class="tab-btn" data-filter="completed">Đã hoàn thành</button>
             <button class="tab-btn" data-filter="construction">Đang thi công</button>
           </div>
 
+          <!-- Mobile Horizontal Scroll Tabs -->
+          <div class="project-tabs-mobile">
+            <div class="project-tabs-scroll">
+              <button class="tab-btn active" data-filter="all">Tất cả</button>
+              <button class="tab-btn" data-filter="completed">Đã hoàn thành</button>
+              <button class="tab-btn" data-filter="construction">Đang thi công</button>
+            </div>
+          </div>
+
           <div class="project-grid">
-            <a href="project_special.html" class="project-card" data-category="completed">
+            <a href="project_special.html" class="project-card project-card-visible" data-category="completed">
               <div class="project-image">
                 <img src="../assets/images/index_images/project1.png" alt="Dự án 1">
               </div>
@@ -401,7 +448,7 @@
               </div>
             </a>
 
-            <a href="project_special.html" class="project-card" data-category="completed">
+            <a href="project_special.html" class="project-card project-card-visible" data-category="completed">
               <div class="project-image">
                 <img src="../assets/images/index_images/project2.png" alt="Dự án 2">
               </div>
@@ -410,7 +457,7 @@
               </div>
             </a>
 
-            <a href="project_special.html" class="project-card" data-category="construction">
+            <a href="project_special.html" class="project-card project-card-visible" data-category="construction">
               <div class="project-image">
                 <img src="../assets/images/index_images/project3.png" alt="Dự án 3">
               </div>
@@ -419,7 +466,7 @@
               </div>
             </a>
 
-            <a href="project_special.html" class="project-card" data-category="completed">
+            <a href="project_special.html" class="project-card project-card-hidden" data-category="completed">
               <div class="project-image">
                 <img src="../assets/images/index_images/project4.png" alt="Dự án 4">
               </div>
@@ -428,7 +475,7 @@
               </div>
             </a>
 
-            <a href="project_special.html" class="project-card" data-category="construction">
+            <a href="project_special.html" class="project-card project-card-hidden" data-category="construction">
               <div class="project-image">
                 <img src="../assets/images/index_images/project5.png" alt="Dự án 5">
               </div>
@@ -437,7 +484,7 @@
               </div>
             </a>
 
-            <a href="project_special.html" class="project-card" data-category="construction">
+            <a href="project_special.html" class="project-card project-card-hidden" data-category="construction">
               <div class="project-image">
                 <img src="../assets/images/index_images/project6.png" alt="Dự án 6">
               </div>
@@ -445,6 +492,100 @@
                 <h3>Nhà hàng cao cấp Quận 1</h3>
               </div>
             </a>
+          </div>
+
+          <!-- View More Button -->
+          <div class="project-view-more" style="display: block !important; margin: 20px 0;">
+            <button class="view-more-btn" id="projectViewMoreBtn"
+              style="display: inline-flex !important; background: #ff6b35; color: white; padding: 12px 24px; border: none; border-radius: 25px;">
+              <span class="view-more-text">Xem thêm</span>
+              <i class="ri-arrow-down-s-line view-more-icon"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Press Section -->
+      <section id="press-section" class="press-section">
+        <div class="container">
+          <div class="press-header">
+            <h2>BÁO CHÍ NÓI GÌ VỀ TRƯỜNG SINH GROUP</h2>
+          </div>
+
+          <div class="press-slider">
+            <div class="slider-container">
+              <!-- Navigation Buttons -->
+              <button class="slider-btn slider-btn-prev" id="pressPrev">
+                <i class="ri-arrow-left-s-line"></i>
+              </button>
+              <button class="slider-btn slider-btn-next" id="pressNext">
+                <i class="ri-arrow-right-s-line"></i>
+              </button>
+
+              <div class="slider-track" id="press-slider-track">
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/PTd_4FQRcBQ?si=VkrmmJsbaCyB57Ah" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>[Kênh VTC2 góc nhìn người tiêu dùng] Dịch vụ thiết kế & xây dựng nhà trọn gói uy tín tại Trường
+                      Sinh</p>
+                  </div>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/M3uVSHreInQ?si=FZnVaGBTlxUDuNDN" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>[VTC2] Dịch vụ xây dựng trọn gói Trường Sinh</p>
+                  </div>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/e4fgphXCMqk?si=7X3BP7_yw3w9aj5t" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>Công tác thi công hoàn thiện móng Dự án thiết kế & xây nhà trọn gói tại phố Hoa của Trường Sinh
+                    </p>
+                  </div>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/MP0NC4cSvek?si=1p2vuUpG3SSKYTcx" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>Giới thiệu chất lượng dịch vụ xây thô của Xây Dựng Trường Sinh</p>
+                  </div>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/Azg_aznmHM4?si=S27fP0a2K89-Hlm" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>Trường Sinh bàn giao công trình Dự án xây nhà trọn gói tại Hưng Yên Năm 2023</p>
+                  </div>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/e4fgphXCMqk?si=7X3BP7_yw3w9aj5t" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="video-info">
+                    <p>Báo Zing News đưa tin về các dự án nhà phố thương mại của Trường Sinh Group</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -631,6 +772,14 @@
                   </div>
 
                   <div class="form-group">
+                    <input type="text" id="address" name="address" placeholder="Địa chỉ" required>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email (không bắt buộc)">
+                  </div>
+
+                  <div class="form-group">
                     <textarea id="content" name="content" placeholder="Nội dung" rows="4" required></textarea>
                   </div>
 
@@ -649,27 +798,25 @@
             <h2 class="blog-title">CHIA SẺ KIẾN THỨC</h2>
 
             <div class="blog-categories">
-              <!-- Mobile Dropdown -->
+              <!-- Mobile Horizontal Scroll Tabs -->
               <div class="filter-tabs-mobile">
-                <div class="filter-dropdown">
-                  <button class="filter-dropdown-toggle" id="categoryDropdown">
-                    <span class="selected-text">Tin tức</span>
-                    <i class="ri-arrow-down-s-line dropdown-arrow"></i>
-                  </button>
-                  <div class="filter-dropdown-menu" id="categoryMenu">
-                    <div class="filter-dropdown-item active" data-category="all">Tin tức</div>
-                    <div class="filter-dropdown-item" data-category="kinh-nghiem-xay-dung">Kinh nghiệm xây dựng</div>
-                    <div class="filter-dropdown-item" data-category="phong-thuy">Phong thủy</div>
-                    <div class="filter-dropdown-item" data-category="kien-truc">Kiến trúc</div>
-                  </div>
+                <div class="filter-tabs-scroll">
+                  <button class="category-btn active" data-category="all">Tin tức</button>
+                  <button class="category-btn" data-category="xay-nha-tron-goi">Xây nhà trọn gói</button>
+                  <button class="category-btn" data-category="sua-nha-tron-goi">Sửa nhà trọn gói</button>
+                  <button class="category-btn" data-category="thiet-ke-nha">Thiết kế nhà</button>
+                  <button class="category-btn" data-category="phong-thuy">Phong thủy</button>
+                  <button class="category-btn" data-category="khac">Khác</button>
                 </div>
               </div>
               <!-- Desktop buttons (hidden on mobile) -->
               <div class="desktop-categories">
                 <button class="category-btn active" data-category="all">Tin tức</button>
-                <button class="category-btn" data-category="kinh-nghiem-xay-dung">Kinh nghiệm xây dựng</button>
+                <button class="category-btn" data-category="xay-nha-tron-goi">Xây nhà trọn gói</button>
+                <button class="category-btn" data-category="sua-nha-tron-goi">Sửa nhà trọn gói</button>
+                <button class="category-btn" data-category="thiet-ke-nha">Thiết kế nhà</button>
                 <button class="category-btn" data-category="phong-thuy">Phong thủy</button>
-                <button class="category-btn" data-category="kien-truc">Kiến trúc</button>
+                <button class="category-btn" data-category="khac">Khác</button>
               </div>
             </div>
           </div>
@@ -677,64 +824,70 @@
           <div class="blog-content">
             <!-- Left Column - Featured Post -->
             <div class="featured-post">
-              <div class="post-card featured">
+              <a href="detail_blog1.html" class="post-card featured">
                 <div class="post-image">
                   <img src="../assets/images/index_images/worker_1.png" alt="Featured Post">
                 </div>
                 <div class="post-content">
-                  <h3 class="post-title">THIẾT KẾ NỘI THẤT BIỆT THỰ</h3>
-                  <p class="post-excerpt">Khám phá những xu hướng thiết kế nội thất mới nhất cho biệt thự cao cấp. Từ
-                    phong cách hiện đại đến cổ điển, chúng tôi mang đến những giải pháp thiết kế độc đáo và sang trọng.
+                  <h3 class="post-title">Xây nhà trọn gói - Giải pháp hoàn hảo</h3>
+                  <p class="post-excerpt">Dịch vụ xây nhà trọn gói từ A-Z với cam kết chất lượng, tiến độ và chi phí
+                    minh bạch.
+                    Từ thiết kế đến hoàn thiện, chúng tôi đồng hành cùng bạn trong suốt quá trình xây dựng ngôi nhà mơ
+                    ước.
                   </p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Right Column - Recent Posts -->
             <div class="recent-posts">
-              <div class="post-card">
+              <a href="detail_blog1.html" class="post-card">
                 <div class="post-image">
                   <img src="../assets/images/index_images/worker_2.png" alt="Post 1">
                 </div>
                 <div class="post-content">
-                  <h3 class="post-title">HOÀN THIỆN BIỆT THỰ</h3>
-                  <p class="post-excerpt">Quy trình hoàn thiện biệt thự từ A-Z với những bước quan trọng và lưu ý cần
-                    thiết để có được ngôi nhà hoàn hảo.</p>
+                  <h3 class="post-title">Sửa nhà trọn gói - Cải tạo toàn diện</h3>
+                  <p class="post-excerpt">Dịch vụ sửa nhà trọn gói chuyên nghiệp, cải tạo toàn diện từ kết cấu đến nội
+                    thất.
+                    Biến ngôi nhà cũ thành không gian sống hiện đại, tiện nghi và đẹp mắt.</p>
                 </div>
-              </div>
+              </a>
 
-              <div class="post-card">
+              <a href="detail_blog1.html" class="post-card">
                 <div class="post-image">
                   <img src="../assets/images/index_images/worker_3.png" alt="Post 2">
                 </div>
                 <div class="post-content">
-                  <h3 class="post-title">THIẾT KẾ NỘI THẤT</h3>
-                  <p class="post-excerpt">Những xu hướng thiết kế nội thất hot nhất 2024, giúp không gian sống trở nên
-                    hiện đại và tiện nghi hơn.</p>
+                  <h3 class="post-title">Thiết kế nhà - Kiến trúc hiện đại</h3>
+                  <p class="post-excerpt">Dịch vụ thiết kế nhà chuyên nghiệp với những mẫu kiến trúc hiện đại, tối ưu
+                    không gian
+                    và phù hợp với phong thủy. Tạo nên ngôi nhà đẹp, tiện nghi và bền vững.</p>
                 </div>
-              </div>
+              </a>
 
-              <div class="post-card">
+              <a href="detail_blog1.html" class="post-card">
                 <div class="post-image">
                   <img src="../assets/images/index_images/worker_4.png" alt="Post 3">
                 </div>
                 <div class="post-content">
-                  <h3 class="post-title">XÂY DỰNG NHÀ PHỐ</h3>
-                  <p class="post-excerpt">Kinh nghiệm xây dựng nhà phố tiết kiệm chi phí mà vẫn đảm bảo chất lượng và
-                    thẩm mỹ cao nhất.</p>
+                  <h3 class="post-title">Quy trình xây nhà trọn gói</h3>
+                  <p class="post-excerpt">Tìm hiểu quy trình xây nhà trọn gói từ khảo sát, thiết kế, thi công đến hoàn
+                    thiện.
+                    Những bước quan trọng và lưu ý cần thiết để có ngôi nhà hoàn hảo.</p>
                 </div>
-              </div>
+              </a>
 
-              <div class="post-card">
+              <a href="detail_blog1.html" class="post-card">
                 <div class="post-image">
                   <img src="../assets/images/index_images/worker_5.png" alt="Post 4">
                 </div>
                 <div class="post-content">
-                  <h3 class="post-title">SỬA CHỮA NHÀ CŨ</h3>
-                  <p class="post-excerpt">Cách cải tạo nhà cũ thành không gian mới hiện đại, nâng cấp toàn diện với chi
-                    phí hợp lý nhất.</p>
+                  <h3 class="post-title">Lợi ích sửa nhà trọn gói</h3>
+                  <p class="post-excerpt">Khám phá những lợi ích vượt trội của dịch vụ sửa nhà trọn gói: tiết kiệm thời
+                    gian,
+                    chi phí hợp lý, đảm bảo chất lượng và có bảo hành dài hạn.</p>
                 </div>
-              </div>
+              </a>
 
             </div>
           </div>
@@ -754,8 +907,70 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- Lightbox Modal for About Visual Images -->
+  <div id="aboutLightbox" class="lightbox-modal">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightboxClose">
+        <i class="ri-close-line"></i>
+      </button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+      <div class="lightbox-image-container">
+        <img id="lightboxImage" src="" alt="About Visual Image">
+      </div>
+      <div class="lightbox-counter">
+        <span id="lightboxCurrent">1</span> / <span id="lightboxTotal">4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Header Slider Images -->
+  <div id="headerSliderLightbox" class="lightbox-modal">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="headerSliderLightboxClose">
+        <i class="ri-close-line"></i>
+      </button>
+      <button class="lightbox-nav lightbox-prev" id="headerSliderLightboxPrev">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" id="headerSliderLightboxNext">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+      <div class="lightbox-image-container">
+        <img id="headerSliderLightboxImage" src="" alt="Header Slider Image">
+      </div>
+      <div class="lightbox-counter">
+        <span id="headerSliderLightboxCurrent">1</span> / <span id="headerSliderLightboxTotal">4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal for Press and Feedback Videos -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-overlay"></div>
+    <div class="video-container">
+      <button class="video-close" id="videoClose">
+        <i class="ri-close-line"></i>
+      </button>
+      <div class="video-player-container">
+        <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Sidebar -->
+  <div id="floating-sidebar-container"></div>
+
+
   <script src="../assets/js/index.js"></script>
   <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/floating-sidebar.js"></script>
 
 </body>
 

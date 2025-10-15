@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../assets/css/ui/header.css" />
     <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
     <link rel="stylesheet" href="../assets/css/ui/footer.css" />
-    <link rel="stylesheet" href="../assets/css/recruitment.css" />
-    <link rel="stylesheet" href="../assets/css/responsive/recruitment_responsive.css" />
+    <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
+    <link rel="stylesheet" href="../assets/css/news.css" />
+    <link rel="stylesheet" href="../assets/css/responsive/news_responsive.css" />
 </head>
 
 <body>
@@ -27,101 +28,216 @@
         <div id="navbar-placeholder"></div>
         <!-- Main Content -->
         <main>
-            <div class="recruitment-container">
+            <div class="news-container">
                 <nav class="breadcrumb">
                     <a href="index.html">Trang chủ</a>
                     <span>></span>
                     <span class="current">Tuyển dụng</span>
                 </nav>
-                <div class="recruitment-content">
-                    <h2 class="recruitment-title">Trường Sinh tuyển dụng Kỹ sư Xây dựng - Thu nhập cao</h2>
-                    <p class="recruitment-description">Bạn là kỹ sư xây dựng có kinh nghiệm, đam mê nghề và đang tìm
-                        kiếm một môi trường làm việc ổn
-                        định - chuyên nghiệp - nhiều cơ hội phát triển? Tại Trường Sinh, bạn không chỉ có một công
-                        việc - bạn có cả một hành trình phát triển sự nghiệp. Thu nhập hấp dẫn, môi trường chuyên
-                        nghiệp và cơ hội thăng tiến rõ ràng đang chờ bạn.</p>
-                    <div class="main-recruitment-content">
-                        <!-- Table of Contents -->
-                        <div class="recruitment-toc">
-                            <h3 class="toc-title" id="recruitmentTocToggle">
-                                <i class="ri-list-check"></i>
-                                Mục lục
-                                <i class="ri-arrow-down-s-line toc-arrow"></i>
-                            </h3>
-                            <ul class="toc-list" id="recruitmentTocList">
-                                <li><a href="#job-description" class="toc-link">Mô tả công việc</a></li>
-                                <li><a href="#candidate-requirements" class="toc-link">Yêu cầu ứng viên</a></li>
-                                <li><a href="#benefits" class="toc-link">Quyền lợi được hưởng</a></li>
-                            </ul>
+                <!-- News Header -->
+                <div class="news-header">
+                    <h2 class="news-title">Trường Sinh tuyển dụng Kỹ sư Xây dựng - Thu nhập cao</h2>
+
+                    <!-- Filter Tabs Desktop -->
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">
+                            Tất cả
+                        </button>
+                        <button class="filter-tab" data-filter="ky-su-xay-dung">
+                            Kỹ sư xây dựng
+                        </button>
+                        <button class="filter-tab" data-filter="ky-su-thiet-ke">
+                            Kỹ sư thiết kế
+                        </button>
+                        <button class="filter-tab" data-filter="giam-sat-cong-trinh">
+                            Giám sát công trình
+                        </button>
+                        <button class="filter-tab" data-filter="quan-ly-du-an">
+                            Quản lý dự án
+                        </button>
+                        <button class="filter-tab" data-filter="tho-xay-dung">
+                            Thợ xây dựng
+                        </button>
+                    </div>
+
+                    <!-- Filter Tabs Mobile -->
+                    <div class="filter-tabs-mobile">
+                        <div class="filter-tabs-scroll">
+                            <button class="filter-tab active" data-filter="all">Tất cả</button>
+                            <button class="filter-tab" data-filter="ky-su-xay-dung">Kỹ sư xây dựng</button>
+                            <button class="filter-tab" data-filter="ky-su-thiet-ke">Kỹ sư thiết kế</button>
+                            <button class="filter-tab" data-filter="giam-sat-cong-trinh">Giám sát công trình</button>
+                            <button class="filter-tab" data-filter="quan-ly-du-an">Quản lý dự án</button>
+                            <button class="filter-tab" data-filter="tho-xay-dung">Thợ xây dựng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recruitment Articles Grid -->
+                <div class="news-grid" id="newsGrid">
+                    <a href="detail_blog1.html" class="news-item" data-category="ky-su-xay-dung">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_1.png"
+                                alt="Tuyển dụng Kỹ sư xây dựng - Thu nhập cao" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Tuyển dụng Kỹ sư xây dựng - Thu nhập cao</h3>
+                            <p class="news-excerpt">Trường Sinh tuyển dụng Kỹ sư xây dựng có kinh nghiệm, thu nhập hấp
+                                dẫn, môi trường làm việc chuyên nghiệp và cơ hội thăng tiến rõ ràng.</p>
+                            <div class="news-meta">
+                                <span class="news-date">15/12/2024</span>
+                                <span class="news-views">1,250 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="ky-su-thiet-ke">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_2.png"
+                                alt="Tuyển dụng Kỹ sư thiết kế - Sáng tạo không giới hạn" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Tuyển dụng Kỹ sư thiết kế - Sáng tạo không giới hạn</h3>
+                            <p class="news-excerpt">Cơ hội nghề nghiệp cho Kỹ sư thiết kế tại Trường Sinh với những dự
+                                án đa dạng, từ nhà phố đến biệt thự cao cấp.</p>
+                            <div class="news-meta">
+                                <span class="news-date">12/12/2024</span>
+                                <span class="news-views">980 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="giam-sat-cong-trinh">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_3.png"
+                                alt="Tuyển dụng Giám sát công trình - Chất lượng hàng đầu" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Tuyển dụng Giám sát công trình - Chất lượng hàng đầu</h3>
+                            <p class="news-excerpt">Trường Sinh cần tuyển Giám sát công trình có kinh nghiệm, đảm bảo
+                                chất lượng và tiến độ thi công các dự án xây dựng.</p>
+                            <div class="news-meta">
+                                <span class="news-date">10/12/2024</span>
+                                <span class="news-views">1,150 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="quan-ly-du-an">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_4.png"
+                                alt="Tuyển dụng Quản lý dự án - Lãnh đạo tài năng" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Tuyển dụng Quản lý dự án - Lãnh đạo tài năng</h3>
+                            <p class="news-excerpt">Cơ hội trở thành Quản lý dự án tại Trường Sinh, quản lý và điều hành
+                                các dự án xây dựng từ A đến Z.</p>
+                            <div class="news-meta">
+                                <span class="news-date">08/12/2024</span>
+                                <span class="news-views">890 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="tho-xay-dung">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_5.png"
+                                alt="Tuyển dụng Thợ xây dựng - Tay nghề cao" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Tuyển dụng Thợ xây dựng - Tay nghề cao</h3>
+                            <p class="news-excerpt">Trường Sinh tuyển dụng Thợ xây dựng có tay nghề cao, làm việc tại
+                                các công trình chất lượng với mức lương cạnh tranh.</p>
+                            <div class="news-meta">
+                                <span class="news-date">05/12/2024</span>
+                                <span class="news-views">1,320 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="ky-su-xay-dung">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_1.png"
+                                alt="Kỹ sư xây dựng - Cơ hội thăng tiến" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Kỹ sư xây dựng - Cơ hội thăng tiến</h3>
+                            <p class="news-excerpt">Môi trường làm việc năng động, cơ hội học hỏi và phát triển kỹ năng
+                                chuyên môn cho Kỹ sư xây dựng tại Trường Sinh.</p>
+                            <div class="news-meta">
+                                <span class="news-date">03/12/2024</span>
+                                <span class="news-views">1,080 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="ky-su-thiet-ke">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_2.png"
+                                alt="Kỹ sư thiết kế - Sáng tạo đột phá" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Kỹ sư thiết kế - Sáng tạo đột phá</h3>
+                            <p class="news-excerpt">Tham gia thiết kế những công trình độc đáo, sáng tạo với công nghệ
+                                hiện đại và phong cách kiến trúc đa dạng.</p>
+                            <div class="news-meta">
+                                <span class="news-date">01/12/2024</span>
+                                <span class="news-views">950 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="giam-sat-cong-trinh">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_3.png"
+                                alt="Giám sát công trình - Chuyên nghiệp" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Giám sát công trình - Chuyên nghiệp</h3>
+                            <p class="news-excerpt">Đảm bảo chất lượng công trình với vai trò Giám sát chuyên nghiệp,
+                                làm việc trong môi trường năng động và chuyên nghiệp.</p>
+                            <div class="news-meta">
+                                <span class="news-date">28/11/2024</span>
+                                <span class="news-views">1,100 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="detail_blog1.html" class="news-item" data-category="quan-ly-du-an">
+                        <div class="news-image">
+                            <img src="../assets/images/index_images/worker_4.png"
+                                alt="Quản lý dự án - Tầm nhìn chiến lược" />
+                        </div>
+                        <div class="news-detail">
+                            <h3 class="news-title-item">Quản lý dự án - Tầm nhìn chiến lược</h3>
+                            <p class="news-excerpt">Phát triển kỹ năng lãnh đạo và quản lý dự án với những thách thức
+                                thú vị và cơ hội thăng tiến rõ ràng.</p>
+                            <div class="news-meta">
+                                <span class="news-date">25/11/2024</span>
+                                <span class="news-views">1,050 lượt xem</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination">
+                        <button class="pagination-btn prev-btn" id="prevBtn" disabled>
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+
+                        <div class="pagination-numbers">
+                            <button class="pagination-number active" data-page="1">1</button>
+                            <button class="pagination-number" data-page="2">2</button>
+                            <button class="pagination-number" data-page="3">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-number" data-page="5">5</button>
                         </div>
 
-                        <!-- Company Introduction -->
-                        <div class="company-introduction">
-                            <p>
-                                <strong>Trường Sinh</strong> là công ty <strong>xây dựng nhà trọn gói</strong> uy tín,
-                                với gần 10 năm kinh nghiệm và hàng trăm công trình đã hoàn thiện. Hiện nay, số lượng dự
-                                án ngày càng tăng, chúng tôi cần tuyển thêm <strong>Kỹ sư Xây dựng</strong> để đồng
-                                hành.
-                            </p>
-                        </div>
-
-                        <!-- Recruitment Illustration Image -->
-                        <div class="recruitment-illustration">
-                            <img src="../public/images/recruiment_picture.png"
-                                alt="Kỹ sư xây dựng tại công trường Trường Sinh" />
-                        </div>
-
-                        <!-- Job Description Section -->
-                        <section id="job-description" class="recruitment-section">
-                            <h2 class="section-title">Mô tả công việc</h2>
-                            <div class="section-content">
-                                <p>Kỹ sư Xây dựng tại Trường Sinh sẽ đảm nhận các nhiệm vụ quan trọng trong việc thiết
-                                    kế, giám sát và quản lý các dự án xây dựng nhà trọn gói.</p>
-                                <div class="job-tasks">
-                                    <h4>Nhiệm vụ chính:</h4>
-                                    <ul>
-                                        <li>Thiết kế và lập kế hoạch thi công các dự án xây dựng</li>
-                                        <li>Giám sát tiến độ và chất lượng công trình</li>
-                                        <li>Quản lý nhân lực và vật tư tại công trường</li>
-                                        <li>Phối hợp với khách hàng và các bên liên quan</li>
-                                        <li>Đảm bảo tuân thủ các quy định về an toàn lao động</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Candidate Requirements Section -->
-                        <section id="candidate-requirements" class="recruitment-section">
-                            <h2 class="section-title">Yêu cầu ứng viên</h2>
-                            <div class="section-content">
-                                <div class="requirements-box">
-                                    <ul class="requirements-list">
-                                        <li>Tốt nghiệp Cao đẳng, Đại học chuyên ngành xây dựng và các ngành liên quan.
-                                        </li>
-                                        <li>Sử dụng tốt các phần mềm Excel, Autocad.</li>
-                                        <li>Am hiểu quy trình thi công, đảm bảo chất lượng và tiến độ công trình.</li>
-                                        <li>Khả năng giám sát thi công chặt chẽ và giải quyết vấn đề nhanh chóng</li>
-                                        <li>Sẵn sàng làm việc xa tại các công trường của công ty khi có yêu cầu.</li>
-                                        <li>Làm việc nhóm tốt, giao tiếp hiệu quả và phối hợp linh hoạt.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Benefits Section -->
-                        <section id="benefits" class="recruitment-section">
-                            <h2 class="section-title">Quyền lợi được hưởng</h2>
-                            <div class="section-content">
-                                <div class="benefits-box">
-                                    <ul class="benefits-list">
-                                        <li>Thu nhập: Thỏa thuận theo năng lực</li>
-                                        <li>Được trang bị đầy đủ thiết bị để phục vụ công việc</li>
-                                        <li>Tham gia BHXH, Thưởng lễ, Tết theo quy định</li>
-                                        <li>Cơ hội nghề nghiệp ổn định, thăng tiến rõ ràng</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
+                        <button class="pagination-btn next-btn" id="nextBtn">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -135,8 +251,13 @@
         <i class="ri-arrow-up-line"></i>
     </button>
 
-    <script src="../assets/js/recruitment.js"></script>
+    <!-- Floating Sidebar -->
+    <div id="floating-sidebar-container"></div>
+
+
+    <script src="../assets/js/news.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

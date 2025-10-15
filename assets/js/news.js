@@ -70,161 +70,121 @@ function initScrollToTop() {
  * Khởi tạo chức năng lọc tin tức theo tab
  * - Click tab để lọc tin tức theo danh mục
  * - Hiệu ứng fade in khi chuyển đổi
+ * - Reset pagination về trang 1 khi lọc
  */
 function initNewsFilter() {
-  const tabButtons = document.querySelectorAll(".filter-tab");
-  const newsItems = document.querySelectorAll(".news-item");
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Xóa class active khỏi tất cả button
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-
-      // Thêm class active vào button được click
-      this.classList.add("active");
-
-      // Lấy giá trị filter
-      const filter = this.getAttribute("data-filter");
-
-      // Lọc news items
-      newsItems.forEach((item) => {
-        const category = item.getAttribute("data-category");
-
-        if (filter === "all" || category === filter) {
-          item.classList.remove("hidden");
-          item.style.animation = "fadeIn 0.5s ease-in-out";
-        } else {
-          item.classList.add("hidden");
-        }
-      });
-    });
-  });
+  // Filter functionality removed - tabs now redirect to detail_blog1.html
+  console.log("Filter tabs now redirect to detail_blog1.html");
 }
 
 /**
- * Khởi tạo chức năng Load More cho tin tức
- * - Hiển thị thêm tin tức khi click nút
- * - Ẩn nút khi đã load hết
+ * Khởi tạo chức năng phân trang cho tin tức
+ * - Hiển thị 9 bài viết mỗi trang
+ * - Navigation giữa các trang
+ * - Cập nhật trạng thái active
+ * - Làm việc với filter
  */
-function initLoadMore() {
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
-  const collapseBtn = document.getElementById("collapseBtn");
-  const hiddenNews = document.getElementById("hiddenNews");
+function initPagination() {
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const pageNumbers = document.querySelectorAll(".pagination-number");
 
-  if (!loadMoreBtn || !collapseBtn || !hiddenNews) return;
+  if (!prevBtn || !nextBtn || !pageNumbers.length) return;
 
-  loadMoreBtn.addEventListener("click", function () {
-    // Hiển thị tin tức ẩn với animation
-    hiddenNews.style.display = "contents";
-    setTimeout(() => {
-      hiddenNews.classList.add("show");
-    }, 100);
+  // Store current page globally
+  window.currentPage = 1;
+  const itemsPerPage = 9;
 
-    // Ẩn nút load more, hiện nút rút gọn
-    loadMoreBtn.style.display = "none";
-    collapseBtn.style.display = "flex";
+  // Function to get visible items (not hidden by filter)
+  function getVisibleItems() {
+    return Array.from(document.querySelectorAll(".news-item")).filter(
+      (item) =>
+        !item.classList.contains("hidden") && item.style.display !== "none"
+    );
+  }
 
-    // Scroll đến phần tin tức mới
-    setTimeout(() => {
-      hiddenNews.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 600);
-  });
+  // Function to show items for current page
+  function showPage(page) {
+    const visibleItems = getVisibleItems();
+    const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
 
-  collapseBtn.addEventListener("click", function () {
-    // Ẩn tin tức với animation
-    hiddenNews.classList.remove("show");
-    setTimeout(() => {
-      hiddenNews.style.display = "none";
-    }, 500);
+    // Ensure current page is within bounds
+    if (page > totalPages && totalPages > 0) {
+      page = totalPages;
+      window.currentPage = page;
+    }
 
-    // Hiện nút load more, ẩn nút rút gọn
-    loadMoreBtn.style.display = "flex";
-    collapseBtn.style.display = "none";
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
 
-    // Scroll lên đầu phần tin tức
-    setTimeout(() => {
-      document.querySelector(".news-grid").scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 100);
-  });
-}
-
-/**
- * Khởi tạo mobile dropdown filter
- * - Toggle dropdown khi click
- * - Lọc tin tức khi chọn option
- * - Đóng dropdown khi click outside
- */
-function initMobileFilter() {
-  const dropdownToggle = document.getElementById("filterDropdownToggle");
-  const dropdownMenu = document.getElementById("filterDropdownMenu");
-  const dropdownItems = document.querySelectorAll(".filter-dropdown-item");
-  const selectedText = document.querySelector(".selected-text");
-
-  if (!dropdownToggle || !dropdownMenu) return;
-
-  // Toggle dropdown
-  dropdownToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdownToggle.classList.toggle("active");
-    dropdownMenu.classList.toggle("show");
-  });
-
-  // Handle dropdown item selection
-  dropdownItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      const filter = item.getAttribute("data-filter");
-      const text = item.textContent;
-
-      // Update selected text
-      selectedText.textContent = text;
-
-      // Update active state
-      dropdownItems.forEach((i) => i.classList.remove("active"));
-      item.classList.add("active");
-
-      // Filter news
-      const newsItems = document.querySelectorAll(".news-item");
-      newsItems.forEach((newsItem) => {
-        const category = newsItem.getAttribute("data-category");
-
-        if (filter === "all" || category === filter) {
-          newsItem.style.display = "block";
-          newsItem.classList.remove("hidden");
-          newsItem.style.animation = "fadeIn 0.5s ease-in-out";
-        } else {
-          newsItem.style.display = "none";
-          newsItem.classList.add("hidden");
-        }
-      });
-
-      // Close dropdown
-      dropdownToggle.classList.remove("active");
-      dropdownMenu.classList.remove("show");
+    // Hide all items first
+    document.querySelectorAll(".news-item").forEach((item) => {
+      item.style.display = "none";
     });
-  });
 
-  // Close dropdown when clicking outside
-  document.addEventListener("click", (e) => {
-    if (
-      !dropdownToggle.contains(e.target) &&
-      !dropdownMenu.contains(e.target)
-    ) {
-      dropdownToggle.classList.remove("active");
-      dropdownMenu.classList.remove("show");
+    // Show items for current page
+    visibleItems.forEach((item, index) => {
+      if (index >= startIndex && index < endIndex) {
+        item.style.display = "block";
+        item.style.animation = "fadeIn 0.5s ease-in-out";
+      }
+    });
+
+    // Update pagination buttons
+    prevBtn.disabled = page === 1;
+    nextBtn.disabled = page === totalPages || totalPages === 0;
+
+    // Update page numbers
+    pageNumbers.forEach((btn) => {
+      btn.classList.remove("active");
+      if (parseInt(btn.getAttribute("data-page")) === page) {
+        btn.classList.add("active");
+      }
+    });
+  }
+
+  // Global function to update pagination (called from filter)
+  window.updatePagination = function () {
+    showPage(window.currentPage);
+  };
+
+  // Event listeners
+  prevBtn.addEventListener("click", () => {
+    if (window.currentPage > 1) {
+      window.currentPage--;
+      showPage(window.currentPage);
     }
   });
 
-  // Close dropdown on scroll
-  window.addEventListener("scroll", () => {
-    dropdownToggle.classList.remove("active");
-    dropdownMenu.classList.remove("show");
+  nextBtn.addEventListener("click", () => {
+    const visibleItems = getVisibleItems();
+    const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
+    if (window.currentPage < totalPages) {
+      window.currentPage++;
+      showPage(window.currentPage);
+    }
   });
+
+  pageNumbers.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const page = parseInt(btn.getAttribute("data-page"));
+      if (page && page !== window.currentPage) {
+        window.currentPage = page;
+        showPage(window.currentPage);
+      }
+    });
+  });
+
+  // Initialize first page
+  showPage(1);
+}
+
+/**
+ * Mobile filter functionality removed - tabs now redirect to detail_blog1.html
+ */
+function initMobileFilter() {
+  // Mobile filter functionality removed - tabs now redirect to detail_blog1.html
+  console.log("Mobile filter tabs now redirect to detail_blog1.html");
 }
 
 // ===========================================
@@ -240,6 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
   initNewsFilter(); // Chức năng lọc tin tức
-  initLoadMore(); // Chức năng load more
+  initPagination(); // Chức năng phân trang
   initMobileFilter(); // Chức năng mobile filter dropdown
 });

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/ui/header.css" />
   <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
   <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+  <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
   <link rel="stylesheet" href="../assets/css/detail_blog.css" />
   <link rel="stylesheet" href="../assets/css/responsive/detail_blog_responsive.css" />
 </head>
@@ -37,11 +38,20 @@
             hậu</span>
         </nav>
         <div class="detail-blog-content">
-          <h2 class="detail-blog-title">Top 5 mẫu nhà chống lụt xu hướng xây dựng trước biến đổi khí hậu</h2>
-          <div class="blog-timestamp">
-            <i class="ri-time-line"></i>
-            <span>10:35 | 07/10/2025</span>
+          <!-- Blog Featured Image -->
+          <div class="blog-featured-image">
+            <img src="../assets/images/blog_images/blog_feature.png"
+              alt="Top 5 mẫu nhà chống lụt xu hướng xây dựng trước biến đổi khí hậu">
           </div>
+
+          <!-- Blog Metadata -->
+          <div class="blog-metadata">
+            <span class="blog-author">Tác giả: Vũ Văn Xuân</span>
+            <span class="separator">|</span>
+            <span class="blog-update-date">Ngày cập nhật: 26/09/2025</span>
+          </div>
+
+          <h2 class="detail-blog-title">Top 5 mẫu nhà chống lụt xu hướng xây dựng trước biến đổi khí hậu</h2>
           <div class="blog-description">
             Mẫu nhà chống ngập lụt đang trở thành xu hướng xây dựng nhà bền vững trong bối cảnh biến đổi khí hậu và nước
             biển dâng ngày càng nghiêm trọng. Tình trạng ngập lụt không chỉ xảy tại các thành phố lớn như Hà Nội, TP.HCM
@@ -65,7 +75,7 @@
               <li><a href="#section-3" class="blog-toc-link">Lưu ý khi xây nhà chống ngập lụt</a></li>
             </ul>
           </div>
-          <div class="section-1-content">
+          <div class="section-content">
             <h2 id="section-1">Tại sao nên xây dựng mẫu nhà chống ngập lụt trong giai đoạn hiện nay?</h2>
             <p>Trong bối cảnh khí hậu ngày càng khắc nghiệt, tình trạng ngập lụt tại Việt Nam diễn ra thường xuyên hơn.
               Chính vì vậy, việc cải tạo và xây dựng nhà theo hướng chống ngập lụt là một giải pháp cần thiết và hiệu
@@ -82,7 +92,7 @@
                 thường trên tầng cao hoặc kết cấu an toàn của ngôi nhà trong suốt thời gian ngập.</li>
             </ul>
           </div>
-          <div class="section-2-content">
+          <div class="section-content">
             <h2 id="section-2">Tham khảo 5 mẫu nhà chống ngập lụt đảm bảo an toàn thẩm mỹ</h2>
             <p class="section-content-p">Nếu bạn đang muốn tìm 1 mẫu nhà chống ngập lụt có thể tham khảo các khảo các
               phong cách thiết kế sau:</p>
@@ -173,7 +183,7 @@
               trên.</p>
 
           </div>
-          <div class="section-3-content">
+          <div class="section-content">
             <h2 id="section-3">Lưu ý khi xây nhà chống ngập lụt</h2>
             <p class="section-content-p">Xây dựng nhà chống ngập lụt là một quyết định thông minh và cần thiết ở Việt
               Nam. Tuy nhiên, để công trình thực sự hiệu quả và an toàn, bạn cần lưu ý kỹ các yếu tố sau trong quá
@@ -201,12 +211,42 @@
           </div>
         </div>
 
+        <!-- Rating and Author Section -->
+        <div class="rating-author-section">
+          <div class="rating-section">
+            <p class="rating-text">Đánh giá bài viết</p>
+            <div class="rating-number">5.0</div>
+            <div class="rating-stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+          </div>
+
+          <div class="author-info-section">
+            <div class="author-avatar-title">
+              <div class="author-avatar">
+                <img src="../assets/images/index_images/architect1.png" alt="Avatar tác giả">
+              </div>
+              <h3 class="author-title">Tác giả</h3>
+            </div>
+            <p class="author-description">
+              Với hơn 15 năm kinh nghiệm trong lĩnh vực xây dựng và kiến trúc, tôi nhận thấy việc thiết kế nhà chống
+              ngập lụt không chỉ là xu hướng mà còn là nhu cầu thiết yếu trong bối cảnh biến đổi khí hậu hiện nay. Các
+              mẫu nhà được giới thiệu trong bài viết đều dựa trên những dự án thực tế mà chúng tôi đã thi công thành
+              công, mang lại sự an toàn và bền vững cho nhiều gia đình Việt Nam.
+            </p>
+          </div>
+        </div>
+
         <!-- Divider Line -->
         <div class="content-divider"></div>
 
         <!-- Related Posts Section -->
         <div class="related-posts">
-          <h2 class="related-posts-title">CÁC TIN KHÁC</h2>
+          <h2 class="related-posts-title">Tin tức nổi bật khác</h2>
           <div class="related-posts-grid">
             <a href="detail_blog1.html" class="related-post-item">
               <div class="related-post-image">
@@ -243,39 +283,6 @@
                 bảo tiến độ thi công.</p>
             </a>
 
-            <a href="detail_blog1.html" class="related-post-item">
-              <div class="related-post-image">
-                <img src="../public/images/post_related.png" alt="Xu hướng thiết kế nhà phố hiện đại 2024">
-              </div>
-              <h3 class="related-post-title">Xu hướng thiết kế nhà phố hiện đại 2024</h3>
-              <p class="related-post-excerpt">Năm 2024, xu hướng thiết kế nhà phố tập trung vào không gian mở, tối ưu
-                ánh sáng tự nhiên và tích hợp công nghệ thông minh. Các mẫu nhà phố của Trường Sinh kết hợp giữa phong
-                cách hiện đại và truyền thống, tạo ra không gian sống tiện nghi, thẩm mỹ cao và phù hợp với khí hậu
-                nhiệt đới của Việt Nam.</p>
-            </a>
-
-            <a href="detail_blog1.html" class="related-post-item">
-              <div class="related-post-image">
-                <img src="../public/images/post_related.png" alt="Cách chọn vật liệu xây dựng bền vững">
-              </div>
-              <h3 class="related-post-title">Cách chọn vật liệu xây dựng bền vững</h3>
-              <p class="related-post-excerpt">Vật liệu xây dựng bền vững không chỉ thân thiện với môi trường mà còn tiết
-                kiệm chi phí lâu dài. Gạch không nung, xi măng xanh, sơn không độc hại là những lựa chọn tốt. Trường
-                Sinh cung cấp đầy đủ các loại vật liệu xanh, đảm bảo chất lượng và có chứng nhận môi trường, giúp khách
-                hàng xây dựng ngôi nhà bền vững cho tương lai.</p>
-            </a>
-
-            <a href="detail_blog1.html" class="related-post-item">
-              <div class="related-post-image">
-                <img src="../public/images/post_related.png"
-                  alt="Quy trình xây dựng nhà trọn gói tại công ty Trường Sinh">
-              </div>
-              <h3 class="related-post-title">Quy trình xây dựng nhà trọn gói tại công ty Trường Sinh</h3>
-              <p class="related-post-excerpt">Trường Sinh áp dụng quy trình xây dựng nhà trọn gói chuyên nghiệp với 7
-                bước: khảo sát, thiết kế, xin phép, chuẩn bị vật liệu, thi công, nghiệm thu và bàn giao. Mỗi bước đều
-                được giám sát chặt chẽ, đảm bảo chất lượng và tiến độ. Khách hàng được cập nhật tiến độ thường xuyên và
-                có thể theo dõi công trình qua ứng dụng di động.</p>
-            </a>
           </div>
         </div>
 
@@ -302,59 +309,107 @@
           <!-- Comments List -->
           <div class="comments-list">
             <div class="comment-item">
-              <div class="comment-avatar">
-                <img src="../assets/images/index_images/architect1.png" alt="Avatar">
+              <div class="comment-avatar-author">
+                <div class="comment-avatar">
+                  <img src="../assets/images/index_images/architect1.png" alt="Avatar">
+                </div>
+                <div class="comment-author-info">
+                  <h4 class="comment-author">Trần Minh Tuấn</h4>
+                  <div class="comment-rating">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
               </div>
-              <div class="comment-content">
-                <h4 class="comment-author">Trần Minh Tuấn</h4>
-                <p class="comment-text">Bài viết rất hay và chi tiết! Tôi đang có kế hoạch xây nhà trọn gói ở Hà Nội và
-                  thông tin này rất hữu ích. Trường Sinh có vẻ là đơn vị uy tín với kinh nghiệm lâu năm. Cảm ơn tác giả
-                  đã chia sẻ!</p>
-              </div>
+              <p class="comment-text">Bài viết rất hay và chi tiết! Tôi đang có kế hoạch xây nhà trọn gói ở Hà Nội và
+                thông tin này rất hữu ích. Trường Sinh có vẻ là đơn vị uy tín với kinh nghiệm lâu năm. Cảm ơn tác giả
+                đã chia sẻ!</p>
             </div>
 
             <div class="comment-item">
-              <div class="comment-avatar">
-                <img src="../assets/images/index_images/architect2.png" alt="Avatar">
+              <div class="comment-avatar-author">
+                <div class="comment-avatar">
+                  <img src="../assets/images/index_images/architect2.png" alt="Avatar">
+                </div>
+                <div class="comment-author-info">
+                  <h4 class="comment-author">Lê Thị Hương</h4>
+                  <div class="comment-rating">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </div>
+                </div>
               </div>
-              <div class="comment-content">
-                <h4 class="comment-author">Lê Thị Hương</h4>
-                <p class="comment-text">Tôi đã từng sử dụng dịch vụ xây nhà trọn gói của Trường Sinh và rất hài lòng.
-                  Đội ngũ kỹ thuật chuyên nghiệp, tiến độ đúng hẹn và chất lượng công trình tốt. Khuyến nghị mọi người
-                  nên tham khảo!</p>
-              </div>
+              <p class="comment-text">Tôi đã từng sử dụng dịch vụ xây nhà trọn gói của Trường Sinh và rất hài lòng.
+                Đội ngũ kỹ thuật chuyên nghiệp, tiến độ đúng hẹn và chất lượng công trình tốt. Khuyến nghị mọi người
+                nên tham khảo!</p>
             </div>
 
             <div class="comment-item">
-              <div class="comment-avatar">
-                <img src="../assets/images/index_images/architect3.png" alt="Avatar">
+              <div class="comment-avatar-author">
+                <div class="comment-avatar">
+                  <img src="../assets/images/index_images/architect3.png" alt="Avatar">
+                </div>
+                <div class="comment-author-info">
+                  <h4 class="comment-author">Phạm Đức Anh</h4>
+                  <div class="comment-rating">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
               </div>
-              <div class="comment-content">
-                <h4 class="comment-author">Phạm Đức Anh</h4>
-                <p class="comment-text">Bảng giá trong bài viết rất chi tiết và minh bạch. Tôi thích cách Trường Sinh
-                  chia nhỏ từng hạng mục chi phí, giúp khách hàng dễ dàng lên kế hoạch tài chính. Sẽ liên hệ để được tư
-                  vấn cụ thể hơn.</p>
-              </div>
+              <p class="comment-text">Bảng giá trong bài viết rất chi tiết và minh bạch. Tôi thích cách Trường Sinh
+                chia nhỏ từng hạng mục chi phí, giúp khách hàng dễ dàng lên kế hoạch tài chính. Sẽ liên hệ để được tư
+                vấn cụ thể hơn.</p>
             </div>
 
             <div class="comment-item">
-              <div class="comment-avatar">
-                <img src="../assets/images/index_images/architect4.png" alt="Avatar">
+              <div class="comment-avatar-author">
+                <div class="comment-avatar">
+                  <img src="../assets/images/index_images/architect4.png" alt="Avatar">
+                </div>
+                <div class="comment-author-info">
+                  <h4 class="comment-author">Hoàng Thị Mai</h4>
+                  <div class="comment-rating">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
               </div>
-              <div class="comment-content">
-                <h4 class="comment-author">Hoàng Thị Mai</h4>
-                <p class="comment-text">Quy trình 7 bước rất rõ ràng và chuyên nghiệp. Tôi đặc biệt ấn tượng với phần hỗ
-                  trợ xin phép xây dựng, vì đây là vấn đề nhiều người gặp khó khăn. Cảm ơn tác giả đã chia sẻ kinh
-                  nghiệm quý báu!</p>
-              </div>
+              <p class="comment-text">Quy trình 7 bước rất rõ ràng và chuyên nghiệp. Tôi đặc biệt ấn tượng với phần hỗ
+                trợ xin phép xây dựng, vì đây là vấn đề nhiều người gặp khó khăn. Cảm ơn tác giả đã chia sẻ kinh
+                nghiệm quý báu!</p>
             </div>
           </div>
 
           <!-- Pagination -->
           <div class="comment-pagination">
-            <span class="page-number active">1</span>
-            <span class="page-number">2</span>
-            <span class="page-number">3</span>
+            <button class="pagination-btn prev-btn" id="commentPrevBtn" disabled>
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+
+            <div class="pagination-numbers">
+              <button class="pagination-number active" data-page="1">1</button>
+              <button class="pagination-number" data-page="2">2</button>
+              <button class="pagination-number" data-page="3">3</button>
+              <span class="pagination-dots">...</span>
+              <button class="pagination-number" data-page="5">5</button>
+            </div>
+
+            <button class="pagination-btn next-btn" id="commentNextBtn">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
           </div>
         </div>
     </main>
@@ -366,8 +421,40 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- Floating Sidebar -->
+  <div id="floating-sidebar-container"></div>
+
+
+  <!-- Rating Popup -->
+  <div id="ratingPopup" class="rating-popup">
+    <div class="rating-popup-content">
+      <div class="rating-popup-header">
+        <h3>Đánh giá bài viết</h3>
+        <button class="rating-popup-close" id="closeRatingPopup">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <div class="rating-popup-body">
+        <div class="rating-stars-container">
+          <div class="rating-stars-select">
+            <i class="ri-star-line" data-rating="1"></i>
+            <i class="ri-star-line" data-rating="2"></i>
+            <i class="ri-star-line" data-rating="3"></i>
+            <i class="ri-star-line" data-rating="4"></i>
+            <i class="ri-star-line" data-rating="5"></i>
+          </div>
+          <p class="rating-feedback">Vui lòng chọn mức độ đánh giá</p>
+        </div>
+        <button class="rating-submit-btn" id="submitRating" disabled>
+          Gửi đánh giá
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="../assets/js/detail_blog.js"></script>
   <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

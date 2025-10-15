@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .main-content {
-        padding: 70px 0 50px 0;
+        padding: 70px 0 20px 0;
     }
 
     .slide-content {
@@ -9,9 +9,9 @@
     }
 
     .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
 
     .slider-dots {
@@ -37,7 +37,7 @@
     }
 
     .slider-container {
-        height: 300px;
+        height: 250px;
     }
 
     .slide-content {
@@ -50,7 +50,7 @@
     }
 
     .slide-content p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         line-height: 1.4;
         max-width: 100%;
     }
@@ -70,8 +70,12 @@
         overflow: hidden;
     }
 
+    .intro-image {
+        height: 250px;
+    }
+
     .intro-image img {
-        height: 300px;
+        height: 250px;
     }
 
     .intro-title {
@@ -97,6 +101,7 @@
 
     .projects-showcase {
         padding: 20px;
+        margin-bottom: 30px;
     }
 
     .section-main-title {
@@ -210,5 +215,69 @@
 
     .advantage-item {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /*Contact Form Section*/
+    .form-title {
+        margin: 0;
+    }
+
+    .contact-form {
+        padding: 0;
+        min-height: 500px;
+    }
+
+    .contact-form .container {
+        padding: 0;
+    }
+
+    .form-title {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .contact-content {
+        display: flex;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .contact-visual {
+        display: none;
+    }
+
+    .contact-form-container {
+        height: auto;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .form-wrapper {
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+    }
+
+    .btn-submit {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }

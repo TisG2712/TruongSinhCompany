@@ -84,26 +84,6 @@
     .cost-table th,
     .cost-table td {
         padding: 8px;
-        font-size: 0.6rem;
-    }
-
-    .article-section h2 {
-        font-size: 1.6rem;
-    }
-
-    .article-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .timeline-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .article-section p {
-        font-size: 1rem;
-    }
-
-    .article-section li {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }

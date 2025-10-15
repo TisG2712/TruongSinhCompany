@@ -115,3 +115,91 @@ button {
   flex-shrink: 0;
   width: 100%;
 }
+
+/* ===========================================
+   CUSTOM SCROLLBAR STYLES
+   =========================================== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 5px;
+  /* Chiều rộng thanh scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Màu nền của track */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  /* Màu cam cho thanh scroll */
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e55a2b;
+  /* Màu cam đậm hơn khi hover */
+}
+
+/* Ẩn các nút mũi tên lên xuống */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* ===========================================
+   SCROLL TO TOP BUTTON - Global Styles
+   =========================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #e55a2b 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: linear-gradient(135deg, #e55a2b 0%, #d44a1a 100%);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Mobile: Scroll to top button nhỏ hơn */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    font-size: 1rem !important;
+  }
+}

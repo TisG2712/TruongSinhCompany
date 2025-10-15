@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết dự án</title>
+    <title>Xây nhà trọn gói chi tiết</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/ui/header.css" />
     <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
     <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+    <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
     <link rel="stylesheet" href="../assets/css/detail-service-construction.css" />
     <link rel="stylesheet" href="../assets/css/responsive/detail-service-construction_responsive.css" />
 </head>
@@ -408,30 +409,40 @@
                         </section>
 
                         <!-- Conclusion -->
-                        <section class="article-conclusion">
+                        <section class="article-section">
                             <h2>Kết luận</h2>
-                            <p>Xây nhà trọn gói tại Hà Nội là giải pháp tối ưu cho những gia đình muốn sở hữu ngôi nhà
-                                mơ ước mà không phải lo lắng về việc quản lý thi công. Với kinh nghiệm 15 năm và hơn 200
-                                dự án thành công, <strong>Trường Sinh</strong> cam kết mang đến cho khách hàng những
-                                ngôi nhà chất lượng cao, đẹp mắt và bền vững.</p>
+                            <div class="article-conclusion">
+                                <p>Xây nhà trọn gói tại Hà Nội là giải pháp tối ưu cho những gia đình muốn sở hữu ngôi
+                                    nhà
+                                    mơ ước mà không phải lo lắng về việc quản lý thi công. Với kinh nghiệm 10 năm và hơn
+                                    500
+                                    dự án thành công, <strong>Trường Sinh</strong> cam kết mang đến cho khách hàng những
+                                    ngôi nhà chất lượng cao, đẹp mắt và bền vững.</p>
 
-                            <p>Nếu bạn đang có kế hoạch xây dựng nhà ở tại Hà Nội, hãy liên hệ ngay với chúng tôi để
-                                được tư vấn miễn phí và nhận báo giá chi tiết. Đội ngũ chuyên gia của Trường Sinh sẵn
-                                sàng đồng hành cùng bạn trong hành trình xây dựng tổ ấm.</p>
+                                <p>Nếu bạn đang có kế hoạch xây dựng nhà ở tại Hà Nội, hãy liên hệ ngay với chúng tôi để
+                                    được tư vấn miễn phí và nhận báo giá chi tiết. Đội ngũ chuyên gia của Trường Sinh
+                                    sẵn
+                                    sàng đồng hành cùng bạn trong hành trình xây dựng tổ ấm.</p>
+                            </div>
                         </section>
 
                         <!-- Author Bio -->
-                        <div class="author-bio">
-                            <div class="author-avatar">
-                                <img src="../assets/images/index_images/architect1.png" alt="Kỹ sư Trường Sinh">
+                        <section class="article-section">
+                            <h2>Đánh giá</h2>
+                            <div class="author-bio">
+                                <div class="author-avatar">
+                                    <img src="../assets/images/index_images/architect1.png" alt="Kỹ sư Trường Sinh">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Kỹ sư Trường Sinh</h4>
+                                    <p>Chuyên gia xây dựng với hơn 15 năm kinh nghiệm trong lĩnh vực xây dựng nhà ở tại
+                                        Hà
+                                        Nội. Tốt nghiệp Đại học Xây dựng Hà Nội, có chứng chỉ quản lý dự án PMP và nhiều
+                                        dự
+                                        án lớn đã thực hiện thành công.</p>
+                                </div>
                             </div>
-                            <div class="author-info">
-                                <h4>Kỹ sư Trường Sinh</h4>
-                                <p>Chuyên gia xây dựng với hơn 15 năm kinh nghiệm trong lĩnh vực xây dựng nhà ở tại Hà
-                                    Nội. Tốt nghiệp Đại học Xây dựng Hà Nội, có chứng chỉ quản lý dự án PMP và nhiều dự
-                                    án lớn đã thực hiện thành công.</p>
-                            </div>
-                        </div>
+                        </section>
 
                         <!-- Contact CTA -->
                         <div class="contact-cta">
@@ -440,7 +451,7 @@
                                 <p>Liên hệ ngay với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết</p>
                                 <div class="cta-buttons">
                                     <a href="contact.html" class="btn-primary">Liên hệ tư vấn</a>
-                                    <a href="tel:0123456789" class="btn-secondary">Gọi ngay: 0123 456 789</a>
+                                    <a href="tel:0123456789" class="btn-secondary">Gọi ngay: 0975 258 999</a>
                                 </div>
                             </div>
                         </div>
@@ -456,8 +467,13 @@
         <i class="ri-arrow-up-line"></i>
     </button>
 
+    <!-- Floating Sidebar -->
+    <div id="floating-sidebar-container"></div>
+
+
     <script src="../assets/js/detail-service-construction.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

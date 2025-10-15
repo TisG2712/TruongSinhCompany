@@ -86,9 +86,13 @@ body {
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
+    transition: all 0.05s ease-out;
+    min-width: 80px;
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
 }
 
 .stat-label {

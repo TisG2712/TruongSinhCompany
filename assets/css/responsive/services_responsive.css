@@ -59,12 +59,12 @@
     }
 
     .why-choose-section {
-        padding: 20px;
+        padding: 20px 0;
         margin-bottom: 30px;
     }
 
     .features-grid {
-        gap: 5px
+        gap: 30px;
     }
 
     .feature-icon {
@@ -94,6 +94,7 @@
 
     .cta-content p {
         font-size: 0.8rem;
+        padding: 0 30px;
     }
 
     .btn-primary,

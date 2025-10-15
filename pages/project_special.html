@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/ui/header.css" />
     <link rel="stylesheet" href="../assets/css/ui/navbar.css" />
     <link rel="stylesheet" href="../assets/css/ui/footer.css" />
+    <link rel="stylesheet" href="../assets/css/ui/floating-sidebar.css" />
     <link rel="stylesheet" href="../assets/css/project_special.css" />
     <link rel="stylesheet" href="../assets/css/responsive/project_special_responsive.css" />
 </head>
@@ -38,7 +39,7 @@
                     <div class="project-header">
                         <div class="project-category">CÔNG TRÌNH NỔI BẬT</div>
                         <h1 class="project-title">Công Trình Nhà Ở Biệt Thự Tân Cổ Điển 3 Tầng 1 Tum</h1>
-                        <div class="project-code">Mã dự án: NOBTTCD03001</div>
+                        <div class="project-category-type">Hạng mục dự án: Biệt thự</div>
                     </div>
 
                     <!-- Project Gallery -->
@@ -230,7 +231,7 @@
                     <div class="related-projects">
                         <h2 class="section-title">Dự án liên quan</h2>
                         <div class="projects-grid">
-                            <div class="related-project-card">
+                            <a href="project_special.html" class="related-project-card">
                                 <div class="project-image">
                                     <img src="../assets/images/services_images/villa2.png" alt="Dự án liên quan 1">
                                 </div>
@@ -238,8 +239,8 @@
                                     <h3>Biệt thự hiện đại 2 tầng</h3>
                                     <p>Diện tích: 450m²</p>
                                 </div>
-                            </div>
-                            <div class="related-project-card">
+                            </a>
+                            <a href="project_special.html" class="related-project-card">
                                 <div class="project-image">
                                     <img src="../assets/images/services_images/villa3.png" alt="Dự án liên quan 2">
                                 </div>
@@ -247,8 +248,8 @@
                                     <h3>Nhà phố thương mại</h3>
                                     <p>Diện tích: 320m²</p>
                                 </div>
-                            </div>
-                            <div class="related-project-card">
+                            </a>
+                            <a href="project_special.html" class="related-project-card">
                                 <div class="project-image">
                                     <img src="../assets/images/services_images/anh3.png" alt="Dự án liên quan 3">
                                 </div>
@@ -256,7 +257,7 @@
                                     <h3>Biệt thự cổ điển 4 tầng</h3>
                                     <p>Diện tích: 800m²</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
 
@@ -288,8 +289,13 @@
         <i class="ri-arrow-up-line"></i>
     </button>
 
+    <!-- Floating Sidebar -->
+    <div id="floating-sidebar-container"></div>
+
+
     <script src="../assets/js/project_special.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/floating-sidebar.js"></script>
 </body>
 
 </html>

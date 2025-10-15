@@ -108,26 +108,37 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 50px;
-    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     transition: all 0.3s ease;
     z-index: 1;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .slider-btn:hover {
     background: var(--primary-color);
-    color: #fff;
-    transform: translateY(-50%) scale(1.1);
+    color: white;
+    transform: translateY(-50%);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+}
+
+.slider-btn i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.slider-btn:hover i {
+    color: white;
 }
 
 .prev-btn {
@@ -834,7 +845,7 @@
     font-size: 1.5rem;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -854,4 +865,139 @@
 
 .scroll-to-top:active {
     transform: translateY(-1px);
+}
+
+/* ===========================================
+   CONTACT FORM SECTION
+   =========================================== */
+
+.contact-form {
+    padding: 50px 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 650px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+
+.contact-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: #ffffff;
+    flex: 2;
+    height: 100%;
+}
+
+.form-wrapper {
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.4;
+}
+
+.contact-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #374151;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, #f97316 0%, #dc2626 100%);
+    border: none;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
 }

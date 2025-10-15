@@ -6,12 +6,16 @@
         padding: 70px 0 50px 0;
     }
 
+    .service-header {
+        margin-bottom: 30px;
+    }
+
     .service-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .service-subtitle {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
 
     .overview-stats {
@@ -22,6 +26,7 @@
 
     .stat-number {
         font-size: 2rem;
+        min-width: 60px;
     }
 
     .service-detail-header {
@@ -52,6 +57,8 @@
 
     .feature-category {
         padding: 20px;
+        border-radius: 0px;
+        border-left: 2px solid var(--primary-color);
     }
 
     .advantages-grid {
@@ -108,10 +115,30 @@
 
     .cta-content p {
         font-size: 0.9rem;
-        padding: 0px 30px;
+        padding: 0px 50px;
     }
 
     .step-content p {
         padding: 0 40px;
+    }
+
+    .service-description p {
+        font-size: 0.8rem;
+    }
+
+    .service-tagline {
+        font-size: 0.8rem;
+    }
+
+    .service-description h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature-category h4 {
+        font-size: 1rem;
+    }
+
+    .feature-category li {
+        font-size: 0.8rem;
     }
 }

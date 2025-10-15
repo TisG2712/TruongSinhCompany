@@ -63,37 +63,58 @@ function initScrollToTop() {
 }
 
 /**
- * Khởi tạo hiệu ứng fade-in từ dưới lên cho các ảnh trong company-images-section
- * - Sử dụng Intersection Observer để kích hoạt khi scroll đến
- * - Hiệu ứng xuất hiện từ từ với delay khác nhau cho mỗi ảnh
+ * Khởi tạo chức năng toggle mục lục
+ * - Click vào title hoặc icon để ẩn/hiện danh sách
+ * - Animation mượt mà với arrow rotation
  */
-function initImageFadeInAnimation() {
-  const imageItems = document.querySelectorAll(
-    ".company-images-section .image-item"
-  );
-  if (!imageItems.length) return;
+function initTocToggle() {
+  const tocToggle = document.getElementById("tocToggle");
+  const tocList = document.getElementById("tocList");
 
-  // Observer để kích hoạt animation khi scroll đến
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Thêm class để kích hoạt animation
-          entry.target.classList.add("fade-in-visible");
-          observer.unobserve(entry.target); // Chỉ chạy 1 lần
-        }
-      });
-    },
-    {
-      threshold: 0.2, // Kích hoạt khi 20% element hiển thị
-      rootMargin: "0px 0px -50px 0px", // Kích hoạt sớm hơn 50px
+  if (!tocToggle || !tocList) return;
+
+  tocToggle.addEventListener("click", function () {
+    // Toggle class collapsed
+    tocToggle.classList.toggle("collapsed");
+
+    // Toggle hiển thị danh sách
+    if (tocToggle.classList.contains("collapsed")) {
+      tocList.style.display = "none";
+    } else {
+      tocList.style.display = "block";
     }
-  );
+  });
+}
 
-  imageItems.forEach((item, index) => {
-    // Thêm delay khác nhau cho mỗi ảnh để tạo hiệu ứng cascade
-    item.style.setProperty("--animation-delay", `${index * 0.2}s`);
-    observer.observe(item);
+/**
+ * Khởi tạo chức năng smooth scroll cho mục lục
+ * - Click vào link mục lục để chuyển đến phần tương ứng
+ * - Smooth scroll animation
+ */
+function initTocSmoothScroll() {
+  const tocLinks = document.querySelectorAll(".toc-link");
+  const sections = document.querySelectorAll(".article-section");
+
+  // Xử lý click vào link mục lục
+  tocLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        // Tính toán vị trí scroll (trừ đi header height)
+        const headerHeight = 120; // Chiều cao header + navbar
+        const targetPosition = targetSection.offsetTop - headerHeight;
+
+        // Smooth scroll
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
   });
 }
 
@@ -109,5 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Khởi tạo các tính năng UI
   initScrollToTop(); // Nút cuộn lên đầu
-  initImageFadeInAnimation(); // Hiệu ứng fade-in cho ảnh
+  initTocToggle(); // Toggle mục lục
+  initTocSmoothScroll(); // Smooth scroll cho mục lục
 });

@@ -55,7 +55,7 @@
     line-height: 1.3;
 }
 
-.project-code {
+.project-category-type {
     font-size: 1rem;
     color: #666;
     font-weight: 500;
@@ -317,6 +317,9 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .related-project-card:hover {
@@ -441,7 +444,7 @@
     font-size: 1.5rem;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);

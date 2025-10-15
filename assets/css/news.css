@@ -60,6 +60,8 @@
     position: relative;
     transition: all 0.3s ease;
     font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .filter-tab:hover {
@@ -84,7 +86,7 @@
 /* News Grid */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -237,7 +239,7 @@
     font-size: 1.5rem;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -260,88 +262,150 @@
 }
 
 /* ===========================================
-   LOAD MORE BUTTON - Nút hiển thị thêm tin tức
+   PAGINATION - Phân trang
    =========================================== */
 
-.load-more-container {
+.pagination-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 60px;
+    padding: 20px 0;
 }
 
-.load-more-btn {
-    background: var(--primary-color);
-    color: white;
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
     border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1rem;
+    backdrop-filter: none;
+}
+
+.pagination-btn {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.load-more-btn:hover {
-    background: #e55a2b;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+.pagination-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e55a2b 100%);
+    transition: left 0.3s ease;
+    z-index: -1;
 }
 
-.load-more-btn:active {
-    transform: translateY(0);
-}
-
-.load-more-btn i {
-    font-size: 1.1rem;
-}
-
-/* Collapse Button */
-.collapse-btn {
-    background: #6b7280;
+.pagination-btn:hover:not(:disabled) {
     color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.pagination-btn:hover:not(:disabled)::before {
+    left: 0;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.pagination-btn:disabled::before {
+    display: none;
+}
+
+.pagination-numbers {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+    margin: 0 12px;
+}
+
+.pagination-number {
+    background: transparent;
+    border: 2px solid transparent;
+    color: #64748b;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pagination-number::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 50%;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(107, 114, 128, 0.2);
-    margin-left: 15px;
+    z-index: -1;
 }
 
-.collapse-btn:hover {
-    background: #4b5563;
+.pagination-number:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 114, 128, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.2);
 }
 
-.collapse-btn:active {
-    transform: translateY(0);
+.pagination-number:hover::before {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
 }
 
-.collapse-btn i {
-    font-size: 1.1rem;
+.pagination-number.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e55a2b 100%);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
-/* Hidden News Animation */
-.hidden-news {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-    display: contents;
+.pagination-number.active::before {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e55a2b 100%);
 }
 
-.hidden-news.show {
-    opacity: 1;
-    transform: translateY(0);
+.pagination-dots {
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    height: 44px;
 }
 
 /* Mobile Filter Tabs - Hidden on Desktop */
